@@ -1,0 +1,13 @@
+name: analysis
+channels:
+- scitools
+dependencies:
+- python=3.5
+- numpy
+- scipy
+- xarray
+- dask
+- iris
+- basemap
+- cartopy
+- ipython
