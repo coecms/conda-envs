@@ -24,9 +24,10 @@ for env in *.yml; do
     echo curl -s https://api.anaconda.org/dist/$ANACONDA_USER/$name/latest/$env
     curl -s https://api.anaconda.org/dist/$ANACONDA_USER/$name/latest/$env
     md5=$(curl -s https://api.anaconda.org/dist/$ANACONDA_USER/$name/latest/$env | sed -n 's/.*"md5":\s*"\([^"]\+\)".*/\1  '$env'/p')
+    echo "$md5"
 
     # If md5 sum has changed upload the environment
-    if ! md5sum -c <<< $md5
+    if ! md5sum -c <<< "$md5"
     then
         anaconda --token $ANACONDA_TOKEN upload -u $ANACONDA_USER $env
     fi
