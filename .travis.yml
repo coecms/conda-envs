@@ -19,8 +19,8 @@ install:
 # Check environments can be created
 script:
     - for env in *.yml; do
-          echo $env
-          conda env create -f $env
+          echo $env;
+          conda env create -f $env;
       done
 
 # Upload
