@@ -26,7 +26,7 @@ for env in *.yml; do
     # If md5 sum has changed upload the environment
     if ! md5sum -c <<< $md5
     then
-        anaconda --token $ANACONDA_TOKEN upload -u accessdev $env
+        anaconda --token $ANACONDA_TOKEN upload -u $ANACONDA_USER $env
     fi
 
 done
