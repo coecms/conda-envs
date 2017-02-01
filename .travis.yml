@@ -2,7 +2,7 @@ language: python
 
 env:
     global:
-        - ANACONDA_USER=scottwales
+        - ANACONDA_USER=accessdev
 
 # Install miniconda
 install:
