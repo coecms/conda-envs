@@ -1,7 +1,0 @@
-name: python35
-dependencies:
-- python=3.5
-- ipython
-- numpy
-- scipy
-

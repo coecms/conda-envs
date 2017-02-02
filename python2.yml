@@ -1,7 +1,0 @@
-name: python2
-dependencies:
-- python=2
-- virtualenv
-- ipython
-- numpy
-- scipy

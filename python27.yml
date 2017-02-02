@@ -5,4 +5,3 @@ dependencies:
 - ipython
 - numpy
 - scipy
-- bsddb
