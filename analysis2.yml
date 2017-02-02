@@ -17,4 +17,4 @@ dependencies:
 - scipy
 - xarray
 - seaborn
-
+- bsddb
