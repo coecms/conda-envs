@@ -1,9 +1,9 @@
-name: analysis
+name: analysis3
 channels:
 - conda-forge
 - scitools
 dependencies:
-- python=3.5
+- python=3
 - basemap
 - cartopy
 - dask
@@ -16,3 +16,5 @@ dependencies:
 - pytest
 - scipy
 - xarray
+- seaborn
+
