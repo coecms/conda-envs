@@ -1,8 +1,20 @@
 name: python27
+channels:
+- conda-forge
+- scitools
 dependencies:
 - python=2.7
-- virtualenv
-- ipython
-- numpy
-- scipy
+- basemap
 - bsddb
+- cartopy
+- dask
+- ipython
+- iris
+- netCDF4
+- numpy
+- pandas
+- pygrib
+- pytest
+- scipy
+- virtualenv
+- xarray
