@@ -13,8 +13,9 @@ dependencies:
 - numpy
 - pandas
 - pygrib
+- pyhdf
 - pytest
 - scipy
-- xarray
 - seaborn
+- xarray
 

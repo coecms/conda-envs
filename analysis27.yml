@@ -5,6 +5,7 @@ channels:
 dependencies:
 - python=2
 - basemap
+- bsddb
 - cartopy
 - dask
 - ipython
@@ -13,8 +14,8 @@ dependencies:
 - numpy
 - pandas
 - pygrib
+- pyhdf
 - pytest
 - scipy
-- xarray
 - seaborn
-- bsddb
+- xarray
