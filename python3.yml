@@ -4,4 +4,6 @@ dependencies:
 - ipython
 - numpy
 - scipy
-
+- mkl
+- libnetcdf
+- libgfortran
