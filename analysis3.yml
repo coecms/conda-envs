@@ -20,3 +20,4 @@ dependencies:
 - xarray
 - pybufr-ecmwf
 - jupyter
+- nb_conda
