@@ -22,3 +22,4 @@ dependencies:
 - pybufr-ecmwf
 - jupyter
 - nb_conda
+- metpy
