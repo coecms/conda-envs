@@ -22,3 +22,4 @@ dependencies:
 - jupyter
 - nb_conda
 - metpy
+- windspharm
