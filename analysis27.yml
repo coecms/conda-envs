@@ -24,3 +24,4 @@ dependencies:
 - nb_conda
 - metpy
 - windspharm
+- cdat_lite
