@@ -25,3 +25,4 @@ dependencies:
 - metpy
 - windspharm
 - cdat-lite
+- python-cdo

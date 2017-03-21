@@ -23,3 +23,4 @@ dependencies:
 - nb_conda
 - metpy
 - windspharm
+- python-cdo
