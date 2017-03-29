@@ -24,3 +24,6 @@ dependencies:
 - metpy
 - windspharm
 - python-cdo
+- arm_pyart
+- bokeh
+- datashader

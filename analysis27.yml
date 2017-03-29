@@ -26,3 +26,6 @@ dependencies:
 - windspharm
 - cdat-lite
 - python-cdo
+- arm_pyart
+- bokeh
+- datashader
