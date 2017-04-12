@@ -1,5 +1,6 @@
 name: analysis27
 channels:
+- coecms
 - conda-forge
 - scitools
 dependencies:
@@ -29,3 +30,4 @@ dependencies:
 - arm_pyart
 - bokeh
 - datashader
+- arccssive
