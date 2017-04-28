@@ -31,3 +31,4 @@ dependencies:
 - bokeh
 - datashader
 - arccssive
+- pyferret
