@@ -2,7 +2,7 @@ pipeline {
     agent {label "saw562.raijin"}
 
     environment {
-        ENV_NAME = 'python27'
+        ENV_NAME = "${env.JOB_BASE_NAME}"
     }
 
     stages {
@@ -45,6 +45,12 @@ pipeline {
                 conda env remove -y -n "test-\${ENV_NAME}"
                 """
             archiveArtifacts artifacts: 'deployed.yml'
+        }
+
+        failure {
+            mail to: 'climate_help', subject: "${env.ENV_NAME} update failed", body: """
+Full results at ${env.BUILD_URL}
+"""
         }
     }
 }
