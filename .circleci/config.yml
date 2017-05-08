@@ -26,7 +26,9 @@ jobs:
                 path: rendered
             - deploy:
                 command: |
+                    /opt/docker/bin/entrypoint /bin/bash << EOF
                     if [[ " python27 python3 analysis27 analysis3 " =~ " ${CIRCLE_BRANCH} " ]]; then
-                        anaconda upload --token $ANACONDA_TOKEN --user $ANACONDA_USER \
+                        anaconda upload --token "${ANACONDA_TOKEN}" --user "${ANACONDA_USER}" \
                             rendered/environment.yml
                     fi
+                    EOF
