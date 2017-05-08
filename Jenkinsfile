@@ -18,7 +18,7 @@ pipeline {
                 sh """
                     module use /g/data3/hh5/public/modules
                     module load conda
-                    source activate 'test-${BRANCH_NAME}'
+                    source activate 'test-\${BRANCH_NAME}'
                     py.test
                     """
             }
