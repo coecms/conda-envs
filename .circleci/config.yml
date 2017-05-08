@@ -28,6 +28,7 @@ jobs:
                 command: |
                     /opt/docker/bin/entrypoint /bin/bash << EOF
                     if [[ " python27 python3 analysis27 analysis3 " =~ " ${CIRCLE_BRANCH} " ]]; then
+                        echo anaconda upload --token "${FOO}" --user "${BAR}" test
                         anaconda upload --token "${ANACONDA_TOKEN}" --user "${ANACONDA_USER}" \
                             rendered/environment.yml
                     fi
