@@ -5,6 +5,7 @@ pipeline {
         stage ('Build') {
             steps {
                 sh """
+                    module use /g/data3/hh5/public/modules
                     module load conda
                     conda env create -f 'test-\${BRANCH_NAME}' environment.yml
                     conda env export -n 'test-\${BRANCH_NAME}' -f deployed.yml
@@ -15,7 +16,6 @@ pipeline {
        stage ('Test') {
            steps {
                sh """
-                   module load conda
                    source activate 'test-${BRANCH_NAME}'
                    py.test
                    """
@@ -26,14 +26,12 @@ pipeline {
    post {
        success {
            sh """
-               module load conda
                echo conda env update -n '\${BRANCH_NAME}' -f deployed.yml
                """
        }
 
        always {
            sh """
-               module load conda
                conda env remove -n 'test-\${BRANCH_NAME}'
                """
            archiveArtifacts artifacts: 'deployed.yml'
