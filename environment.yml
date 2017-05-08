@@ -1,9 +1,9 @@
-name: python27
+name: python3
 dependencies:
-- python=2.7
-- pytest
-- virtualenv
+- python=3
 - ipython
 - numpy
 - scipy
-- bsddb
+- mkl
+- libnetcdf
+- libgfortran
