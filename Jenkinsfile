@@ -7,7 +7,7 @@ pipeline {
                 sh """
                     module use /g/data3/hh5/public/modules
                     module load conda
-                    conda env create -f 'test-\${BRANCH_NAME}' environment.yml
+                    conda env create -n 'test-\${BRANCH_NAME}' -f environment.yml
                     conda env export -n 'test-\${BRANCH_NAME}' -f deployed.yml
                     """
             }
