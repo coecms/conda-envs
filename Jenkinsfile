@@ -49,7 +49,7 @@ pipeline {
 
         failure {
             mail to: 'climate_help', subject: "${env.ENV_NAME} update failed", body: """
-Full results at ${env.JENKINS_BUILD_URL}
+Full results at ${env.BUILD_URL}
 """
         }
     }
