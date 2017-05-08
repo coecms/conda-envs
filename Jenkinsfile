@@ -7,8 +7,8 @@ pipeline {
                 sh """
                     module use /g/data3/hh5/public/modules
                     module load conda
-                    conda env create -n 'test-${env.BRANCH_NAME}' -f environment.yml
-                    conda env export -n 'test-${env.BRANCH_NAME}' -f deployed.yml
+                    conda env create -n "test-\${BRANCH_NAME}" -f environment.yml
+                    conda env export -n "test-\${BRANCH_NAME}" -f deployed.yml
                     """
             }
         }
@@ -18,7 +18,7 @@ pipeline {
                 sh """
                     module use /g/data3/hh5/public/modules
                     module load conda
-                    source activate 'test-${env.BRANCH_NAME}'
+                    source activate "test-\${BRANCH_NAME}"
                     py.test
                     """
             }
@@ -30,7 +30,7 @@ pipeline {
             sh """
                 module use /g/data3/hh5/public/modules
                 module load conda
-                echo conda env update -n '${env.BRANCH_NAME}' -f deployed.yml
+                echo conda env update -n "\${BRANCH_NAME}" -f deployed.yml
                 """
         }
 
@@ -38,7 +38,7 @@ pipeline {
             sh """
                 module use /g/data3/hh5/public/modules
                 module load conda
-                conda env remove -y -n 'test-${env.BRANCH_NAME}'
+                conda env remove -y -n "test-\${BRANCH_NAME}"
                 """
             archiveArtifacts artifacts: 'deployed.yml'
         }
