@@ -1,8 +1,11 @@
 pipeline {
+    agent {label "saw562.raijin"}
     
     stages {
         stage ('Test') {
-            sh "echo hello"
+            steps {
+                sh "echo hello"
+            }
         }
     }
 //     stages {
@@ -41,5 +44,5 @@ pipeline {
 //                archiveArtifacts artifacts: 'deployed.yml'
 //            }
 //        }
-    }
+//    }
 }
