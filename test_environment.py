@@ -17,11 +17,13 @@ from __future__ import print_function
 
 def test_python_version():
     import sys
-    assert sys.version_info >= (2,7)
-    assert sys.version_info <= (3,0)
+    assert sys.version_info > (3,0)
 
 def test_numpy_import():
     import numpy
 
 def test_scipy_import():
     import scipy
+
+def test_pandas_import():
+    import pandas
