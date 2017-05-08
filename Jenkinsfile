@@ -1,14 +1,18 @@
 pipeline {
     agent {label "saw562.raijin"}
 
+    environment {
+        ENV_NAME = 'python27'
+    }
+
     stages {
         stage ('Build') {
             steps {
                 sh """
                     module use /g/data3/hh5/public/modules
                     module load conda
-                    conda env create -n "test-\${BRANCH_NAME}" -f environment.yml
-                    conda env export -n "test-\${BRANCH_NAME}" -f deployed.yml
+                    conda env create -n "test-\${ENV_NAME}" -f environment.yml
+                    conda env export -n "test-\${ENV_NAME}" -f deployed.yml
                     """
             }
         }
@@ -18,7 +22,7 @@ pipeline {
                 sh """
                     module use /g/data3/hh5/public/modules
                     module load conda
-                    source activate "test-\${BRANCH_NAME}"
+                    source activate "test-\${ENV_NAME}"
                     py.test
                     """
             }
@@ -30,7 +34,7 @@ pipeline {
             sh """
                 module use /g/data3/hh5/public/modules
                 module load conda
-                echo conda env update -n "\${BRANCH_NAME}" -f deployed.yml
+                echo conda env update -n "\${ENV_NAME}" -f deployed.yml
                 """
         }
 
@@ -38,7 +42,7 @@ pipeline {
             sh """
                 module use /g/data3/hh5/public/modules
                 module load conda
-                conda env remove -y -n "test-\${BRANCH_NAME}"
+                conda env remove -y -n "test-\${ENV_NAME}"
                 """
             archiveArtifacts artifacts: 'deployed.yml'
         }
