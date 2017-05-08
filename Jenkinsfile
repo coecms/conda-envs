@@ -21,21 +21,22 @@ pipeline {
                    """
            }
        }
+   }
 
-       post {
-           success {
-               sh """
-                   module load conda
-                   conda env update -n '\${BRANCH_NAME}' -f deployed.yml
-                   """
-           }
-           always {
-               sh """
-                   module load conda
-                   conda env remove -n 'test-\${BRANCH_NAME}'
-                   """
-               archiveArtifacts artifacts: 'deployed.yml'
-           }
+   post {
+       success {
+           sh """
+               module load conda
+               echo conda env update -n '\${BRANCH_NAME}' -f deployed.yml
+               """
+       }
+
+       always {
+           sh """
+               module load conda
+               conda env remove -n 'test-\${BRANCH_NAME}'
+               """
+           archiveArtifacts artifacts: 'deployed.yml'
        }
    }
 }
