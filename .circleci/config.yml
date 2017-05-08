@@ -8,6 +8,7 @@ jobs:
             - checkout
             - run: |
                 /opt/docker/bin/entrypoint /bin/bash << EOF
+                conda install anaconda
                 conda update anaconda conda
                 EOF
             - run: |
