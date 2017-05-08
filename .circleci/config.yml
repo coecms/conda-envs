@@ -1,0 +1,31 @@
+version: 2
+jobs:
+    build:
+        working_directory: ~/conda
+    docker:
+        - image: condaforge/linux-anvil
+    steps:
+        - checkout
+        - run: |
+            /opt/docker/bin/entrypoint /bin/bash << EOF
+            conda update anaconda conda
+            EOF
+        - run: |
+            /opt/docker/bin/entrypoint /bin/bash << EOF
+            mkdir rendered
+            conda env create -n "${CIRCLE_BRANCH}" -f environment.yml
+            conda env export -n "${CIRCLE_BRANCH}" -f rendered/environment.yml
+            EOF
+        - run: |
+            /opt/docker/bin/entrypoint /bin/bash << EOF
+            source activate "${CIRCLE_BRANCH}"
+            py.test
+            EOF
+        - store_artifacts:
+            path: rendered
+        - deploy:
+            command: |
+                if [[ " python27 python3 analysis27 analysis3 " =~ " ${CIRCLE_BRANCH} " ]]; then
+                    anaconda upload --token $ANACONDA_TOKEN --user $ANACONDA_USER \
+                        rendered/environment.yml
+                fi
