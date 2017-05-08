@@ -38,7 +38,7 @@ pipeline {
             sh """
                 module use /g/data3/hh5/public/modules
                 module load conda
-                conda env remove -n 'test-\${BRANCH_NAME}'
+                conda env remove -y -n 'test-\${BRANCH_NAME}'
                 """
             archiveArtifacts artifacts: 'deployed.yml'
         }
