@@ -1,9 +1,29 @@
-name: python27
+name: analysis3
+channels:
+- conda-forge
+- scitools
 dependencies:
-- python=2.7
-- pytest
-- virtualenv
+- python=3
+- basemap
+- cartopy
+- dask
 - ipython
+- iris
+- netCDF4
 - numpy
+- pandas
+- pygrib
+- pyhdf
+- pytest
 - scipy
-- bsddb
+- seaborn
+- xarray
+- pybufr-ecmwf
+- jupyter
+- nb_conda
+- metpy
+- windspharm
+- python-cdo
+- arm_pyart
+- bokeh
+- datashader

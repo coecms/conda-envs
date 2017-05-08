@@ -2,7 +2,7 @@ pipeline {
     agent {label "saw562.raijin"}
 
     environment {
-        ENV_NAME = 'python27'
+        ENV_NAME = 'analysis3'
     }
 
     stages {
