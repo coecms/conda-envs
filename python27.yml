@@ -1,8 +1,0 @@
-name: python27
-dependencies:
-- python=2.7
-- virtualenv
-- ipython
-- numpy
-- scipy
-- bsddb

@@ -1,9 +1,0 @@
-name: python3
-dependencies:
-- python=3
-- ipython
-- numpy
-- scipy
-- mkl
-- libnetcdf
-- libgfortran
