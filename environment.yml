@@ -27,3 +27,4 @@ dependencies:
 - arm_pyart
 - bokeh
 - datashader
+- f90nml
