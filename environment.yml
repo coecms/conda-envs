@@ -32,3 +32,4 @@ dependencies:
 - datashader
 - arccssive
 - pyferret
+- f90nml
