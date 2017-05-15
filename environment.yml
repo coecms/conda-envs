@@ -33,3 +33,4 @@ dependencies:
 - arccssive
 - pyferret
 - f90nml
+- wrf-python
