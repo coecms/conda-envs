@@ -28,3 +28,4 @@ dependencies:
 - bokeh
 - datashader
 - f90nml
+- wrf-python
