@@ -34,6 +34,7 @@ pipeline {
             sh """
                 module use /g/data3/hh5/public/modules
                 module load conda
+                unset CONDA_ENVS_PATH
                 conda env update -n "\${ENV_NAME}" -f deployed.yml
                 """
         }
