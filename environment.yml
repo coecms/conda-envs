@@ -29,3 +29,4 @@ dependencies:
 - datashader
 - f90nml
 - wrf-python
+- sympy
