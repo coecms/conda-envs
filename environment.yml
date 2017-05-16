@@ -34,3 +34,4 @@ dependencies:
 - pyferret
 - f90nml
 - wrf-python
+- sympy
