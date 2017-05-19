@@ -35,3 +35,4 @@ dependencies:
 - f90nml
 - wrf-python
 - sympy
+- sh
