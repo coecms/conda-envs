@@ -36,3 +36,4 @@ dependencies:
 - wrf-python
 - sympy
 - sh
+- basemap-data-hires
