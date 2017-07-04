@@ -1,6 +1,7 @@
 name: analysis3
 channels:
 - conda-forge
+- coecms
 - scitools
 dependencies:
 - python=3
@@ -32,3 +33,4 @@ dependencies:
 - sympy
 - sh
 - basemap-data-hires
+- dataset
