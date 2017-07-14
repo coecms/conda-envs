@@ -38,3 +38,4 @@ dependencies:
 - sh
 - basemap-data-hires
 - ffmpeg
+- pydap
