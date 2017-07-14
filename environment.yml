@@ -35,3 +35,4 @@ dependencies:
 - basemap-data-hires
 - dataset
 - ffmpeg
+- pydap
