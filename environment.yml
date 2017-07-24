@@ -39,3 +39,4 @@ dependencies:
 - basemap-data-hires
 - ffmpeg
 - pydap
+- twine
