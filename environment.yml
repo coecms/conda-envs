@@ -40,3 +40,4 @@ dependencies:
 - ffmpeg
 - pydap
 - twine
+- mule
