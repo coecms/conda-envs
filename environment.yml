@@ -37,3 +37,6 @@ dependencies:
 - ffmpeg
 - pydap
 - twine
+- python-graphviz
+- joblib
+- tqdm
