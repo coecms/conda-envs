@@ -44,3 +44,4 @@ dependencies:
 - python-graphviz
 - joblib
 - tqdm
+- gdal
