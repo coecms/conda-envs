@@ -45,3 +45,4 @@ dependencies:
 - joblib
 - tqdm
 - gdal
+- umtools
