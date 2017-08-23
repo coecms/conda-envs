@@ -48,3 +48,4 @@ dependencies:
 - umtools
 - dataset
 - cfchecker
+- compliance-checker
