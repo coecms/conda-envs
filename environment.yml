@@ -42,3 +42,4 @@ dependencies:
 - tqdm
 - gdal
 - umtools
+- compliance-checker
