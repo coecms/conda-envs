@@ -26,6 +26,9 @@ def test_numpy_import():
 def test_scipy_import():
     import scipy
 
+def test_pandas_import():
+    import pandas
+
 def test_xarray_import():
     import xarray
 
