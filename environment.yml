@@ -7,7 +7,7 @@ dependencies:
 - python=3
 - basemap
 - cartopy
-- dask
+- dask=0.15.1
 - ipython
 - iris
 - netCDF4
