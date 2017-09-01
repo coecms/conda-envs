@@ -32,3 +32,7 @@ def test_pandas_import():
 def test_xarray_import():
     import xarray
 
+def test_dask_import():
+    import dask
+    import dask.bag
+
