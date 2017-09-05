@@ -142,9 +142,8 @@ def extract_module(path,depth=1):
     else:
         return None
             
-def test_package_list():
-    print("Hello\n")
-    print(package_list())
+def test_check_packages():
+    check_packages()
 
 def test_python_version():
     import sys
