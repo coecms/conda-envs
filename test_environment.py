@@ -75,8 +75,12 @@ def check_packages(dirs=None,depth=1):
     else:
         pkgcachedirs = dirs
 
+    print("Searching these package cache directories: {}".format(pkgcachedirs))
+
     for package in package_list():
-        
+
+        print("Package: {}".format(package["dist_name"]))
+
         # Look for the "files" file in the package cache directories. This, perhaps
         # unsurprisingly, lists all the files in the package
         files = None
@@ -91,20 +95,14 @@ def check_packages(dirs=None,depth=1):
         else:
             # Read in all the file paths, find directories containing an __init__.py
             # transform the directory path into a module name and attempt to import it
-            print(files)
             with open(files, 'r') as infile:
                 for name in infile:
                     name = name.rstrip("\n")
                     if name.endswith('__init__.py'):
-                        name = os.path.dirname(name)
-                        names = []
-                        for element in nextdir(name):
-                            if element == 'site-packages': break
-                            names.append(element)
-                        if len(names) <= depth:
-                            modname = ".".join(reversed(names))
+                        modname = extract_module(os.path.dirname(name),depth)
+                        if modname is not None:
                             if importmodule(modname):
-                                print("Imported {} successfully".format(modname))
+                                print("Imported {}".format(modname))
 
 
 def importmodule(modname,fail=True):
@@ -130,12 +128,19 @@ def nextdir(path):
         if base == '': break
         yield base
 
-def extract_module(path):
+def extract_module(path,depth=1):
     """ 
     From a typical python package install path extract out the 
     importable name
     """
-    pass
+    names = []
+    for element in nextdir(path):
+        if element == 'site-packages': break
+        names.append(element)
+    if len(names) <= depth:
+        return ".".join(reversed(names))
+    else:
+        return None
             
 def test_package_list():
     print("Hello\n")
