@@ -147,7 +147,8 @@ def test_check_packages():
 
 def test_python_version():
     import sys
-    assert sys.version_info > (3,0)
+    assert sys.version_info >= (2,7)
+    assert sys.version_info <= (3,0)
 
 def test_numpy_import():
     import numpy
