@@ -59,6 +59,18 @@ def package_list():
     """
     return _call_and_parse(['list', '--json'])
 
+def import_exceptions():
+    """
+    Return a set of python modules that are exempt in check_packages
+    """
+    mods = set()
+
+    with open('exceptions', 'r') as f:
+        for line in f:
+            mods.add(line.rstrip("\n"))
+
+    return mods
+
 def check_packages(dirs=None,depth=1):
     """
     For each installed package rummage through python cache directories looking for 
@@ -93,6 +105,9 @@ def check_packages(dirs=None,depth=1):
         if files is None:
             print("no files file found for package: {}\n".format(package))
         else:
+
+            exceptions = import_exceptions()
+
             # Read in all the file paths, find directories containing an __init__.py
             # transform the directory path into a module name and attempt to import it
             with open(files, 'r') as infile:
@@ -100,9 +115,12 @@ def check_packages(dirs=None,depth=1):
                     name = name.rstrip("\n")
                     if name.endswith('__init__.py'):
                         modname = extract_module(os.path.dirname(name),depth)
-                        if modname is not None:
-                            if importmodule(modname):
-                                print("Imported {}".format(modname))
+                        if modname in exceptions:
+                            print("{} listed in exceptions, skipping".format(modname))
+                        else:
+                            if modname is not None:
+                                if importmodule(modname):
+                                    print("Imported {}".format(modname))
 
 
 def importmodule(modname,fail=True):
@@ -147,7 +165,8 @@ def test_check_packages():
 
 def test_python_version():
     import sys
-    assert sys.version_info > (3,0)
+    assert sys.version_info >= (2,7)
+    assert sys.version_info <= (3,0)
 
 def test_numpy_import():
     import numpy
