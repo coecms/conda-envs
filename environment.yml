@@ -50,3 +50,4 @@ dependencies:
 - dataset
 - cfchecker
 - compliance-checker
+- icu=58.1
