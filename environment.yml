@@ -27,7 +27,7 @@ dependencies:
 - windspharm
 - python-cdo
 - arm_pyart
-- bokeh
+- bokeh=0.12.4
 - datashader
 - f90nml
 - wrf-python
