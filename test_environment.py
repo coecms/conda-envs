@@ -63,11 +63,13 @@ def import_exceptions():
     """
     Return a set of python modules that are exempt in check_packages
     """
+    exceptionsfile = 'exceptions'
     mods = set()
 
-    with open('exceptions', 'r') as f:
-        for line in f:
-            mods.add(line.rstrip("\n"))
+    if os.path.exists(exceptionsfile):
+        with open(exceptionsfile, 'r') as f:
+            for line in f:
+                mods.add(line.rstrip("\n"))
 
     return mods
 
@@ -153,7 +155,7 @@ def extract_module(path,depth=1):
     """
     names = []
     for element in nextdir(path):
-        if element == 'site-packages': break
+        if element == 'site-packages' or element.endswith('.egg'): break
         names.append(element)
     if len(names) <= depth:
         return ".".join(reversed(names))
@@ -161,25 +163,8 @@ def extract_module(path,depth=1):
         return None
             
 def test_check_packages():
-    check_packages()
+    check_packages(depth=2)
 
 def test_python_version():
     import sys
-    assert sys.version_info >= (2,7)
-    assert sys.version_info <= (3,0)
-
-def test_numpy_import():
-    import numpy
-
-def test_scipy_import():
-    import scipy
-
-def test_pandas_import():
-    import pandas
-
-def test_xarray_import():
-    import xarray
-
-def test_dask_import():
-    import dask
-    import dask.bag
+    assert sys.version_info > (3,0)
