@@ -109,23 +109,47 @@ def check_packages(dirs=None,depth=1):
         else:
 
             exceptions = import_exceptions()
+            mods = find_imports(files, depth=depth)
 
-            # Read in all the file paths, find directories containing an __init__.py
-            # transform the directory path into a module name and attempt to import it
-            with open(files, 'r') as infile:
-                for name in infile:
-                    name = name.rstrip("\n")
-                    if name.endswith('__init__.py'):
-                        modname = extract_module(os.path.dirname(name),depth)
-                        if modname in exceptions:
-                            print("{} listed in exceptions, skipping".format(modname))
-                        else:
-                            if modname is not None:
-                                if importmodule(modname):
-                                    print("Imported {}".format(modname))
+            if not mods:
+                warnstring ="No imports founds for {}, no testing possible".format(package["dist_name"])
+                warnings.warn(UserWarning(warnstring))
 
+            for modname in mods:
+                if modname in exceptions:
+                    print("{} listed in exceptions, skipping".format(modname))
+                else:
+                    print("Importing {} ".format(modname),end='')
+                    if importmodule(modname):
+                        print("... ok")
+
+def find_imports(files, depth):
+    """
+    Find importable modules from the files listing in a conda package
+    """
+
+    mods = set() 
+
+    # Read in all the file paths, find directories containing an __init__.py
+    # transform the directory path into a module name and attempt to import it
+    with open(files, 'r') as infile:
+        for name in infile:
+            name = name.rstrip("\n")
+            if name.endswith('__init__.py'):
+                modname = extract_module(os.path.dirname(name),depth)
+                if modname is not None: mods.add(modname)
+            elif name.endswith('top_level.txt'):
+                with open(os.path.join(os.path.dirname(os.path.dirname(files)),name), 'r') as toplevel:
+                    for modname in toplevel:
+                        modname = extract_module(modname.rstrip("\n"),depth)
+                        if modname is not None: mods.add(modname)
+                    
+    return mods
 
 def importmodule(modname,fail=True):
+    """
+    Try to import a python module. By default will raise an exception if import fails
+    """
 
     imported_ok = False
     try:
