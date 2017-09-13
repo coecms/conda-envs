@@ -19,10 +19,8 @@ from __future__ import print_function
 # Didn't want the tests to rely on any external packages, so included
 # stripped down version of the code rather than use the package as-is 
 
-import warnings
 import os, sys
-from importlib import import_module
-from pkgutil import iter_modules
+from pkgutil import walk_packages
 
 exceptions = set()
 
@@ -49,70 +47,11 @@ def handle_error(name):
         print("ERROR>>>>",name)
         raise
 
-def walk_packages_depth(path=None, prefix='', onerror=None, depth=0):
-    """Yields ModuleInfo for all modules recursively
-    on path, or, if path is None, all accessible modules.
-    'path' should be either None or a list of paths to look for
-    modules in.
-    'prefix' is a string to output on the front of every module name
-    on output.
-    Note that this function must import all *packages* (NOT all
-    modules!) on the given path, in order to access the __path__
-    attribute to find submodules.
-    'onerror' is a function which gets called with one argument (the
-    name of the package which was being imported) if any exception
-    occurs while trying to import a package.  If no onerror function is
-    supplied, ImportErrors are caught and ignored, while all other
-    exceptions are propagated, terminating the search.
-    Examples:
-    # list all modules python can access
-    walk_packages()
-    # list all submodules of ctypes
-    walk_packages(ctypes.__path__, ctypes.__name__+'.')
-    """
-
-    def seen(p, m={}):
-        if p in m:
-            return True
-        m[p] = True
-
-    for importer, name, ispkg in iter_modules(path, prefix):
-        yield importer, name, ispkg
-
-        if ispkg:
-            # Check depth
-            if name.count('.') > depth:
-                # print(name,name.count('.'),depth)
-                continue
-            try:
-                print('import ',name,end=' ')
-                __import__(name)
-            except ImportError:
-                if onerror is not None:
-                    onerror(name)
-            except Exception:
-                if onerror is not None:
-                    onerror(name)
-                else:
-                    raise
-            else:
-                print('... ok')
-                path = getattr(sys.modules[name], '__path__', None) or []
-
-                # don't traverse path items we've seen before
-                path = [p for p in path if not seen(p)]
-
-                for item in walk_packages_depth(path, name+'.', onerror,depth):
-                    yield item
-
-# def test_check_packages():
-#     check_packages(depth=2)
-
-def test_walk_packages_depth(depth=3):
+def test_walk_packages():
     global exceptions
     exceptions = import_exceptions()
-    for p in walk_packages_depth(depth=depth,onerror=handle_error):
-        pass
+    for p in walk_packages(onerror=handle_error):
+        print("Importing {}".format(p.name))
 
 def test_python_version():
     import sys
