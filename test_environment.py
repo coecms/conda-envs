@@ -20,166 +20,99 @@ from __future__ import print_function
 # stripped down version of the code rather than use the package as-is 
 
 import warnings
-import os
-import json
-import subprocess
-from subprocess import Popen, PIPE
+import os, sys
 from importlib import import_module
+from pkgutil import iter_modules
 
-def _call_conda(extra_args):
-    # call conda with the list of extra arguments, and return the tuple
-    # stdout, stderr
-    cmd_list = ['conda']
-
-    cmd_list.extend(extra_args)
-
-    try:
-        p = Popen(cmd_list, stdout=PIPE, stderr=PIPE)
-    except OSError:
-        raise Exception("could not invoke %r\n" % args)
-    return p.communicate()
-
-def _call_and_parse(extra_args):
-    stdout, stderr = _call_conda(extra_args)
-    if stderr.decode().strip():
-        raise Exception('conda %r:\nSTDERR:\n%s\nEND' % (extra_args,
-                                                         stderr.decode()))
-    return json.loads(stdout.decode())
-
-def package_dirs():
-    """
-    Return a list of the package directories
-    """
-    info = _call_and_parse(['info', '--json'])
-    return(info['pkgs_dirs'])
-
-def package_list():
-    """
-    Return a dictionary with list of installed packages
-    """
-    return _call_and_parse(['list', '--json'])
+exceptions = set()
 
 def import_exceptions():
     """
     Return a set of python modules that are exempt in check_packages
     """
+    exceptionsfile = 'exceptions'
     mods = set()
 
-    with open('exceptions', 'r') as f:
-        for line in f:
-            mods.add(line.rstrip("\n"))
+    if os.path.exists(exceptionsfile):
+        with open(exceptionsfile, 'r') as f:
+            for line in f:
+                mods.add(line.rstrip("\n"))
 
     return mods
 
-def check_packages(dirs=None,depth=1):
-    """
-    For each installed package rummage through python cache directories looking for 
-    modules to try and load, in order to check the integrity of the conda installation
-
-    Keyword arguments:
-    dirs  -- array of conda package cache directories to search 
-    depth -- integer determing the depth of module import namespace. Default 
-             only imports top level
-    """
-
-    if dirs is None:
-        pkgcachedirs = package_dirs()
+def handle_error(name):
+    global exceptions
+    if name in exceptions:
+        print("{} listed in exceptions, ignoring import error".format(name))
+        pass
     else:
-        pkgcachedirs = dirs
+        print("ERROR>>>>",name)
+        raise
 
-    print("Searching these package cache directories: {}".format(pkgcachedirs))
-
-    for package in package_list():
-
-        print("Package: {}".format(package["dist_name"]))
-
-        # Look for the "files" file in the package cache directories. This, perhaps
-        # unsurprisingly, lists all the files in the package
-        files = None
-        for directory in pkgcachedirs:
-            tmp = os.path.join(directory, package["dist_name"], 'info','files')
-            if os.path.exists(tmp):
-                files = tmp
-                break
-
-        if files is None:
-            print("no files file found for package: {}\n".format(package))
-        else:
-
-            exceptions = import_exceptions()
-
-            # Read in all the file paths, find directories containing an __init__.py
-            # transform the directory path into a module name and attempt to import it
-            with open(files, 'r') as infile:
-                for name in infile:
-                    name = name.rstrip("\n")
-                    if name.endswith('__init__.py'):
-                        modname = extract_module(os.path.dirname(name),depth)
-                        if modname in exceptions:
-                            print("{} listed in exceptions, skipping".format(modname))
-                        else:
-                            if modname is not None:
-                                if importmodule(modname):
-                                    print("Imported {}".format(modname))
-
-
-def importmodule(modname,fail=True):
-
-    imported_ok = False
-    try:
-        import_module(modname, package=None)
-    except Exception as e:
-        warnstring = "Failed to import {} : Reported error: {}".format(modname,str(e))
-        warnings.warn(UserWarning(warnstring))
-        if fail: raise
-    else:
-        imported_ok = True
-
-    return imported_ok
-
-def nextdir(path):
+def walk_packages_depth(path=None, prefix='', onerror=None, depth=0):
+    """Yields ModuleInfo for all modules recursively
+    on path, or, if path is None, all accessible modules.
+    'path' should be either None or a list of paths to look for
+    modules in.
+    'prefix' is a string to output on the front of every module name
+    on output.
+    Note that this function must import all *packages* (NOT all
+    modules!) on the given path, in order to access the __path__
+    attribute to find submodules.
+    'onerror' is a function which gets called with one argument (the
+    name of the package which was being imported) if any exception
+    occurs while trying to import a package.  If no onerror function is
+    supplied, ImportErrors are caught and ignored, while all other
+    exceptions are propagated, terminating the search.
+    Examples:
+    # list all modules python can access
+    walk_packages()
+    # list all submodules of ctypes
+    walk_packages(ctypes.__path__, ctypes.__name__+'.')
     """
-    Sequentially return elements from a path
-    """
-    while True:
-        path, base = os.path.split(path)
-        if base == '': break
-        yield base
 
-def extract_module(path,depth=1):
-    """ 
-    From a typical python package install path extract out the 
-    importable name
-    """
-    names = []
-    for element in nextdir(path):
-        if element == 'site-packages': break
-        names.append(element)
-    if len(names) <= depth:
-        return ".".join(reversed(names))
-    else:
-        return None
-            
-def test_check_packages():
-    check_packages()
+    def seen(p, m={}):
+        if p in m:
+            return True
+        m[p] = True
+
+    for importer, name, ispkg in iter_modules(path, prefix):
+        yield importer, name, ispkg
+
+        if ispkg:
+            # Check depth
+            if name.count('.') > depth:
+                # print(name,name.count('.'),depth)
+                continue
+            try:
+                print('import ',name,end=' ')
+                __import__(name)
+            except ImportError:
+                if onerror is not None:
+                    onerror(name)
+            except Exception:
+                if onerror is not None:
+                    onerror(name)
+                else:
+                    raise
+            else:
+                print('... ok')
+                path = getattr(sys.modules[name], '__path__', None) or []
+
+                # don't traverse path items we've seen before
+                path = [p for p in path if not seen(p)]
+
+                for item in walk_packages_depth(path, name+'.', onerror,depth):
+                    yield item
+
+def test_walk_packages_depth(depth=3):
+    global exceptions
+    exceptions = import_exceptions()
+    for p in walk_packages_depth(depth=depth,onerror=handle_error):
+        pass
 
 def test_python_version():
     import sys
     assert sys.version_info >= (2,7)
     assert sys.version_info <= (3,0)
 
-def test_numpy_import():
-    import numpy
-
-def test_scipy_import():
-    import scipy
-
-def test_pandas_import():
-    import pandas
-
-def test_xarray_import():
-    import xarray
-
-def test_dask_import():
-    import dask
-    import dask.bag
