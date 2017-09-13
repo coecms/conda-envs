@@ -1,8 +1,9 @@
 iris.tests
 networkx.testing
 numba.hsa
-zmq.green
 xarray.tests
 cartopy.tests.mpl
 iris.fileformats.grib
 sqlalchemy.testing.suite
+zmq.green
+zmq.backend.cffi

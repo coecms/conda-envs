@@ -108,7 +108,7 @@ def walk_packages_depth(path=None, prefix='', onerror=None, depth=0):
 # def test_check_packages():
 #     check_packages(depth=2)
 
-def test_walk_packages_depth(depth=1):
+def test_walk_packages_depth(depth=3):
     global exceptions
     exceptions = import_exceptions()
     for p in walk_packages_depth(depth=depth,onerror=handle_error):
