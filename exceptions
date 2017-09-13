@@ -3,5 +3,6 @@ networkx.testing
 numba.hsa
 zmq.green
 xarray.tests
-_padding
-gnm
+cartopy.tests.mpl
+iris.fileformats.grib
+sqlalchemy.testing.suite
