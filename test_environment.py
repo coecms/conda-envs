@@ -15,10 +15,6 @@
 # limitations under the License.
 from __future__ import print_function
 
-# Nicked this code from https://github.com/conda/conda-api
-# Didn't want the tests to rely on any external packages, so included
-# stripped down version of the code rather than use the package as-is 
-
 import os, sys
 from pkgutil import walk_packages
 
@@ -52,8 +48,3 @@ def test_walk_packages():
     exceptions = import_exceptions()
     for importer, name, ispkg in walk_packages(onerror=handle_error):
         print("Importing {}".format(name))
-
-def test_python_version():
-    import sys
-    assert sys.version_info >= (2,7)
-    assert sys.version_info <= (3,0)
