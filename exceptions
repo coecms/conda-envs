@@ -6,6 +6,7 @@ gribapi
 iris.fileformats.grib
 iris.tests
 iris_grib
+iris_grib.tests
 ncml
 networkx.testing
 numba.hsa
