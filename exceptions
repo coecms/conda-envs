@@ -15,3 +15,4 @@ sqlalchemy.testing
 xarray.tests
 zmq.backend.cffi
 zmq.green
+bkcharts
