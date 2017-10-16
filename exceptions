@@ -16,3 +16,5 @@ xarray.tests
 zmq.backend.cffi
 zmq.green
 bkcharts
+distutils.tests
+json.tests
