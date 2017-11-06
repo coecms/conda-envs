@@ -14,7 +14,7 @@ dependencies:
 - iris
 - netCDF4
 - numpy
-- pandas
+- pandas=0.20.3
 - pygrib
 - pyhdf
 - pytest
