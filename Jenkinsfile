@@ -52,14 +52,12 @@ pipeline {
             mail to: 'climate_help', subject: "${env.ENV_NAME} update failed", body: """
 Full results at ${env.BUILD_URL}
 """
-            steps {
-                sh """
-                    module use /g/data3/hh5/public/modules
-                    module load conda
-                    source activate "test-\${ENV_NAME}"
-                    py.test -s
-                    """
-            }
+            sh """
+               module use /g/data3/hh5/public/modules
+               module load conda
+               source activate "test-\${ENV_NAME}"
+               py.test -s
+               """
         }
     }
 }
