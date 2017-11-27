@@ -17,6 +17,7 @@ from __future__ import print_function
 
 import os, sys
 from pkgutil import walk_packages
+import warnings
 
 exceptions = set()
 
@@ -38,6 +39,7 @@ def handle_error(name):
     global exceptions
     if name in exceptions:
         print("{} listed in exceptions, ignoring import error".format(name))
+        exceptions.remove(name)
         pass
     else:
         print("ERROR>>>>",name)
@@ -48,3 +50,8 @@ def test_walk_packages():
     exceptions = import_exceptions()
     for importer, name, ispkg in walk_packages(onerror=handle_error):
         print("Importing {}".format(name))
+
+    if len(exceptions) > 0:
+        warnstring = "Untripped exceptions should be removed: {}".format(exceptions)
+        warnings.warn(UserWarning(warnstring))
+
