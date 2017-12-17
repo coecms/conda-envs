@@ -45,6 +45,6 @@ dependencies:
 - umtools
 - compliance-checker
 - arccssive
-- poppler<0.61 # Pinned for GDAL prereq
-- xerces-c<3.2 # Pinned for GDAL prereq
+- poppler
+- xerces-c
 - ncimonitor
