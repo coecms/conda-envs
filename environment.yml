@@ -45,7 +45,7 @@ dependencies:
 - python-graphviz
 - joblib
 - tqdm
-- gdal
+- gdal=2.1.4
 - umtools
 - dataset
 - cfchecker
