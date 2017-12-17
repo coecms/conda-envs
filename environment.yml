@@ -45,7 +45,7 @@ dependencies:
 - python-graphviz
 - joblib
 - tqdm
-- gdal=2.2.2=py27_0
+- gdal
 - umtools
 - dataset
 - cfchecker
@@ -54,3 +54,5 @@ dependencies:
 - hdf5=1.8.18
 - poppler<0.61 # Pinned for GDAL prereq
 - xerces-c<3.2 # Pinned for GDAL prereq
+- ncimonitor
+
