@@ -51,7 +51,7 @@ dependencies:
 - cfchecker
 - compliance-checker
 - icu=58.1
-- hdf5=1.8.18
+- hdf5
 - poppler
 - xerces-c
 - ncimonitor
