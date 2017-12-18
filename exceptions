@@ -20,3 +20,4 @@ distutils.tests
 json.tests
 pbr.tests
 sqlalchemy.testing.suite
+cdat_lite.test.test_cdms
