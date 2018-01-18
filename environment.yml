@@ -40,3 +40,4 @@ dependencies:
 - python-graphviz
 - joblib
 - tqdm
+- mayavi
