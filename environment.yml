@@ -48,3 +48,4 @@ dependencies:
 - poppler
 - xerces-c
 - ncimonitor
+- mayavi
