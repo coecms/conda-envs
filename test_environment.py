@@ -15,13 +15,43 @@
 # limitations under the License.
 from __future__ import print_function
 
-def test_python_version():
-    import sys
-    assert sys.version_info >= (2,7)
-    assert sys.version_info <= (3,0)
+import os, sys
+from pkgutil import walk_packages
+import warnings
 
-def test_numpy_import():
-    import numpy
+exceptions = set()
 
-def test_scipy_import():
-    import scipy
+def import_exceptions():
+    """
+    Return a set of python modules that are exempt in check_packages
+    """
+    exceptionsfile = 'exceptions'
+    mods = set()
+
+    if os.path.exists(exceptionsfile):
+        with open(exceptionsfile, 'r') as f:
+            for line in f:
+                mods.add(line.rstrip("\n"))
+
+    return mods
+
+def handle_error(name):
+    global exceptions
+    if name in exceptions:
+        print("{} listed in exceptions, ignoring import error".format(name))
+        exceptions.remove(name)
+        pass
+    else:
+        print("ERROR>>>>",name)
+        raise
+
+def test_walk_packages():
+    global exceptions
+    exceptions = import_exceptions()
+    for importer, name, ispkg in walk_packages(onerror=handle_error):
+        print("Importing {}".format(name))
+
+    if len(exceptions) > 0:
+        warnstring = "Untripped exceptions should be removed: {}".format(exceptions)
+        warnings.warn(UserWarning(warnstring))
+

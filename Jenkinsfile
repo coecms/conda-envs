@@ -23,7 +23,7 @@ pipeline {
                     module use /g/data3/hh5/public/modules
                     module load conda
                     source activate "test-\${ENV_NAME}"
-                    py.test
+                    py.test -s
                     """
             }
         }

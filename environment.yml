@@ -8,12 +8,13 @@ dependencies:
 - basemap
 - bsddb
 - cartopy
-- dask
+- dask=0.15.1
+- distributed=1.18.0
 - ipython
 - iris
 - netCDF4
 - numpy
-- pandas
+- pandas=0.20.3
 - pygrib
 - pyhdf
 - pytest
@@ -44,5 +45,14 @@ dependencies:
 - python-graphviz
 - joblib
 - tqdm
-- gdal=2.2.2=py27_0
+- gdal<2.1.4
+- umtools
+- dataset
+- cfchecker
+- compliance-checker
+- icu=58.1
+- hdf5<1.10
+- poppler
+- xerces-c
+- ncimonitor
 

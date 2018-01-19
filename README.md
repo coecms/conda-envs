@@ -1,5 +1,7 @@
 # Anaconda environments
 
+Environment files are in this repository's branches
+
 Install from anaconda.org
 
     conda env create accessdev/analysis
