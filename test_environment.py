@@ -16,7 +16,7 @@
 from __future__ import print_function
 
 import os, sys
-from pkgutil import walk_packages
+from pkgutil import walk_packages, iter_modules
 import warnings
 import pytest
 
@@ -56,4 +56,13 @@ def test_walk_packages():
     if len(exceptions) > 0:
         warnstring = "Untripped exceptions should be removed: {}".format(exceptions)
         warnings.warn(UserWarning(warnstring))
+
+def test_import():
+    for info in iter_modules():
+        if info.ispkg:
+            try:
+                __import__(info.name)
+            except:
+                print("Error loading %s"%info.name, file=sys.stderr)
+                raise
 
