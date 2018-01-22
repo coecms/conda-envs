@@ -22,6 +22,7 @@ dependencies:
 - xarray
 - pybufr-ecmwf
 - jupyter
+- notebook=5.2.2 # Pinned due to bug in 5.3.1 breaking conda kernels
 - nb_conda
 - metpy
 - windspharm
