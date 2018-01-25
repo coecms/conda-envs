@@ -19,8 +19,7 @@ set -eu
 
 module purge
 
-ENVIRONMENT=analysis3
-VERSION=18.01
+source version
 
 FULLENV="${ENVIRONMENT}-${VERSION}"
 
@@ -31,11 +30,30 @@ unset CONDA_PKGS_DIRS
 
 conda info
 
-conda env create -n "${FULLENV}" -f environment.yml
+function env_install {
+    conda env create -n "${FULLENV}" -f environment.yml
+    ln -s /g/data3/hh5/public/modules/conda/{.common,"${FULLENV}"}
+    
+    conda activate "${FULLENV}"
+    py.test
+}
 
-conda activate "${FULLENV}"
-py.test
+function env_update {
+    conda env export -n "${FULLENV}" > deployed.old.yml
+    conda env update --prune -n "${FULLENV}" -f environment.yml
+
+    conda activate "${FULLENV}"
+    if ! py.test; then
+        # Rollback
+        conda env update --prune -f deployed.old.yml
+    fi
+}
+
+if [ ! -d "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}" ]; then
+    env_install
+else
+    env_update
+fi
 
 conda env export > deployed.yml
 
-ln -s /g/data3/hh5/public/modules/conda/{.common,"${FULLENV}"}

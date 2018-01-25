@@ -6,11 +6,13 @@ channels:
 dependencies:
   - arccssive=0.3.3=py36_0
   - cdo=1.9.2=0
-  - coecms-nci=1=0
+  - coecms-nci=1.1=0
   - dataset=0.8.0=py36_0
+  - nchash=0.1.5=py36_0
   - ncimonitor=0.3.2=py36_0
   - normality=0.4.4=py36_0
   - umtools=0.1.5=py36_0
+  - yamanifest=0.2.2=py36_0
   - alembic=0.9.7=py_0
   - arm_pyart=1.8.0=np112py36_0
   - asn1crypto=0.22.0=py36_0
