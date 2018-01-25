@@ -5,16 +5,17 @@ channels:
 - scitools
 dependencies:
 - python=2
+- cdo
 - basemap
 - bsddb
 - cartopy
-- dask=0.15.1
-- distributed=1.18.0
+- dask
+- distributed
 - ipython
 - iris
 - netCDF4
 - numpy
-- pandas=0.20.3
+- pandas
 - pygrib
 - pyhdf
 - pytest
@@ -45,14 +46,13 @@ dependencies:
 - python-graphviz
 - joblib
 - tqdm
-- gdal<2.1.4
 - umtools
 - dataset
 - cfchecker
 - compliance-checker
-- icu=58.1
-- hdf5<1.10
+- icu
+- hdf5
 - poppler
 - xerces-c
 - ncimonitor
-
+- plotly
