@@ -24,7 +24,7 @@ VERSION=18.01
 
 FULLENV="${ENVIRONMENT}-${VERSION}"
 
-source g/data3/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
+source /g/data3/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
 
 unset CONDA_ENVS_PATH
 unset CONDA_PKGS_DIRS
