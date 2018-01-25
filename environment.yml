@@ -1,19 +1,21 @@
 name: analysis3
 channels:
-- conda-forge
 - coecms
+- conda-forge
 - scitools
 dependencies:
 - python=3
+- coecms-nci
+- cdo
 - basemap
 - cartopy
-- dask=0.15.2
-- distributed=1.18.0
+- dask
+- distributed
 - ipython
 - iris
 - netCDF4
 - numpy
-- pandas=0.20.3
+- pandas
 - pygrib
 - pyhdf
 - pytest
@@ -28,7 +30,7 @@ dependencies:
 - windspharm
 - python-cdo
 - arm_pyart
-- bokeh=0.12.4
+- bokeh
 - datashader
 - f90nml
 - wrf-python
@@ -42,10 +44,10 @@ dependencies:
 - python-graphviz
 - joblib
 - tqdm
-  #- gdal=2.1.4
 - umtools
 - compliance-checker
 - arccssive
 - poppler
 - xerces-c
 - ncimonitor
+- plotly

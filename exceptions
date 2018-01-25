@@ -1,10 +1,6 @@
-bkcharts
-networkx.testing
 numba.hsa
 cartopy.tests.mpl
 iris.tests
 iris.fileformats.grib
 sqlalchemy.testing.suite
-xarray.tests
 zmq.green
-zmq.backend.cffi

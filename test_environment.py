@@ -19,6 +19,7 @@ import os, sys
 from pkgutil import walk_packages, iter_modules
 import warnings
 import pytest
+import subprocess
 
 exceptions = set()
 
@@ -65,3 +66,5 @@ def test_import():
                 print("Error loading %s"%info.name, file=sys.stderr)
                 raise
 
+def test_cdo():
+   assert subprocess.call(['cdo','--version']) == 0
