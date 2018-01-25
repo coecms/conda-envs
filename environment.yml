@@ -56,3 +56,5 @@ dependencies:
 - xerces-c
 - ncimonitor
 - plotly
+- nchash
+- yamanifest

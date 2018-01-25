@@ -9,9 +9,11 @@ dependencies:
   - cdat-lite=6.0.1=py27_3
   - cdo=1.9.2=0
   - dataset=0.8.0=py27_0
+  - nchash=0.1.5=py27_0
   - ncimonitor=0.3.2=py27_0
   - normality=0.4.4=py27_0
   - umtools=0.1.5=py27_0
+  - yamanifest=0.2.2=py27_0
   - alembic=0.9.7=py_0
   - arm_pyart=1.8.0=np111py27_0
   - asn1crypto=0.22.0=py27_0
