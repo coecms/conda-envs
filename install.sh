@@ -30,6 +30,12 @@ unset CONDA_PKGS_DIRS
 
 conda info
 
+# Check this is not a `-stable` enviornment
+if grep "${FULLENV}\>.*\<${ENVIRONMENT}-stable" /g/data3/hh5/public/modules/conda/.modulerc > /dev/null; then
+    echo "${FULLENV} is a 'stable' environment, aborting" 1>&2
+    exit 1
+fi
+
 function env_install {
     conda env create -n "${FULLENV}" -f environment.yml
     ln -s /g/data3/hh5/public/modules/conda/{.common,"${FULLENV}"}
@@ -44,7 +50,7 @@ function env_update {
 
     conda activate "${FULLENV}"
     if ! py.test; then
-        # Rollback
+        echo "${FULLENV} tests failed, rolling back update" 1>&2
         conda env update --prune -f deployed.old.yml
     fi
 }

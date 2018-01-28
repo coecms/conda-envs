@@ -87,7 +87,7 @@ dependencies:
   - iris=1.13.0=py36_1
   - isodate=0.6.0=py_0
   - jasper=1.900.1=4
-  - jedi=0.10.2=py36_0
+  - jedi=0.11.1=py36_0
   - jinja2=2.10=py36_0
   - joblib=0.11=py36_0
   - jpeg=9b=2
@@ -144,6 +144,7 @@ dependencies:
   - pandocfilters=1.4.1=py36_0
   - pango=1.40.14=0
   - param=1.5.1=py36_0
+  - parso=0.1.1=py_0
   - partd=0.3.8=py36_0
   - patsy=0.5.0=py36_0
   - pcre=8.39=0
@@ -182,7 +183,7 @@ dependencies:
   - pyspharm=1.0.9=py36_2
   - pytest=3.3.2=py36_0
   - python=3.6.4=0
-  - python-cdo=1.3.4=py36_0
+  - python-cdo=1.3.5=py36_0
   - python-dateutil=2.6.1=py36_0
   - python-editor=1.0.3=py36_0
   - python-graphviz=0.8=py36_0
@@ -200,7 +201,7 @@ dependencies:
   - seaborn=0.8.1=py36_0
   - setuptools=38.4.0=py36_0
   - sh=1.12.14=py36_0
-  - shapely=1.6.3=py36_0
+  - shapely=1.6.4=py36_0
   - simplegeneric=0.8.1=py36_0
   - singledispatch=3.4.0.3=py36_0
   - sip=4.18=py36_1
@@ -230,7 +231,7 @@ dependencies:
   - widgetsnbextension=3.1.3=py36_0
   - windspharm=1.5.1=py36_0
   - wrapt=1.10.11=py36_0
-  - wrf-python=1.0.5=np112py36_0
+  - wrf-python=1.1.0=py36_0
   - x264=20131217=3
   - xarray=0.10.0=py36_0
   - xerces-c=3.2.0=0
