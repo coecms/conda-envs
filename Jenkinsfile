@@ -9,7 +9,7 @@ pipeline {
         stage ('Update') {
             steps {
                 sh """
-                   ./install.sh
+                   bash install.sh
                    """
             }
         }
