@@ -30,8 +30,8 @@ unset CONDA_PKGS_DIRS
 
 conda info
 
-# Check this is not a `-stable` enviornment
-if grep "${FULLENV}\>.*\<${ENVIRONMENT}-stable" /g/data3/hh5/public/modules/conda/.modulerc > /dev/null; then
+# Check this is not a 'stable' enviornment
+if grep "${FULLENV}\>.*\<${ENVIRONMENT}\>" /g/data3/hh5/public/modules/conda/.modulerc > /dev/null; then
     echo "${FULLENV} is a 'stable' environment, aborting" 1>&2
     exit 1
 fi
