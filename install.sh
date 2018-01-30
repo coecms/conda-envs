@@ -41,7 +41,7 @@ function env_install {
     ln -s /g/data3/hh5/public/modules/conda/{.common,"${FULLENV}"}
     
     conda activate "${FULLENV}"
-    py.test
+    py.test -s
 }
 
 function env_update {
@@ -49,7 +49,7 @@ function env_update {
     conda env update --prune -n "${FULLENV}" -f environment.yml
 
     conda activate "${FULLENV}"
-    if ! py.test; then
+    if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
         conda env update --prune -f deployed.old.yml
     fi
