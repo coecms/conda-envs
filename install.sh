@@ -15,7 +15,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-set -eu
+set -eux
 
 module purge
 
@@ -42,16 +42,20 @@ function env_install {
     
     conda activate "${FULLENV}"
     py.test -s
+    conda env export > deployed.yml
 }
 
 function env_update {
     conda env export -n "${FULLENV}" > deployed.old.yml
     conda env update --prune -n "${FULLENV}" -f environment.yml
+    conda env export -n "${FULLENV}" > deployed.yml
 
     conda activate "${FULLENV}"
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
-        conda env update --prune -f deployed.old.yml
+        PREVIOUS="$(conda list --revisions | sed -n 's/^....-..-.. ..:..:..\s\+(rev \(.*\))$/\1/p' | tail -2 | head -1)"
+        conda install --yes -c coecms -c conda-forge --revision "${PREVIOUS}"
+        exit 1
     fi
 }
 
@@ -61,5 +65,4 @@ else
     env_update
 fi
 
-conda env export > deployed.yml
 
