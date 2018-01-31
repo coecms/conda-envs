@@ -21,6 +21,8 @@ module purge
 
 source version
 
+export LC_ALL=en_AU.utf8
+
 FULLENV="${ENVIRONMENT}-${VERSION}"
 
 source /g/data3/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
