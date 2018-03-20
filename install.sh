@@ -52,6 +52,7 @@ function env_update {
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
         conda env update --prune -f deployed.old.yml
+        exit -1
     fi
 }
 
