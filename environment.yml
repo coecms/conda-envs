@@ -53,3 +53,4 @@ dependencies:
 - plotly
 - nchash
 - yamanifest
+- cmocean
