@@ -49,7 +49,7 @@ dependencies:
 - arccssive
 - poppler
 - xerces-c
-- ncimonitor
+- ncimonitor>=3.3
 - plotly
 - nchash
 - yamanifest
