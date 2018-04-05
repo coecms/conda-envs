@@ -54,3 +54,4 @@ dependencies:
 - nchash
 - yamanifest
 - cmocean
+- nccompress
