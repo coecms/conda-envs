@@ -54,7 +54,7 @@ dependencies:
 - hdf5
 - poppler
 - xerces-c
-- ncimonitor>=0.3.4
+- ncimonitor>=0.3.5
 - plotly
 - nchash
 - yamanifest
