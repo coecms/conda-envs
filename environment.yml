@@ -55,3 +55,4 @@ dependencies:
 - yamanifest
 - cmocean
 - nccompress>=0.1.4
+- zarr
