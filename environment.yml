@@ -57,3 +57,4 @@ dependencies:
 - nccompress>=0.1.4
 - zarr
 - pytables
+- nose
