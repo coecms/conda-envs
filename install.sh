@@ -54,7 +54,9 @@ function env_update {
     conda env update --prune -n "${FULLENV}" -f environment.yml
     conda env export -n "${FULLENV}" > deployed.yml
 
+    set +u
     conda activate "${FULLENV}"
+    set -u
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
         PREVIOUS="$(conda list --revisions | sed -n 's/^....-..-.. ..:..:..\s\+(rev \(.*\))$/\1/p' | tail -2 | head -1)"
