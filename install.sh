@@ -47,8 +47,9 @@ function env_install {
 function env_update {
     conda env export -n "${FULLENV}" > deployed.old.yml
     conda env update --prune -n "${FULLENV}" -f environment.yml
-
+    set +u
     conda activate "${FULLENV}"
+    set -u
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
         conda env update --prune -f deployed.old.yml
