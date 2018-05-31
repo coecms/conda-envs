@@ -4,3 +4,4 @@ iris.tests
 iris.fileformats.grib
 sqlalchemy.testing.suite
 zmq.green
+matplotlib.tests
