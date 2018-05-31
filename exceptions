@@ -21,3 +21,4 @@ json.tests
 pbr.tests
 sqlalchemy.testing.suite
 winreg
+matplotlib.tests

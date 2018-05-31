@@ -42,7 +42,9 @@ function env_install {
     conda env create -n "${FULLENV}" -f environment.yml
     ln -s /g/data3/hh5/public/modules/conda/{.common,"${FULLENV}"}
     
+    set +u
     conda activate "${FULLENV}"
+    set -u
     py.test -s
     conda env export > deployed.yml
 }
