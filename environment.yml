@@ -60,3 +60,5 @@ dependencies:
 - nose
 - ncdu
 - cftime # Missing dependency of pyart
+- memory_profiler
+
