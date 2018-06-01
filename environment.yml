@@ -65,3 +65,4 @@ dependencies:
 - nose
 - ncdu
 - cftime
+- memory_profiler
