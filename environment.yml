@@ -66,3 +66,4 @@ dependencies:
 - ncdu
 - cftime
 - memory_profiler
+- mdssdiff
