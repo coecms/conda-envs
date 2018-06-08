@@ -52,7 +52,7 @@ dependencies:
 - ncimonitor>=0.3.5
 - plotly
 - nchash
-- yamanifest
+- yamanifest>=0.3.2
 - cmocean
 - nccompress>=0.1.4
 - zarr
