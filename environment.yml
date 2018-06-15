@@ -67,3 +67,4 @@ dependencies:
 - cftime
 - memory_profiler
 - mdssdiff
+- fs
