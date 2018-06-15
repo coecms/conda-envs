@@ -62,4 +62,5 @@ dependencies:
 - cftime # Missing dependency of pyart
 - memory_profiler
 - mdssdiff
+- fs
 
