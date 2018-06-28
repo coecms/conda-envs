@@ -68,3 +68,5 @@ dependencies:
 - memory_profiler
 - mdssdiff
 - fs
+- python-magic
+- pathlib2
