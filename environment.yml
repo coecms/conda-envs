@@ -33,7 +33,7 @@ dependencies:
 - bokeh
 - datashader
 - arccssive
-- pyferret
+- pyferret<7.1.0 # pyferret 7.1.0 requires libnetcdf>=4.6
 - f90nml
 - wrf-python
 - sympy
