@@ -67,6 +67,6 @@ dependencies:
 - cftime
 - memory_profiler
 - mdssdiff
-- fs
+- fs>=2.0.24
 - python-magic
 - pathlib2
