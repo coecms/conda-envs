@@ -1,7 +1,3 @@
-numba.hsa
-cartopy.tests.mpl
 iris.tests
-iris.fileformats.grib
-sqlalchemy.testing.suite
 zmq.green
-matplotlib.tests
+twisted.internet.iocpreactor
