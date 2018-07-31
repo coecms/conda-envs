@@ -1,3 +1,4 @@
+numba.hsa
 iris.tests
 zmq.green
 twisted.internet.iocpreactor
