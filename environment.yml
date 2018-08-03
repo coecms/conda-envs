@@ -41,3 +41,4 @@ dependencies:
 - python-magic
 - dataset
 - joblib
+- tqdm
