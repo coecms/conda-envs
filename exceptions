@@ -22,3 +22,4 @@ pbr.tests
 sqlalchemy.testing.suite
 winreg
 matplotlib.tests
+twisted.internet.iocpreactor
