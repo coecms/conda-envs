@@ -18,6 +18,7 @@ from __future__ import print_function
 import os, sys
 from pkgutil import walk_packages
 import warnings
+import pytest
 
 exceptions = set()
 
