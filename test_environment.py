@@ -55,3 +55,6 @@ def test_walk_packages():
         warnstring = "Untripped exceptions should be removed: {}".format(exceptions)
         warnings.warn(UserWarning(warnstring))
 
+def test_mpi():
+    with pytest.raises(ImportError, message="MPI in the Conda environment is a bad idea"):
+        import mpi4py
