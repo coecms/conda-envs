@@ -68,3 +68,8 @@ def test_import():
 
 def test_cdo():
    assert subprocess.call(['cdo','--version']) == 0
+
+
+def test_mpi():
+    with pytest.raises(ImportError, message="MPI in the Conda environment is a bad idea"):
+        import mpi4py
