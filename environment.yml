@@ -64,5 +64,5 @@ dependencies:
 - mdssdiff
 - fs>=2.0.24
 - python-magic
-- datasette
 - regionmask
+- click_default_group
