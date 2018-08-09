@@ -50,7 +50,7 @@ def test_walk_packages():
     global exceptions
     exceptions = import_exceptions()
     for importer, name, ispkg in walk_packages(onerror=handle_error):
-        print("Importing {}".format(name))
+        pass
 
     if len(exceptions) > 0:
         warnstring = "Untripped exceptions should be removed: {}".format(exceptions)
