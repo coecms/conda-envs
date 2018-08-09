@@ -23,3 +23,6 @@ sqlalchemy.testing.suite
 winreg
 matplotlib.tests
 twisted.internet.iocpreactor
+pysal
+shapely.vectorized
+tables

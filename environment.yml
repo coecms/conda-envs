@@ -72,3 +72,7 @@ dependencies:
 - pathlib2
 - fiona
 - libgdal=2.2.4=ha6e4b24_6 # Pin to conda-forge version
+- regionmask
+- numpy=1.11.3=py27_blas_openblas_203 # Pinned to stop numpy.dtype size warning
+- pywavelets<0.5.2 # Some sort of error linking to numpy
+- pytables<3.4.4 # As pywavelets
