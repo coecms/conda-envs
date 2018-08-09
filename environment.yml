@@ -70,6 +70,5 @@ dependencies:
 - fs>=2.0.24
 - python-magic
 - pathlib2
-- pyngl
-- pynio
-- regionmask
+- fiona
+- libgdal=2.2.4=ha6e4b24_6 # Pin to conda-forge version
