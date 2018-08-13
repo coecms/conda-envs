@@ -3,3 +3,4 @@ sqlalchemy.testing.suite
 iris.tests
 zmq.green
 twisted.internet.iocpreactor
+fiona
