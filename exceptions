@@ -27,4 +27,4 @@ pysal
 shapely.vectorized
 tables
 pywt
-skimage._shared.tests
+h5py.tests

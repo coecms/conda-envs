@@ -47,6 +47,7 @@ def handle_error(name):
         raise
 
 def test_walk_packages():
+    from pywt._extensions._pywt import DiscreteContinuousWavelet
     global exceptions
     exceptions = import_exceptions()
     for importer, name, ispkg in walk_packages(onerror=handle_error):
@@ -59,3 +60,6 @@ def test_walk_packages():
 def test_mpi():
     with pytest.raises(ImportError, message="MPI in the Conda environment is a bad idea"):
         import mpi4py
+
+if __name__ == '__main__':
+    test_walk_packages()
