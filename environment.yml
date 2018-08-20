@@ -60,7 +60,7 @@ dependencies:
 - nose
 - ncdu
 - cftime # Missing dependency of pyart
-- memory_profiler
+- memory_profiler<0.54 # Bad md5 sum
 - mdssdiff
 - fs>=2.0.24
 - python-magic
