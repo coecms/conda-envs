@@ -6,50 +6,22 @@ pipeline {
     }
 
     stages {
-        stage ('Build') {
+        stage ('Update') {
             steps {
                 sh """
-                    module use /g/data3/hh5/public/modules
-                    module load conda
-                    conda env create -n "test-\${ENV_NAME}" -f environment.yml
-                    conda env export -n "test-\${ENV_NAME}" -f deployed.yml
-                    """
-            }
-        }
-
-        stage ('Test') {
-            steps {
-                sh """
-                    module use /g/data3/hh5/public/modules
-                    module load conda
-                    source activate "test-\${ENV_NAME}"
-                    py.test
-                    """
+                   bash install.sh
+                   """
             }
         }
     }
 
     post {
-        success {
-            sh """
-                module use /g/data3/hh5/public/modules
-                module load conda
-                unset CONDA_ENVS_PATH
-                conda env update -n "\${ENV_NAME}" -f deployed.yml
-                """
-        }
-
         always {
-            sh """
-                module use /g/data3/hh5/public/modules
-                module load conda
-                conda env remove -y -n "test-\${ENV_NAME}"
-                """
             archiveArtifacts artifacts: 'deployed.yml'
         }
 
         failure {
-            mail to: 'climate_help', subject: "${env.ENV_NAME} update failed", body: """
+            mail to: 'saw562', subject: "${env.ENV_NAME} update failed", body: """
 Full results at ${env.BUILD_URL}
 """
         }
