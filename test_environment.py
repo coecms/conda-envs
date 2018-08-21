@@ -39,19 +39,28 @@ def import_exceptions():
 
 def handle_error(name):
     global exceptions
-    if name in exceptions:
-        print("{} listed in exceptions, ignoring import error".format(name))
-        exceptions.remove(name)
-        pass
-    else:
-        print("ERROR>>>>",name)
+    try:
         raise
+    except Warning as e:
+        print("Warning loading %s"%name, file=sys.stderr)
+    except Exception as e:
+        print("Error loading %s"%name, file=sys.stderr)
+        if name in exceptions:
+            print("{} listed in exceptions, ignoring import error".format(name))
+            exceptions.remove(name)
+            pass
+        else:
+            raise
 
 def test_walk_packages():
+    import pysal
+    import tables
+    import skimage.data
     global exceptions
     exceptions = import_exceptions()
     for importer, name, ispkg in walk_packages(onerror=handle_error):
-        print("Importing {}".format(name))
+        #print("Importing {}".format(name))
+        pass
 
     if len(exceptions) > 0:
         warnstring = "Untripped exceptions should be removed: {}".format(exceptions)
@@ -62,6 +71,9 @@ def test_import():
         if info.ispkg:
             try:
                 __import__(info.name)
+            except Warning:
+                print("Warning loading %s"%info.name, file=sys.stderr)
+                pass
             except:
                 print("Error loading %s"%info.name, file=sys.stderr)
                 raise
@@ -73,3 +85,6 @@ def test_cdo():
 def test_mpi():
     with pytest.raises(ImportError, message="MPI in the Conda environment is a bad idea"):
         import mpi4py
+
+if __name__ == '__main__':
+    test_walk_packages()
