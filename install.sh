@@ -67,5 +67,5 @@ else
     env_update
 fi
 
-conda env export > deployed.yml
+conda env export -n "$FULLENV" > deployed.yml
 
