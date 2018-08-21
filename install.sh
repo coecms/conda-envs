@@ -19,11 +19,8 @@ set -eu
 
 module purge
 
-source version
-
-FULLENV="${ENVIRONMENT}-${VERSION}"
 # For python*
-FULLENV="$ENVIORNMENT"
+FULLENV="python3"
 
 source /g/data3/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
 
