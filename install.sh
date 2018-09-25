@@ -46,6 +46,11 @@ function env_install {
 
 function env_update {
     conda env export -n "${FULLENV}" > deployed.old.yml
+
+    # Clear the history - see https://github.com/conda/conda/issues/7279
+    cat /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history >> /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history.log
+    echo > /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history
+
     conda env update --prune -n "${FULLENV}" -f environment.yml
     set +u
     conda activate "${FULLENV}"

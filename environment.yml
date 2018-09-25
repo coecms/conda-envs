@@ -47,7 +47,6 @@ dependencies:
 - umtools
 - compliance-checker
 - arccssive
-- poppler
 - xerces-c
 - ncimonitor>=0.3.5
 - plotly
@@ -60,8 +59,16 @@ dependencies:
 - nose
 - ncdu
 - cftime # Missing dependency of pyart
-- memory_profiler
+- memory_profiler<0.54 # Bad md5 sum
 - mdssdiff
 - fs>=2.0.24
 - python-magic
 - mo_pack
+- click_default_group
+- regionmask
+- fiona=1.7.13=py36hb00a9d7_3
+- poppler=0.61.1
+- kealib=1.4.9
+- libgdal=2.2.4=h25f9fa3_7
+- matplotlib=2.2.0
+- dreqpy
