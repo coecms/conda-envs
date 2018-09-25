@@ -74,3 +74,4 @@ dependencies:
 - dreqpy
 - pint
 - sanic 
+- hupper
