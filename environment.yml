@@ -72,3 +72,4 @@ dependencies:
 - libgdal=2.2.4=h25f9fa3_7
 - matplotlib=2.2.0
 - dreqpy
+- datasette
