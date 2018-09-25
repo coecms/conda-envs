@@ -4,3 +4,4 @@ iris.tests
 zmq.green
 twisted.internet.iocpreactor
 matplotlib.tests
+prometheus_client.twisted
