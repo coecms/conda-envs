@@ -80,3 +80,4 @@ dependencies:
 - pyngl
 - ncl
 - memory_profiler<0.54.0 # Conda MD5 checksum error
+- pycodestyle
