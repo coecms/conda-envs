@@ -5,7 +5,7 @@ channels:
 - scitools
 dependencies:
 - python=2
-- cdo
+- cdo==1.9.4 # 1.9.5 installs a bad version of cdms2
 - basemap
 - bsddb
 - cartopy
@@ -73,7 +73,7 @@ dependencies:
 - fiona
 - libgdal=2.2.4=ha6e4b24_6 # Pin to conda-forge version
 - regionmask
-- numpy=1.11.3=py27_blas_openblas_203 # Pinned to stop numpy.dtype size warning
+  #- numpy=1.11.3=py27_blas_openblas_203 # Pinned to stop numpy.dtype size warning
 - pywavelets #<0.5.2 # Some sort of error linking to numpy
 - pytables<3.4.4 # As pywavelets
 - pynio

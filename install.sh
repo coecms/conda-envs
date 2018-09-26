@@ -15,13 +15,11 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-set -eux
+set -eu
 
 module purge
 
 source version
-
-export LC_ALL=en_AU.utf8
 
 FULLENV="${ENVIRONMENT}-${VERSION}"
 
@@ -42,26 +40,25 @@ function env_install {
     conda env create -n "${FULLENV}" -f environment.yml
     ln -s /g/data3/hh5/public/modules/conda/{.common,"${FULLENV}"}
     
-    set +u
     conda activate "${FULLENV}"
-    set -u
     py.test -s
-    conda env export > deployed.yml
 }
 
 function env_update {
     conda env export -n "${FULLENV}" > deployed.old.yml
-    conda env update --prune -n "${FULLENV}" -f environment.yml
-    conda env export -n "${FULLENV}" > deployed.yml
 
+    # Clear the history - see https://github.com/conda/conda/issues/7279
+    cat /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history >> /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history.log
+    echo > /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history
+
+    conda env update --prune -n "${FULLENV}" -f environment.yml
     set +u
     conda activate "${FULLENV}"
     set -u
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
-        PREVIOUS="$(conda list --revisions | sed -n 's/^....-..-.. ..:..:..\s\+(rev \(.*\))$/\1/p' | tail -2 | head -1)"
-        conda install --yes -c coecms -c conda-forge --revision "${PREVIOUS}"
-        exit 1
+        conda env update --prune -f deployed.old.yml
+        exit -1
     fi
 }
 
@@ -71,4 +68,5 @@ else
     env_update
 fi
 
+conda env export > deployed.yml
 
