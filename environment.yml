@@ -77,3 +77,4 @@ dependencies:
 - hupper
 - pycodestyle
 - nc-time-axis
+- jq
