@@ -78,3 +78,5 @@ dependencies:
 - pycodestyle
 - nc-time-axis
 - jq
+- pvlib
+- scikit-learn
