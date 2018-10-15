@@ -83,3 +83,4 @@ dependencies:
 - pycodestyle
 - nc-time-axis
 - jq
+- parcels
