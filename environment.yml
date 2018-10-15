@@ -70,7 +70,7 @@ dependencies:
 - poppler=0.61.1
 - kealib=1.4.9
 - libgdal=2.2.4=h25f9fa3_7
-- matplotlib=2.2.0
+- matplotlib
 - dreqpy
 - pint
 - sanic 
