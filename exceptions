@@ -1,7 +1,5 @@
-numba.hsa
 sqlalchemy.testing.suite
 iris.tests
 zmq.green
-twisted.internet.iocpreactor
-matplotlib.tests
 prometheus_client.twisted
+murmurhash3_32
