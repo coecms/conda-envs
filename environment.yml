@@ -80,3 +80,4 @@ dependencies:
 - jq
 - pvlib-python
 - scikit-learn
+- parcels
