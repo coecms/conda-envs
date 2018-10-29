@@ -79,5 +79,4 @@ dependencies:
 - nc-time-axis
 - jq
 - pvlib-python
-- scikit-learn
 - parcels
