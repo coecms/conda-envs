@@ -81,3 +81,4 @@ dependencies:
 - pvlib-python
 - parcels
 - siphon
+- scikit-learn
