@@ -32,3 +32,4 @@ cdat_lite.test.test_cdms
 cdutil
 prometheus_client.twisted
 genutil
+pyart
