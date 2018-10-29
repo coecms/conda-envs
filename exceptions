@@ -3,3 +3,5 @@ iris.tests
 zmq.green
 prometheus_client.twisted
 sklearn
+matplotlib.tests
+
