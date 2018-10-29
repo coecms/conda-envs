@@ -2,3 +2,4 @@ sqlalchemy.testing.suite
 iris.tests
 zmq.green
 prometheus_client.twisted
+sklearn
