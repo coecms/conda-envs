@@ -36,3 +36,4 @@ pyart
 scipy.io
 scipy.signal
 seaborn
+skimage
