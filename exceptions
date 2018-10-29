@@ -33,3 +33,4 @@ cdutil
 prometheus_client.twisted
 genutil
 pyart
+scipy.io
