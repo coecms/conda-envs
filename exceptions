@@ -34,3 +34,4 @@ prometheus_client.twisted
 genutil
 pyart
 scipy.io
+scipy.signal
