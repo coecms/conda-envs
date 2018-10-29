@@ -37,3 +37,4 @@ scipy.io
 scipy.signal
 seaborn
 skimage
+statsmodels.sandbox.tsa
