@@ -38,3 +38,4 @@ scipy.signal
 seaborn
 skimage
 statsmodels.sandbox.tsa
+zmq.eventloop.minitornado
