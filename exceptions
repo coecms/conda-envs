@@ -5,4 +5,5 @@ prometheus_client.twisted
 sklearn
 sklearn.utils
 matplotlib.tests
-
+sqlalchemy.testing.suite
+zmq.backend.cffi

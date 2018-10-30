@@ -56,10 +56,13 @@ def test_walk_packages():
     import pysal
     import tables
     import skimage.data
+    import sklearn
+    import sklearn.covariance
+    import sklearn.manifold
     global exceptions
     exceptions = import_exceptions()
     for importer, name, ispkg in walk_packages(onerror=handle_error):
-        print("Importing {}".format(name))
+        # print("Importing {}".format(name))
         pass
 
     if len(exceptions) > 0:
