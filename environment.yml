@@ -83,3 +83,4 @@ dependencies:
 - siphon
 - scikit-learn
 - filelock
+- cosima-cookbook
