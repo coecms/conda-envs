@@ -6,8 +6,8 @@ channels:
 dependencies:
 - python=3
 - coecms-nci
-- cdo
-- hdf5=1.10.3
+- cdo=1.9.2
+- hdf5
 - basemap
 - cartopy
 - dask
