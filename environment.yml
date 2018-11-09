@@ -7,7 +7,7 @@ dependencies:
 - python=3
 - coecms-nci
 - cdo
-- hdf5=1.10.2
+- hdf5=1.10.3
 - basemap
 - cartopy
 - dask
