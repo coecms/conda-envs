@@ -52,6 +52,12 @@ def handle_error(name):
         else:
             raise
 
+def test_walk_top_level_packages():
+    for p in pkgutil.iter_modules():
+        if p.ispkg:
+            print(p.name)
+            importlib.import_module(p.name)
+
 def test_walk_packages():
     import pysal
     import tables

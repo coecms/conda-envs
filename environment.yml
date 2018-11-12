@@ -6,7 +6,7 @@ channels:
 dependencies:
 - python=3
 - coecms-nci
-- cdo=1.9.2
+- cdo
 - hdf5
 - basemap
 - cartopy
@@ -67,10 +67,10 @@ dependencies:
 - mo_pack
 - click_default_group
 - regionmask
-- fiona=1.7.13=py36hb00a9d7_3
-- poppler=0.61.1
-- kealib=1.4.9
-- libgdal=2.2.4=h25f9fa3_7
+- fiona
+- popple
+- kealib
+- libgdal
 - matplotlib
 - dreqpy
 - pint
