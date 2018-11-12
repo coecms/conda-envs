@@ -68,7 +68,7 @@ dependencies:
 - click_default_group
 - regionmask
 - fiona
-- popple
+- poppler
 - kealib
 - libgdal
 - matplotlib
