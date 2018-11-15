@@ -85,3 +85,6 @@ dependencies:
 - scikit-learn
 - filelock
 - cosima-cookbook
+# Below are dependencies that only appear because they need to be pinned
+# Can be removed when pinning no longer required
+- nb_conda_kernels<=2.1.0
