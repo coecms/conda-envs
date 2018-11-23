@@ -8,7 +8,18 @@ if {[module-info mode remove]} {
     }
 }
 
-conflict conda
+# Check if any paths in ~/.local might interfere with Conda
+if { ! [info exists ::env(PYTHONNOUSERSITE)] } {
+    foreach {localpath} [glob -nocomplain ~/.local/lib/python*] {
+        if {[file isdirectory $localpath]} {
+            puts stderr "WARNING: Your ~/.local/lib/python* directory may cause conflicts with Conda."
+            puts stderr "WARNING: If you have Python errors try 'export PYTHONNOUSERSITE=yes'"
+            break;
+        }
+    }
+}
+
+conflict conda python python3
 
 # Conda install directory
 set condahome "/g/data3/hh5/public/apps/miniconda3"
