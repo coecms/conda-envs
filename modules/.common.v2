@@ -22,7 +22,7 @@ set condaenv [exec /bin/env -i /g/data3/hh5/public/modules/conda/condaenv.sh $co
 # Convert the environment into module commands
 set lines [split $condaenv '\n']
 foreach line $lines {
-    lassign [split $line '='] key value
+    regexp {^([^=]*)=(.*)} $line -> key value
 
     # Exclude $PWD and $_
     if {[lsearch -exact {PATH PWD _} $key] == -1} {
