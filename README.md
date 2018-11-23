@@ -34,3 +34,18 @@ The environments are named like YY.MM, e.g. the Q4 2018 install is named 18.10 (
 2. Update the module aliases by editing the file `/g/data3/hh5/public/modules/conda/.modulerc`. Increase the versions in the file to the new 'stable' and 'unstable' versions
 
 3. Remove the oldest environment by moving the environment directory in `/g/data3/hh5/public/apps/miniconda3/envs` into the `archive` subdirectory (this should be possible for a hh5 admin regardless of who owns the environment) and asking the environment owner to delete it.
+
+### Module files
+
+The module files for conda environments should be symbolic links to a copy of
+modules/.common.v2 in this repository's master branch. This script will load a
+conda environment based on the name of the symbolic link.
+
+.common.v2 works by activating the conda environment in a clean shell (using
+`env -i`), printing out all of the environment variables, then parsing that
+printed output. This means that any special activation scripts used by the
+conda environment will still be run.
+
+The module also sets the default user environment directory to the directory
+/short/$PROJECT/$USER/conda. Users can override this in a configuration file,
+see the conda docs.
