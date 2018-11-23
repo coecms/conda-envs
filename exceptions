@@ -20,3 +20,4 @@ skimage
 statsmodels.sandbox.tsa
 zmq.eventloop.minitornado
 matplotlib.tests
+cartopy.tests.mpl
