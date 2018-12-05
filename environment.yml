@@ -85,3 +85,4 @@ dependencies:
 - jq
 - parcels
 - siphon
+- gsw 
