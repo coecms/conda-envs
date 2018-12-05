@@ -64,18 +64,12 @@ dependencies:
 - mdssdiff
 - fs>=2.0.24
 - python-magic
-- mo_pack
 - click_default_group
 - regionmask
-- fiona
-- poppler
-- kealib
 - libgdal
 - matplotlib
 - dreqpy
 - pint
-- sanic 
-- hupper
 - pycodestyle
 - nc-time-axis
 - jq
@@ -85,6 +79,13 @@ dependencies:
 - scikit-learn
 - filelock
 - cosima-cookbook
+- gsw
 # Below are dependencies that only appear because they need to be pinned
 # Can be removed when pinning no longer required
 - nb_conda_kernels<=2.1.0
+- poppler
+- fiona
+- sanic 
+- hupper
+- kealib
+- mo_pack
