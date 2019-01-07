@@ -27,3 +27,4 @@ exception:
 - prometheus_client.twisted
 - matplotlib.tests
 - sqlalchemy.testing.suite
+- zmq.backend.cffi
