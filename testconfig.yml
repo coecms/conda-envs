@@ -28,3 +28,4 @@ exception:
 - matplotlib.tests
 - sqlalchemy.testing.suite
 - zmq.backend.cffi
+- numba.hsa
