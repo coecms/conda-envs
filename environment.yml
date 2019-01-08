@@ -13,7 +13,7 @@ dependencies:
 - dask
 - distributed
 - ipython
-- iris=2.1.0
+- iris
 - netCDF4
 - numpy
 - pandas
@@ -49,20 +49,20 @@ dependencies:
 - compliance-checker
 - arccssive
 - xerces-c
-- ncimonitor>=0.3.5
+- ncimonitor
 - plotly
 - nchash
-- yamanifest>=0.3.2
+- yamanifest
 - cmocean
-- nccompress>=0.1.4
+- nccompress
 - zarr
 - pytables
 - nose
 - ncdu
 - cftime # Missing dependency of pyart
-- memory_profiler<0.54 # Bad md5 sum
+- memory_profiler
 - mdssdiff
-- fs>=2.0.24
+- fs
 - python-magic
 - click_default_group
 - regionmask
@@ -80,9 +80,7 @@ dependencies:
 - filelock
 - cosima-cookbook
 - gsw
-# Below are dependencies that only appear because they need to be pinned
-# Can be removed when pinning no longer required
-- nb_conda_kernels<=2.1.0
+- nb_conda_kernels
 - poppler
 - fiona
 - sanic 
@@ -90,3 +88,4 @@ dependencies:
 - kealib
 - mo_pack
 - mule
+- cf_units
