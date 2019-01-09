@@ -22,6 +22,7 @@ module purge
 source version
 
 FULLENV="${ENVIRONMENT}-${VERSION}"
+export PYTHONNOUSERSITE=true
 
 source /g/data3/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
 
