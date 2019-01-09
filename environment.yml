@@ -89,3 +89,4 @@ dependencies:
 - mo_pack
 - mule
 - cf_units
+- python-stratify
