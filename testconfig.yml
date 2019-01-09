@@ -18,6 +18,7 @@ preload:
 - sklearn
 - sklearn.covariance
 - sklearn.manifold
+- stratify
 
 # Allow loading, but pass exceptions. When exceptions no longer triggered
 # can remove
