@@ -90,3 +90,4 @@ dependencies:
 - mule
 - cf_units
 - python-stratify
+- nbdime
