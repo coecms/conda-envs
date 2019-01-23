@@ -9,6 +9,7 @@ skip:
 - cartopy.tests
 - plotly.validators
 - xarray.tests
+- pyresample.test
 
 # Preload these modules before testing to avoid weird python issues
 preload:

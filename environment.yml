@@ -48,7 +48,7 @@ dependencies:
 - umtools
 - compliance-checker
 - arccssive
-- xerces-c
+- xerces-c>=3.2.2
 - ncimonitor
 - plotly
 - nchash
@@ -82,7 +82,7 @@ dependencies:
 - gsw
 - nb_conda_kernels
 - poppler
-- fiona
+- fiona>1.8
 - sanic 
 - hupper
 - kealib
