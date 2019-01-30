@@ -2,7 +2,6 @@ name: analysis27
 channels:
 - coecms
 - conda-forge
-- scitools
 dependencies:
 - python=2
 - cdo==1.9.4 # 1.9.5 installs a bad version of cdms2
