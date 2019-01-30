@@ -2,7 +2,6 @@ name: analysis3
 channels:
 - coecms
 - conda-forge
-- scitools
 dependencies:
 - python=3
 - coecms-nci
