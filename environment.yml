@@ -90,3 +90,4 @@ dependencies:
 - cf_units
 - python-stratify
 - nbdime
+- eofs
