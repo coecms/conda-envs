@@ -91,3 +91,4 @@ dependencies:
 - python-stratify
 - nbdime
 - eofs
+- matplotlib-venn
