@@ -93,3 +93,4 @@ dependencies:
 - eofs
 - matplotlib-venn
 - mnctools
+- dusql
