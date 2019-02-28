@@ -94,3 +94,4 @@ dependencies:
 - matplotlib-venn
 - mnctools
 - payu
+- dusql
