@@ -30,3 +30,4 @@ exception:
 - sqlalchemy.testing.suite
 - zmq.backend.cffi
 - sklearn.mixture
+- matplotlib.tests
