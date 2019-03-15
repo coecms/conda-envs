@@ -95,3 +95,4 @@ dependencies:
 - mnctools
 - payu
 - dusql
+- splitvar
