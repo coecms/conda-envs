@@ -96,3 +96,5 @@ dependencies:
 - payu
 - dusql
 - splitvar
+- python-eccodes
+- h5py
