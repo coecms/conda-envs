@@ -4,6 +4,7 @@ skip:
 - psutil.tests
 - pandas.io.clipboard
 - matplotlib.backends
+- pbr.tests
 # Too many, or not necessary
 - iris.tests
 - cartopy.tests
