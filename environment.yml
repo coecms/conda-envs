@@ -47,7 +47,7 @@ dependencies:
 - umtools
 - compliance-checker
 - arccssive
-- xerces-c>=3.2.2
+- xerces-c
 - ncimonitor
 - plotly
 - nchash
