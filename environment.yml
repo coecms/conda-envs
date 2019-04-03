@@ -98,3 +98,4 @@ dependencies:
 - splitvar
 - python-eccodes
 - h5py
+- clef
