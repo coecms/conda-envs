@@ -99,3 +99,5 @@ dependencies:
 - python-eccodes
 - h5py
 - clef
+- data_profiler
+- line_profiler
