@@ -100,3 +100,4 @@ dependencies:
 - h5py
 - clef
 - line_profiler
+- nccmp
