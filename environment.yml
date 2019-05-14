@@ -46,7 +46,6 @@ dependencies:
 - tqdm
 - umtools
 - compliance-checker
-- arccssive
 - xerces-c
 - ncimonitor
 - plotly
