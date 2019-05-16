@@ -106,3 +106,4 @@ dependencies:
 - dask-jobqueue
 - jupyterlab_server
 - docrep
+- jupyter-server-proxy
