@@ -1,6 +1,12 @@
 # Adding packages
 
+<<<<<<< HEAD
 New conda packages are added to `environment.yml`
+=======
+Environment files are in this repository's branches
+
+Install from anaconda.org
+>>>>>>> b62376056e1945d95ce5f7fdf8ec2374aaf25e7e
 
 Sometimes it is necessary to pin a package to a specific version to avoid conflicts and errors. If the package is only being added to environment.yml to pin it's version, please add it after the comment to that effect, so it can be removed when pinning is no longer required.
 
@@ -30,3 +36,42 @@ When updating to a new unstable release environment use the following protocol
 3. Check [build is successful](https://accessdev.nci.org.au/jenkins/blue/organizations/jenkins/conda%2Fanalysis3-unstable/activity/)
 4. Add back version pins where required. Pin to latest available version as unstable aims to be an updated environment. Packages dependencies which are added simply to pin their version should be added below the comment to that effect.
 
+<<<<<<< HEAD
+=======
+    conda env create -f analysis.yml
+
+## Updating the environment
+
+We update the environments once a quarter, around when NCI does their quarterly maintenance
+
+We maintain three versions of the analysis environments - 'unstable', 'stable' and 'old'. 'stable' and 'old' are frozen environments, they do not recieve updates to their libraries. 'unstable' is where updates and new packages are installed into.
+
+During the update, the current 'unstable' branch becomes the new 'stable', the current 'stable' becomes the new 'old', and the current 'old' environment gets removed. An entirely new environment is created to be the new 'unstable', to make sure there are no bits of packages hanging around that should have been cleaned up.
+
+The environments are named like YY.MM, e.g. the Q4 2018 install is named 18.10 (like ubuntu versions). There is an alias in the module files to the 'unstable' etc. names.
+
+### Installing a new version
+
+1. Update the version number in this repository (in the file `version` of the branch you want to update). This will trigger a Jenkins build to install the new unstable environment (done automatically by the `install.sh` script)
+
+2. Wait for Jenkins to install the new environment (see progress at https://accessdev.nci.org.au/jenkins/job/conda/)
+
+2. Update the module aliases by editing the file `/g/data3/hh5/public/modules/conda/.modulerc`. Increase the versions in the file to the new 'stable' and 'unstable' versions
+
+3. Remove the oldest environment by moving the environment directory in `/g/data3/hh5/public/apps/miniconda3/envs` into the `archive` subdirectory (this should be possible for a hh5 admin regardless of who owns the environment) and asking the environment owner to delete it.
+
+### Module files
+
+The module files for conda environments should be symbolic links to a copy of
+modules/.common.v2 in this repository's master branch. This script will load a
+conda environment based on the name of the symbolic link.
+
+.common.v2 works by activating the conda environment in a clean shell (using
+`env -i`), printing out all of the environment variables, then parsing that
+printed output. This means that any special activation scripts used by the
+conda environment will still be run.
+
+The module also sets the default user environment directory to the directory
+/short/$PROJECT/$USER/conda. Users can override this in a configuration file,
+see the conda docs.
+>>>>>>> b62376056e1945d95ce5f7fdf8ec2374aaf25e7e

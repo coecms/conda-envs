@@ -102,3 +102,7 @@ dependencies:
 - nccmp
 - bottleneck
 - coecms-util
+- jupyterlab
+- dask-jobqueue
+- jupyterlab_server
+- docrep
