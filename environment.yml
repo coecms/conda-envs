@@ -19,7 +19,7 @@ dependencies:
 - pygrib
 - pyhdf
 - pytest
-- scipy
+- scipy=1.2.1 # 1.3.0 incompatible with statsmodels https://github.com/statsmodels/statsmodels/issues/5759
 - seaborn
 - xarray
 - pybufr-ecmwf
@@ -108,3 +108,4 @@ dependencies:
 - docrep
 - dask-labextension
 - jupyter_nbextensions_configurator
+# Can be removed when pinning no longer required
