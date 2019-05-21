@@ -107,3 +107,4 @@ dependencies:
 - jupyterlab_server
 - docrep
 - dask-labextension
+- jupyter_nbextensions_configurator
