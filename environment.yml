@@ -12,7 +12,7 @@ dependencies:
 - dask
 - distributed
 - ipython
-- iris
+- iris>=2.2.1
 - netCDF4
 - numpy
 - pandas
