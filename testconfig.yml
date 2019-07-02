@@ -11,6 +11,7 @@ skip:
 - plotly.validators
 - xarray.tests
 - pyresample.test
+- pyferret.eofanal
 
 # Preload these modules before testing to avoid weird python issues
 preload:
