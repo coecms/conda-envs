@@ -106,7 +106,8 @@ dependencies:
 - dask-jobqueue
 - jupyterlab_server
 - docrep
-- dask-labextension
+# Error installing - can't find jupyter bin
+#- dask-labextension
 - jupyter_nbextensions_configurator
 - nodejs
 - cfgrib
@@ -114,4 +115,4 @@ dependencies:
 - jupyter_contrib_nbextensions
 - intake
 # Can be removed when pinning no longer required
-- tornado=5.1.1 # To get dask-labextension working
+#- tornado=5.1.1 # To get dask-labextension working
