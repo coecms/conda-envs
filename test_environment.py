@@ -155,8 +155,9 @@ def test_cdo():
 
 
 def test_mpi():
-    with pytest.raises(ImportError, message="MPI in the Conda environment is a bad idea"):
+    with pytest.raises(ImportError):
         import mpi4py
+        pytest.fail("MPI in the Conda environment is a bad idea")
 
 if __name__ == '__main__':
     test_walk_packages()

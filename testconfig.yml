@@ -21,6 +21,7 @@ preload:
 - sklearn.covariance
 - sklearn.manifold
 - stratify
+- xarray
 
 # Allow loading, but pass exceptions. When exceptions no longer triggered
 # can remove
