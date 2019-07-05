@@ -106,6 +106,7 @@ dependencies:
 - dask-jobqueue
 - jupyterlab_server
 - docrep
+- gifsicle
 # Error installing - can't find jupyter bin
 #- dask-labextension
 - jupyter_nbextensions_configurator
