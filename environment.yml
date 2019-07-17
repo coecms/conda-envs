@@ -116,6 +116,7 @@ dependencies:
 - jupyter_contrib_nbextensions
 - intake
 - pyngl
+- pynio
 # Can be removed when pinning no longer required
 #- tornado=5.1.1 # To get dask-labextension working
 - pyferret
