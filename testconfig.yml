@@ -5,6 +5,7 @@ skip:
 - pandas.io.clipboard
 - matplotlib.backends
 - pbr.tests
+- plotly.plotly
 # Too many, or not necessary
 - iris.tests
 - cartopy.tests
