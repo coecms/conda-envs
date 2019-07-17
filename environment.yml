@@ -115,6 +115,7 @@ dependencies:
 - h5netcdf
 - jupyter_contrib_nbextensions
 - intake
+- pyngl
 # Can be removed when pinning no longer required
 #- tornado=5.1.1 # To get dask-labextension working
 - pyferret
