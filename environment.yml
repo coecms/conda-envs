@@ -76,7 +76,7 @@ dependencies:
 - siphon
 - scikit-learn
 - filelock
-- cosima-cookbook
+- cosima-cookbook=0.3.2
 - gsw
 - nb_conda_kernels
 - poppler
