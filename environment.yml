@@ -121,3 +121,4 @@ dependencies:
 #- tornado=5.1.1 # To get dask-labextension working
 - pyferret
 - xgcm
+- xrft
