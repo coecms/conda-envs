@@ -93,7 +93,7 @@ dependencies:
 - matplotlib-venn
 - mnctools
 - payu
-- dusql
+- dusqlpg
 - splitvar
 - python-eccodes
 - h5py
