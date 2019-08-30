@@ -47,7 +47,7 @@ dependencies:
 - umtools
 - compliance-checker
 - xerces-c
-- ncimonitor
+- ncimonitor=0.3.6   # Pin to this version for general NCI use. Later versions are for grafana
 - plotly
 - nchash
 - yamanifest
