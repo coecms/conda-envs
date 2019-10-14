@@ -123,3 +123,4 @@ dependencies:
 - xgcm
 - xrft
 - doit
+- pylint
