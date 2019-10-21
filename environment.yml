@@ -3,7 +3,7 @@ channels:
 - coecms
 - conda-forge
 dependencies:
-- python=3
+- python>=3.7
 - coecms-nci
 - cdo
 - hdf5
@@ -22,7 +22,6 @@ dependencies:
 - scipy=1.2.1 # 1.3.0 incompatible with statsmodels https://github.com/statsmodels/statsmodels/issues/5759
 - seaborn
 - xarray
-- pybufr-ecmwf
 - jupyter
 - notebook
 - nb_conda
@@ -44,22 +43,15 @@ dependencies:
 - python-graphviz
 - joblib
 - tqdm
-- umtools
 - compliance-checker
 - xerces-c
-- ncimonitor=0.3.6   # Pin to this version for general NCI use. Later versions are for grafana
 - plotly
-- nchash
-- yamanifest
-- cmocean
-- nccompress
 - zarr
 - pytables
 - nose
 - ncdu
 - cftime # Missing dependency of pyart
 - memory_profiler
-- mdssdiff
 - fs
 - python-magic
 - click_default_group
@@ -76,7 +68,6 @@ dependencies:
 - siphon
 - scikit-learn
 - filelock
-- cosima-cookbook
 - gsw
 - nb_conda_kernels
 - poppler
@@ -90,25 +81,17 @@ dependencies:
 - python-stratify
 - nbdime
 - eofs
-- matplotlib-venn
-- mnctools
-- payu
-- dusqlpg
-- splitvar
 - python-eccodes
 - h5py
-- clef
 - line_profiler
-- nccmp
 - bottleneck
-- coecms-util
 - jupyterlab
 - dask-jobqueue
 - jupyterlab_server
 - docrep
 - gifsicle
-# Error installing - can't find jupyter bin
-#- dask-labextension
+ ## Error installing - can't find jupyter bin
+ ##- dask-labextension
 - jupyter_nbextensions_configurator
 - nodejs
 - cfgrib
@@ -124,3 +107,21 @@ dependencies:
 - xrft
 - doit
 - pylint
+
+  #- pybufr-ecmwf # Error compiling for python 3.7
+- umtools
+  #- ncimonitor=0.3.6   # Pin to this version for general NCI use. Later versions are for grafana
+  #- nchash
+  #- yamanifest
+  #- cmocean
+  #- nccompress
+  #- mdssdiff
+  #- cosima-cookbook
+  #- matplotlib-venn
+  #- mnctools
+  #- payu
+  #- dusqlpg
+  #- splitvar
+  #  #- clef
+  #  #- nccmp
+  #- coecms-util
