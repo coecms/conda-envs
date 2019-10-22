@@ -111,17 +111,17 @@ dependencies:
 - matplotlib-venn
 - ncimonitor=0.3.6   # Pin to this version for general NCI use. Later versions are for grafana
 - nchash
+- umtools
+- cosima-cookbook
+  #- payu
+- clef
+- nccmp
+  #- coecms-util
+  #- yamanifest
+  #- splitvar # py36 only, pr submitted
 
   #- pybufr-ecmwf # Error compiling for python 3.7
-  #- umtools
-  #- yamanifest
   #- cmocean
-  #- nccompress
-  #- mdssdiff
-  #- cosima-cookbook
-  #- mnctools
-  #- payu
-  #- splitvar
-  #  #- clef
-  #  #- nccmp
-  #- coecms-util
+  #- nccompress # py36 only
+  #- mdssdiff # py36 only
+  #- mnctools # py36 only
