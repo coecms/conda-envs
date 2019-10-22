@@ -124,3 +124,4 @@ dependencies:
 - xrft
 - doit
 - pylint
+- marineHeatWaves
