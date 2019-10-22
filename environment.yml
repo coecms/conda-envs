@@ -107,20 +107,20 @@ dependencies:
 - xrft
 - doit
 - pylint
+- dusqlpg
+- matplotlib-venn
+- ncimonitor=0.3.6   # Pin to this version for general NCI use. Later versions are for grafana
+- nchash
 
   #- pybufr-ecmwf # Error compiling for python 3.7
-- umtools
-  #- ncimonitor=0.3.6   # Pin to this version for general NCI use. Later versions are for grafana
-  #- nchash
+  #- umtools
   #- yamanifest
   #- cmocean
   #- nccompress
   #- mdssdiff
   #- cosima-cookbook
-  #- matplotlib-venn
   #- mnctools
   #- payu
-  #- dusqlpg
   #- splitvar
   #  #- clef
   #  #- nccmp
