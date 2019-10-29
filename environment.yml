@@ -125,3 +125,4 @@ dependencies:
 - doit
 - pylint
 - marineHeatWaves
+- addmeta
