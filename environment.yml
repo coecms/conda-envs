@@ -57,7 +57,7 @@ dependencies:
 - pytables
 - nose
 - ncdu
-- cftime # Missing dependency of pyart
+- cftime=1.0.3.4 # Missing dependency of pyart
 - memory_profiler
 - mdssdiff
 - fs
