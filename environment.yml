@@ -128,3 +128,4 @@ dependencies:
 - marineHeatWaves
 - addmeta
 - holoviews
+- pytest-cov
