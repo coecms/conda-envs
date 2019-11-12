@@ -129,3 +129,4 @@ dependencies:
 - addmeta
 - holoviews
 - pytest-cov
+- panel
