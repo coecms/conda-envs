@@ -130,3 +130,4 @@ dependencies:
 - holoviews
 - pytest-cov
 - panel
+- xrft
