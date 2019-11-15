@@ -1,0 +1,38 @@
+# Modules test will not try to import
+skip:
+# Cause errors and don't throw exceptions cleanly
+- psutil.tests
+- pandas.io.clipboard
+- matplotlib.backends
+- pbr.tests
+- plotly.plotly
+- bokeh.server.django
+# Too many, or not necessary
+- iris.tests
+- cartopy.tests
+- plotly.validators
+- xarray.tests
+- pyresample.test
+- pyferret.eofanal
+
+# Preload these modules before testing to avoid weird python issues
+preload:
+- pysal
+- tables
+- skimage.data
+- sklearn
+- sklearn.covariance
+- sklearn.manifold
+- stratify
+- xarray
+
+# Allow loading, but pass exceptions. When exceptions no longer triggered
+# can remove
+exception:
+- sqlalchemy.testing.suite
+- zmq.green
+- prometheus_client.twisted
+- sqlalchemy.testing.suite
+- zmq.backend.cffi
+- sklearn.mixture
+- matplotlib.tests

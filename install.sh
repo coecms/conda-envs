@@ -22,6 +22,7 @@ module purge
 source version
 
 FULLENV="${ENVIRONMENT}-${VERSION}"
+export PYTHONNOUSERSITE=true
 
 source /g/data3/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
 
@@ -37,23 +38,23 @@ if grep "${FULLENV}\>.*\<${ENVIRONMENT}\>\(\s\|$\)" /g/data3/hh5/public/modules/
 fi
 
 function env_install {
-    conda env create -n "${FULLENV}" -f environment.yml
-    ln -s /g/data3/hh5/public/modules/conda/{.common,"${FULLENV}"}
+    conda env create -p "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
+    ln -s /g/data3/hh5/public/modules/conda/{.common.v2,"${FULLENV}"}
     
-    conda activate "${FULLENV}"
+    conda activate "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}"
     py.test -s
 }
 
 function env_update {
-    conda env export -n "${FULLENV}" > deployed.old.yml
+    conda env export -p "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}" > deployed.old.yml
 
     # Clear the history - see https://github.com/conda/conda/issues/7279
     cat /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history >> /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history.log
     echo > /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history
 
-    conda env update --prune -n "${FULLENV}" -f environment.yml
+    conda env update --prune -p "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
     set +u
-    conda activate "${FULLENV}"
+    conda activate "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}"
     set -u
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
