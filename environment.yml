@@ -7,7 +7,8 @@ dependencies:
 - coecms-nci
 - cdo
 - hdf5
-- basemap
+  #- basemap # Deprecated - see https://matplotlib.org/basemap/users/intro.html#deprecation-notice
+  #- basemap-data-hires
 - cartopy
 - dask
 - distributed
@@ -36,7 +37,6 @@ dependencies:
 - wrf-python
 - sympy
 - sh
-- basemap-data-hires
 - dataset
 - ffmpeg
 - pydap
@@ -130,4 +130,6 @@ dependencies:
 - holoviews
 - pytest-cov
 - panel
-- xrft
+- mpi ==1.0=openmpi
+- openmpi ==4.0.1.gadi # Special version of openmpi that just loads gadi's module
+- mpi4py
