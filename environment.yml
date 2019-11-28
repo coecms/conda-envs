@@ -7,7 +7,7 @@ dependencies:
 - coecms-nci
 - cdo
 - hdf5
-- basemap
+  #- basemap # Deprecated, see https://matplotlib.org/basemap/users/intro.html#deprecation-notice
 - cartopy
 - dask
 - distributed
@@ -36,7 +36,7 @@ dependencies:
 - wrf-python
 - sympy
 - sh
-- basemap-data-hires
+  # - basemap-data-hires
 - dataset
 - ffmpeg
 - pydap
