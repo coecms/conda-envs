@@ -134,3 +134,4 @@ dependencies:
 - git
 - openmpi=4.0.1.gadi # Loads openmpi module on gadi
 - mpi4py
+- palettable
