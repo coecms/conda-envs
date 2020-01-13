@@ -50,7 +50,7 @@ dependencies:
 - pytables
 - nose
 - ncdu
-- cftime # =1.0.3.4 # Missing dependency of pyart
+- cftime
 - memory_profiler
 - fs
 - python-magic
@@ -116,15 +116,8 @@ dependencies:
 - yamanifest
 - cmocean
 - payu
-
-  #- splitvar # py36 only, pr submitted
-  #- pybufr-ecmwf # Error compiling for python 3.7
-  #- nccompress # py36 only
-  #- mdssdiff # py36 only
-  #- mnctools # py36 only
-  #- marineHeatWaves # Segfault in conda
-  #- addmeta # error
-
+- splitvar
+- marineHeatWaves
 - holoviews
 - pytest-cov
 - panel
@@ -133,3 +126,11 @@ dependencies:
 - openmpi=4.0.1.gadi # Loads openmpi module on gadi
 - mpi4py
 - palettable
+- xlrd
+
+  #- pybufr-ecmwf # Error compiling for python 3.7
+  #- nccompress # py36 only
+  #- mdssdiff # py36 only
+  #- mnctools # py36 only
+  #- addmeta # error
+
