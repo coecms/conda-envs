@@ -7,7 +7,7 @@ dependencies:
 - coecms-nci
 - cdo
 - hdf5
-- basemap
+  #- basemap # Deprecated, see https://matplotlib.org/basemap/users/intro.html#deprecation-notice
 - cartopy
 - dask
 - distributed
@@ -35,7 +35,7 @@ dependencies:
 - wrf-python
 - sympy
 - sh
-- basemap-data-hires
+  # - basemap-data-hires
 - dataset
 - ffmpeg
 - pydap
@@ -50,7 +50,7 @@ dependencies:
 - pytables
 - nose
 - ncdu
-- cftime # Missing dependency of pyart
+- cftime=1.0.3.4 # Missing dependency of pyart
 - memory_profiler
 - fs
 - python-magic
@@ -100,6 +100,7 @@ dependencies:
 - intake
 - pyngl
 - pynio
+- gridfill
 # Can be removed when pinning no longer required
 #- tornado=5.1.1 # To get dask-labextension working
 - pyferret
@@ -118,6 +119,7 @@ dependencies:
 - coecms-util
 - yamanifest
 - cmocean
+
   #- payu
 
   #- splitvar # py36 only, pr submitted
@@ -125,3 +127,14 @@ dependencies:
   #- nccompress # py36 only
   #- mdssdiff # py36 only
   #- mnctools # py36 only
+  
+- marineHeatWaves
+- addmeta
+- holoviews
+- pytest-cov
+- panel
+- xrft
+- git
+- openmpi=4.0.1.gadi # Loads openmpi module on gadi
+- mpi4py
+- palettable

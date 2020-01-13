@@ -1,0 +1,56 @@
+#%Module1.0
+
+if {[module-info mode remove]} {
+    if {$env(CONDA_SHLVL) > 1} {
+        puts stderr "ERROR: Multiple ($::env(CONDA_SHLVL)) conda environments have been loaded, cannot unload with module"
+        puts stderr "ERROR: Try 'conda deactivate' first"
+        break
+    }
+}
+
+conflict conda
+
+# Conda install directory
+set condahome "/g/data3/hh5/public/apps/miniconda3"
+
+# Name of this module's environment
+set condaenv [lindex [split [module-info name] {/}] 1]
+
+# Get the environment variables from 'conda activate'
+set condaenv [exec /bin/env -i /g/data3/hh5/public/modules/conda/condaenv.sh $condaenv]
+
+# Convert the environment into module commands
+set lines [split $condaenv '\n']
+foreach line $lines {
+    regexp {^([^=]*)=(.*)} $line -> key value
+
+    # Exclude $PWD and $_
+    if {[lsearch -exact {PATH PWD _} $key] == -1} {
+        if {[string match "*:" $value]} {
+            prepend-path $key [string trimright $value ":"]
+        } else {
+            setenv $key $value
+        }
+    }
+
+    # Only get the first path entry (ignore /usr/bin:/bin)
+    if {[lsearch -exact {PATH} $key] == 0} {
+        prepend-path PATH [regsub {:.*} $value {}]
+    }
+}
+
+# Add the base conda environment
+append-path PATH /g/data3/hh5/public/apps/miniconda3/bin
+
+# Add user environments
+if [ file isdirectory "/short" ] {
+    set userconda /short/$::env(PROJECT)/$::env(USER)/conda
+} else {
+    set userconda /local/$::env(PROJECT)/$::env(USER)/conda
+}
+
+setenv CONDA_ENVS_PATH $userconda/envs
+setenv CONDA_PKGS_DIRS $userconda/pkgs
+
+# Disable including libraries from ~/.local
+# setenv PYTHONNOUSERSITE x

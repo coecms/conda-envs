@@ -6,6 +6,7 @@ skip:
 - matplotlib.backends
 - pbr.tests
 - plotly.plotly
+- bokeh.server.django
 # Too many, or not necessary
 - iris.tests
 - cartopy.tests
