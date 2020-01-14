@@ -127,10 +127,9 @@ dependencies:
 - mpi4py
 - palettable
 - xlrd
-
   #- pybufr-ecmwf # Error compiling for python 3.7
-  #- nccompress # py36 only
-  #- mdssdiff # py36 only
-  #- mnctools # py36 only
-  #- addmeta # error
+- nccompress
+- mdssdiff
+- mnctools
+- addmeta
 
