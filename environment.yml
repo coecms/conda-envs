@@ -132,4 +132,5 @@ dependencies:
 - mdssdiff
 - mnctools
 - addmeta
+- satpy
 
