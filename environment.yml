@@ -136,3 +136,4 @@ dependencies:
 - statsmodels>=0.11.0
 - dask-labextension
 - nbstripout
+- jupyter-server-proxy
