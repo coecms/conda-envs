@@ -137,3 +137,4 @@ dependencies:
 - dask-labextension
 - nbstripout
 - jupyter-server-proxy
+- sphinx
