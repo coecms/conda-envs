@@ -138,3 +138,4 @@ dependencies:
 - nbstripout
 - jupyter-server-proxy
 - sphinx
+- doc8
