@@ -30,3 +30,6 @@ When updating to a new unstable release environment use the following protocol
 3. Check [build is successful](https://accessdev.nci.org.au/jenkins/blue/organizations/jenkins/conda%2Fanalysis3-unstable/activity/)
 4. Add back version pins where required. Pin to latest available version as unstable aims to be an updated environment. Packages dependencies which are added simply to pin their version should be added below the comment to that effect.
 
+# Update environment
+
+If you need to rerun the unstable environment but don't need to commit anything (e.g update the version of one of the installed package), login to Jenkins and use the "Build Now" option for the analysis3-unstable job.
