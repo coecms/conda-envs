@@ -140,3 +140,4 @@ dependencies:
 - sphinx
 - doc8
 - pymunge
+- climtas
