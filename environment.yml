@@ -141,4 +141,5 @@ dependencies:
 - doc8
 - pymunge
 - climtas
+- asyncssh
 - ants
