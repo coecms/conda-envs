@@ -143,3 +143,4 @@ dependencies:
 - climtas
 - asyncssh
 - ants
+- xhistogram
