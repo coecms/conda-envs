@@ -15,6 +15,9 @@ skip:
 - pyresample.test
 - pyferret.eofanal
 - ants.tests
+- alembic.testing
+- sqlalchemy.testing
+  # - mpi4py # Enable when testing locally
 
 # Preload these modules before testing to avoid weird python issues
 preload:
