@@ -69,5 +69,8 @@ else
     env_update
 fi
 
+# Refresh jupyter plugins
+jupyter lab build
+
 conda env export > deployed.yml
 
