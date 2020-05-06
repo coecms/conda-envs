@@ -144,3 +144,4 @@ dependencies:
 - asyncssh
 - ants
 - xhistogram
+- deepdiff
