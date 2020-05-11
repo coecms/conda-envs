@@ -25,7 +25,7 @@ dependencies:
 - jupyter
 - notebook
 - nb_conda
-- metpy<0.12.1 # Pinned due to Issue #21
+- metpy
 - windspharm
 - python-cdo
 - arm_pyart
