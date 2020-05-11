@@ -40,4 +40,5 @@ exception:
 - zmq.backend.cffi
 - sklearn.mixture
 - matplotlib.tests
-- metpy.io  # While Issue #21 unresolved
+- metpy.io     # While Issue #21 unresolved
+- metpy.plots  # While Issue #21 unresolved
