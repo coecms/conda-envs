@@ -145,3 +145,4 @@ dependencies:
 - ants
 - xhistogram
 - cartopy_userconfig=1.0.gadi
+- geopy
