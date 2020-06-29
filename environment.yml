@@ -147,3 +147,4 @@ dependencies:
 - cartopy_userconfig=1.0.gadi
 - geopy
 - ninja
+- hvplot
