@@ -148,3 +148,4 @@ dependencies:
 - geopy
 - ninja
 - hvplot
+- cython
