@@ -123,7 +123,7 @@ dependencies:
 - panel
 - xrft
 - git
-- openmpi=4.0.2.gadi # Loads openmpi module on gadi
+- openmpi=4.0.1.gadi # Loads openmpi module on gadi
 - mpi4py
 - palettable
 - xlrd
