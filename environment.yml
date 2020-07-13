@@ -110,7 +110,7 @@ dependencies:
 - nchash
 - umtools
 - cosima-cookbook=0.5.0
-- clef
+- clef=1.0.1
 - nccmp
 - coecms-util
 - yamanifest
