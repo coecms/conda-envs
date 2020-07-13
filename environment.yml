@@ -109,7 +109,7 @@ dependencies:
 - ncimonitor=0.3.6   # Pin to this version for general NCI use. Later versions are for grafana
 - nchash
 - umtools
-- cosima-cookbook
+- cosima-cookbook=0.5.0
 - clef
 - nccmp
 - coecms-util
