@@ -149,3 +149,4 @@ dependencies:
 - ninja
 - hvplot
 - cython
+- xesmf
