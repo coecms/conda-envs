@@ -149,4 +149,5 @@ dependencies:
 - ninja
 - hvplot
 - cython
+- esmpy=7.1.0=gadi
 - xesmf
