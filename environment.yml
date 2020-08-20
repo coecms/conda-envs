@@ -150,4 +150,4 @@ dependencies:
 - hvplot
 - cython
   # - esmpy=7.1.0=gadi_* # Not working, conflict with hdf5 version
-- xesmf
+  # - xesmf # Not working.
