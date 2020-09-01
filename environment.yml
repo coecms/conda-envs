@@ -152,3 +152,4 @@ dependencies:
   # - esmpy=7.1.0=gadi_* # Not working, conflict with hdf5 version
   # - xesmf # Not working.
 - sharppy
+- docrep<0.3.0 # 0.3.0 causes an error with xgcm
