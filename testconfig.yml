@@ -18,6 +18,7 @@ skip:
 - alembic.testing
 - sqlalchemy.testing
   # - mpi4py # Enable when testing locally
+- xgcm # Error in grid.py @docstring.dedent
 
 # Preload these modules before testing to avoid weird python issues
 preload:
