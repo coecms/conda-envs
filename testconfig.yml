@@ -18,7 +18,6 @@ skip:
 - alembic.testing
 - sqlalchemy.testing
   # - mpi4py # Enable when testing locally
-- xgcm # Error in grid.py @docstring.dedent
 
 # Preload these modules before testing to avoid weird python issues
 preload:
@@ -30,6 +29,7 @@ preload:
 - sklearn.manifold
 - stratify
 - xarray
+- xgcm
 
 # Allow loading, but pass exceptions. When exceptions no longer triggered
 # can remove
