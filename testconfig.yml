@@ -17,6 +17,7 @@ skip:
 - ants.tests
 - alembic.testing
 - sqlalchemy.testing
+- xgcm
   # - mpi4py # Enable when testing locally
 
 # Preload these modules before testing to avoid weird python issues
@@ -30,6 +31,7 @@ preload:
 - stratify
 - xarray
 - xgcm
+- xgcm.grid
 
 # Allow loading, but pass exceptions. When exceptions no longer triggered
 # can remove
