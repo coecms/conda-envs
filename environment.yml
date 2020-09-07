@@ -153,3 +153,5 @@ dependencies:
   # - xesmf # Not working.
 - sharppy
 - docrep<0.3.0 # 0.3.0 causes an error with xgcm
+- earthpy
+- descartes
