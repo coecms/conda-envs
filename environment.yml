@@ -156,3 +156,4 @@ dependencies:
 - earthpy
 - descartes
 - era5grib
+- conda-tree
