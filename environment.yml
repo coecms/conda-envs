@@ -157,4 +157,4 @@ dependencies:
 - descartes
 - era5grib
 - conda-tree
-
+- xmitgcm
