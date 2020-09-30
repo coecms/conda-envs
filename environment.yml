@@ -100,7 +100,7 @@ dependencies:
 - pynio
 - gridfill
 - pyferret
-- xgcm
+- xgcm=0.4.0 # numpy error in 0.5.0
 - xrft
 - doit
 - pylint
@@ -157,3 +157,4 @@ dependencies:
 - descartes
 - era5grib
 - conda-tree
+
