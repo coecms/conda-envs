@@ -18,6 +18,8 @@ skip:
 - alembic.testing
 - sqlalchemy.testing
   # - mpi4py # Enable when testing locally
+- httpx
+- sanic
 
 # Preload these modules before testing to avoid weird python issues
 preload:
@@ -42,3 +44,5 @@ exception:
 - matplotlib.tests
 - metpy.io     # While Issue #21 unresolved
 - metpy.plots  # While Issue #21 unresolved
+- httpx
+- sanic

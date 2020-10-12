@@ -22,7 +22,7 @@ import pytest
 import subprocess
 import yaml
 
-debug = False
+debug = True
 
 def my_walk_packages(path=None, prefix='', onerror=None, skip=None):
     """Yields ModuleInfo for all modules recursively

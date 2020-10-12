@@ -72,7 +72,6 @@ dependencies:
 - nb_conda_kernels
 - poppler
 - fiona
-- sanic 
 - hupper
 - kealib
 - mo_pack
