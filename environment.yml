@@ -157,3 +157,4 @@ dependencies:
 - era5grib
 - conda-tree
 - xmitgcm
+- cupy
