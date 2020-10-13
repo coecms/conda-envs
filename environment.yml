@@ -158,3 +158,4 @@ dependencies:
 - conda-tree
 - xmitgcm
 - cupy
+- rioxarray
