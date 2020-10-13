@@ -159,3 +159,4 @@ dependencies:
 - xmitgcm
 - cupy
 - rioxarray
+- rasterstats
