@@ -160,3 +160,4 @@ dependencies:
 - cupy
 - rioxarray
 - rasterstats
+- windrose
