@@ -162,3 +162,4 @@ dependencies:
 - rasterstats
 - windrose
 - pyam
+- pyarrow
