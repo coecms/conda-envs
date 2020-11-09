@@ -163,3 +163,4 @@ dependencies:
 - windrose
 - pyam
 - pyarrow
+- python-gist
