@@ -50,7 +50,7 @@ dependencies:
 - pytables
 - nose
 - ncdu
-- cftime
+- cftime<1.3.0
 - memory_profiler
 - fs
 - python-magic
@@ -164,4 +164,4 @@ dependencies:
 - pyam
 - pyarrow
 - python-gist
-- celluloid
+  #- celluloid
