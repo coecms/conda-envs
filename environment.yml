@@ -165,3 +165,4 @@ dependencies:
 - pyarrow
 - python-gist
   #- celluloid
+- jags
