@@ -76,7 +76,7 @@ dependencies:
 - kealib
 - mo_pack
 - mule
-  #- cf_units # Not available for python 3.8
+- cf-units
 - python-stratify
 - nbdime
 - eofs
