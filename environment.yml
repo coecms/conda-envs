@@ -166,3 +166,4 @@ dependencies:
 - python-gist
   #- celluloid
 - jags
+- xarray-spatial
