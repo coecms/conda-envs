@@ -167,3 +167,4 @@ dependencies:
   #- celluloid
 - jags
 - xarray-spatial
+- nctoolkit
