@@ -168,3 +168,4 @@ dependencies:
 - jags
 - xarray-spatial
 - nctoolkit
+- geoplot
