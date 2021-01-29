@@ -80,6 +80,7 @@ dependencies:
 - python-stratify
 - nbdime
 - eofs
+- eccodes=2.18.0
 - python-eccodes
 - h5py
 - line_profiler
