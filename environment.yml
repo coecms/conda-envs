@@ -106,7 +106,6 @@ dependencies:
 - pylint
 - dusqlpg
 - matplotlib-venn
-- ncimonitor=0.3.6   # Pin to this version for general NCI use. Later versions are for grafana
 - nchash
 - umtools
 - cosima-cookbook
@@ -123,7 +122,7 @@ dependencies:
 - panel
 - xrft
 - git
-- openmpi=*=gadi_* # Loads openmpi module on gadi
+- openmpi
 - mpi4py
 - palettable
 - xlrd
@@ -149,7 +148,7 @@ dependencies:
 - ninja
 - hvplot
 - cython
-- esmpy=*=gadi
+- esmpy
 - xesmf
 - sharppy
 - docrep
