@@ -26,6 +26,8 @@ export PYTHONNOUSERSITE=true
 
 source /g/data3/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
 
+MAMBA=/g/data/hh5/public/apps/miniconda3/envs/analysis3-21.01/bin/mamba
+
 unset CONDA_ENVS_PATH
 unset CONDA_PKGS_DIRS
 
@@ -38,7 +40,7 @@ if grep "${FULLENV}\>.*\<${ENVIRONMENT}\>\(\s\|$\)" /g/data3/hh5/public/modules/
 fi
 
 function env_install {
-    conda env create -p "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
+    ${MAMBA} env create -p "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
     ln -s /g/data3/hh5/public/modules/conda/{.common.v2,"${FULLENV}"}
     
     conda activate "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}"
@@ -52,13 +54,13 @@ function env_update {
     cat /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history >> /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history.log
     echo > /g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history
 
-    conda env update --prune -p "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
+    ${MAMBA} env update --prune -p "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
     set +u
     conda activate "/g/data3/hh5/public/apps/miniconda3/envs/${FULLENV}"
     set -u
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
-        conda env update --prune -f deployed.old.yml
+        ${MAMBA} env update --prune -f deployed.old.yml
         exit -1
     fi
 }
