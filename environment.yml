@@ -170,3 +170,4 @@ dependencies:
 - xarray-spatial
 - nctoolkit
 - geoplot
+- dask-ml
