@@ -170,5 +170,5 @@ dependencies:
 - xarray-spatial
 - nctoolkit
 - geoplot
-  #- dask-ml
+- dask-ml
 - mamba
