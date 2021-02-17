@@ -172,3 +172,4 @@ dependencies:
 - geoplot
 - dask-ml
 - mamba
+- intake-esm
