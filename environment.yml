@@ -173,3 +173,4 @@ dependencies:
 - dask-ml
 - mamba
 - intake-esm
+- pykrige
