@@ -174,3 +174,4 @@ dependencies:
 - mamba
 - intake-esm
 - pykrige
+- nci_intake_catalogue
