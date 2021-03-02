@@ -175,3 +175,4 @@ dependencies:
 - intake-esm
 - pykrige
 - nci_intake_catalogue
+- cmdline_provenance
