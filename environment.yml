@@ -22,7 +22,7 @@ dependencies:
 - pytest
 - scipy
 - seaborn
-- xarray
+- xarray>=0.17.0
 - jupyter
 - notebook
 - nb_conda
