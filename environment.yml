@@ -177,3 +177,6 @@ dependencies:
 - nci_intake_catalogue
 - cmdline_provenance
 - mplleaflet
+- branca
+- fiona
+- folium
