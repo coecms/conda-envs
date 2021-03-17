@@ -7,8 +7,6 @@ skip:
 - pbr.tests
 - plotly.plotly
 - bokeh.server.django
-- black
-- blackd
 # Too many, or not necessary
 - iris.tests
 - cartopy.tests
@@ -49,5 +47,3 @@ exception:
 - metpy.plots  # While Issue #21 unresolved
 - httpx
 - sanic
-- black
-- blackd
