@@ -21,6 +21,7 @@ skip:
   # - mpi4py # Enable when testing locally
 - httpx
 - sanic
+- tests # random tests from black?
 
 # Preload these modules before testing to avoid weird python issues
 preload:
