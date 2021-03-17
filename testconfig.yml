@@ -47,3 +47,5 @@ exception:
 - metpy.plots  # While Issue #21 unresolved
 - httpx
 - sanic
+- black
+- blackd
