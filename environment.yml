@@ -181,4 +181,4 @@ dependencies:
 - fiona
 - folium
 - black
-- aiohttp_cors
+- aiohttp
