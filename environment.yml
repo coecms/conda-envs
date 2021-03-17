@@ -180,3 +180,4 @@ dependencies:
 - branca
 - fiona
 - folium
+- black
