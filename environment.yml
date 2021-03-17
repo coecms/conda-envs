@@ -180,3 +180,4 @@ dependencies:
 - branca
 - fiona
 - folium
+- black::anaconda  # Try specifying the anaconda version, and hope it has correct dependencies
