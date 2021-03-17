@@ -180,5 +180,3 @@ dependencies:
 - branca
 - fiona
 - folium
-- black
-- aiohttp
