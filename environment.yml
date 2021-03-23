@@ -155,7 +155,7 @@ dependencies:
 - docrep
 - earthpy
 - descartes
-- era5grib>=2.0.0
+- era5grib>=0.2.0
 - conda-tree
 - xmitgcm
 - cupy
