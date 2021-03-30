@@ -185,3 +185,4 @@ dependencies:
 - black
 - aiohttp
 - aiohttp-cors
+- autopep8
