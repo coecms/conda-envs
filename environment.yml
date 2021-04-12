@@ -35,7 +35,7 @@ dependencies:
 - bokeh
 - datashader
 - f90nml
-- wrf-python
+- wrf-python>=1.3.2.5
 - sympy
 - sh
 - ffmpeg
@@ -82,7 +82,7 @@ dependencies:
 - python-stratify
 - nbdime
 - eofs
-- eccodes
+- eccodes>=2.21.0
 - python-eccodes
 - h5py
 - line_profiler
@@ -98,11 +98,11 @@ dependencies:
 - h5netcdf
 - jupyter_contrib_nbextensions
 - intake
-- pyngl
-  # - pynio # Wants HDF5 < 1.10.6
+# - pyngl # Needs recompiling with more recent gfortran?
+# - pynio # Wants HDF5 < 1.10.6
 - gridfill
-- pyferret
-- xgcm
+# - pyferret # Needs recompiling with more recent gfortran?
+- xgcm>=0.5
 - xrft
 - doit
 - pylint

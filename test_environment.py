@@ -139,8 +139,9 @@ def test_walk_packages():
         warnings.warn(UserWarning(warnstring))
 
 def test_import():
+    config = import_config('testconfig.yml')
     for info in iter_modules():
-        if info.ispkg:
+        if info.ispkg and info.name not in config['skip']:
             try:
                 __import__(info.name)
             except Warning:
