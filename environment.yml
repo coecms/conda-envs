@@ -15,7 +15,7 @@ dependencies:
 - dask
 - distributed
 - ipython
-- iris=2.4.0
+- iris
 - netcdf4
 - numpy
 - pandas
@@ -24,7 +24,7 @@ dependencies:
 - pytest
 - scipy
 - seaborn
-- xarray>=0.17.0
+- xarray
 - jupyter
 - notebook
 - nb_conda
@@ -83,7 +83,7 @@ dependencies:
 - nbdime
 - eofs
 - eccodes
-- python-eccodes<2021.01
+- python-eccodes
 - h5py
 - line_profiler
 - bottleneck
@@ -124,7 +124,7 @@ dependencies:
 - panel
 - xrft
 - git
-- openmpi>4.0.2
+- openmpi
 - mpi4py
 - palettable
 - xlrd
@@ -134,7 +134,7 @@ dependencies:
 - mnctools
 - addmeta
 - satpy
-- statsmodels>=0.11.0
+- statsmodels
 - dask-labextension
 - nbstripout
 - jupyter-server-proxy
@@ -157,7 +157,7 @@ dependencies:
 - docrep
 - earthpy
 - descartes
-- era5grib>=0.2.1
+- era5grib
 - conda-tree
 - xmitgcm
 - cupy
