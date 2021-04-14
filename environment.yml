@@ -187,3 +187,4 @@ dependencies:
 - aiohttp-cors
 - autopep8
 - spyder-kernels
+- sqlalchemy<1.4
