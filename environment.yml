@@ -188,3 +188,4 @@ dependencies:
 - autopep8
 - spyder-kernels
 - sqlalchemy<1.4
+- tenacity<7.0.0
