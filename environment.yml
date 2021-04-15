@@ -189,3 +189,4 @@ dependencies:
 - spyder-kernels
 - sqlalchemy<1.4
 - tenacity<7.0.0
+- dask-xgboost
