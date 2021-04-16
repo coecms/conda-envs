@@ -6,6 +6,11 @@ variables:
   CARTOPY_USER_BACKGROUNDS: /g/data/hh5/public/apps/cartopy-data/backgrounds
 dependencies:
 - python>=3.8
+###########
+# Resolve issues before removing these pins
+- sqlalchemy<1.4
+- tenacity<7.0.0
+###########
 - coecms-nci
 - cdo
 - hdf5
@@ -187,6 +192,4 @@ dependencies:
 - aiohttp-cors
 - autopep8
 - spyder-kernels
-- sqlalchemy<1.4
-- tenacity<7.0.0
 - dask-xgboost

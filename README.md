@@ -25,7 +25,7 @@ In some cases, due to the order in which modules are imported, the error only oc
 
 When updating to a new unstable release environment use the following protocol
 
-1. Remove all version pins
+1. Remove all version pins unless pinned due to an [unresolved issue](https://github.com/coecms/conda-envs/labels/update) 
 2. Delete all packages below the comment line `Can be removed when pinning no longer required`
 3. Check [build is successful](https://accessdev.nci.org.au/jenkins/blue/organizations/jenkins/conda%2Fanalysis3-unstable/activity/)
 4. Add back version pins where required. Pin to latest available version as unstable aims to be an updated environment. Packages dependencies which are added simply to pin their version should be added below the comment to that effect.
