@@ -177,7 +177,7 @@ dependencies:
 - intake-esm
 - pykrige
 - nci_intake_catalogue
-- cmdline_provenance
+- cmdline_provenance=1.0.0
 - mplleaflet
 - branca
 - fiona
