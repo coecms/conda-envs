@@ -54,13 +54,13 @@ function env_update {
     cat /g/data/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history >> /g/data/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history.log
     echo > /g/data/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history
 
-    ${MAMBA} env update -p "/g/data/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
+    conda env update -p "/g/data/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
     set +u
     conda activate "/g/data/hh5/public/apps/miniconda3/envs/${FULLENV}"
     set -u
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
-        ${MAMBA} env update -f deployed.old.yml
+        conda env update -f deployed.old.yml
         exit -1
     fi
 }
