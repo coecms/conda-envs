@@ -26,7 +26,9 @@ export PYTHONNOUSERSITE=true
 
 source /g/data/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
 
-MAMBA=/g/data/hh5/public/apps/miniconda3/envs/analysis3-21.01/bin/mamba
+MAMBA=/g/data/hh5/public/apps/miniconda3/envs/analysis3/bin/mamba
+# Bugfix version
+MAMBA=/scratch/w35/saw562/conda/envs/mamba/bin/mamba
 
 unset CONDA_ENVS_PATH
 unset CONDA_PKGS_DIRS
@@ -54,13 +56,13 @@ function env_update {
     cat /g/data/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history >> /g/data/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history.log
     echo > /g/data/hh5/public/apps/miniconda3/envs/${FULLENV}/conda-meta/history
 
-    conda env update -p "/g/data/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
+    ${MAMBA} env update -p "/g/data/hh5/public/apps/miniconda3/envs/${FULLENV}" -f environment.yml
     set +u
     conda activate "/g/data/hh5/public/apps/miniconda3/envs/${FULLENV}"
     set -u
     if ! py.test -s; then
         echo "${FULLENV} tests failed, rolling back update" 1>&2
-        conda env update -f deployed.old.yml
+        ${MAMBA} env update -f deployed.old.yml
         exit -1
     fi
 }
