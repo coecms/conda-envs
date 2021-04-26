@@ -26,7 +26,7 @@ export PYTHONNOUSERSITE=true
 
 source /g/data/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
 
-MAMBA=/g/data/hh5/public/apps/miniconda3/envs/analysis3i-21.04/bin/mamba
+MAMBA=/g/data/hh5/public/apps/miniconda3/envs/analysis3-21.04/bin/mamba
 
 unset CONDA_ENVS_PATH
 unset CONDA_PKGS_DIRS
