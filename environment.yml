@@ -172,7 +172,7 @@ dependencies:
 - pyam
 - pyarrow
 - python-gist
-  #- celluloid
+- celluloid
 - jags
 - xarray-spatial
 - nctoolkit
