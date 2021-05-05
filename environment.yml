@@ -193,3 +193,4 @@ dependencies:
 - autopep8
 - spyder-kernels
 - dask-xgboost
+- git-subtree
