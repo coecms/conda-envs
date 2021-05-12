@@ -57,7 +57,7 @@ dependencies:
 - pytables
 - nose
 - ncdu
-- cftime<1.3.0 # Error with year=0 dates in 1.3.0
+- cftime>=1.4.0 # Error with year=0 dates in 1.3.0
 - memory_profiler
 - fs
 - python-magic
