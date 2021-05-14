@@ -115,7 +115,7 @@ dependencies:
 - matplotlib-venn
 - nchash
 - umtools
-- cosima-cookbook<0.5.6
+- cosima-cookbook
 - clef
 - nccmp
 - coecms-util
