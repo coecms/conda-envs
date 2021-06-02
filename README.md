@@ -1,3 +1,8 @@
+| conda/analysis3 | 
+|:-------:|
+| [![Build Status](https://accessdev.nci.org.au/jenkins/buildStatus/icon?job=conda/analysis3-unstable)](https://accessdev.nci.org.au/jenkins/job/conda/job/analysis3-unstable/) |
+
+
 # Anaconda environments
 
 Environment files are in this repository's branches
