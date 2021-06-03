@@ -197,3 +197,4 @@ dependencies:
 - spyder-kernels
 - dask-xgboost
 - git-subtree
+- xrspatial<0.2.3
