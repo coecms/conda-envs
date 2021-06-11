@@ -198,3 +198,4 @@ dependencies:
 - dask-xgboost
 - git-subtree
 - xarray-spatial<0.2.3
+- watermark
