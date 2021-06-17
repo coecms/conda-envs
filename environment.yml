@@ -200,3 +200,4 @@ dependencies:
 - xarray-spatial<0.2.3
 - watermark
 - cvxpy
+- rechunker
