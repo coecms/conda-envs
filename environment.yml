@@ -201,3 +201,4 @@ dependencies:
 - watermark
 - cvxpy
 - rechunker
+- xmovie
