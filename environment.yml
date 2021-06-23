@@ -202,3 +202,4 @@ dependencies:
 - cvxpy
 - rechunker
 - xmovie
+- pymannkendall
