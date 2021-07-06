@@ -23,7 +23,7 @@ dependencies:
 - iris
 - netcdf4
 - numpy
-- pandas
+- pandas<1.3 # Xarray incompatibility - https://github.com/pydata/xarray/issues/5581
 - pygrib
 - pyhdf
 - pytest
