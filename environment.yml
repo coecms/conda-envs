@@ -202,3 +202,4 @@ dependencies:
 - pymannkendall
 - param
 - noise # unlisted dependency of xarray-spatial
+- shap
