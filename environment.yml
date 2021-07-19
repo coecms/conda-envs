@@ -204,3 +204,4 @@ dependencies:
 - noise # unlisted dependency of xarray-spatial
 - tensorflow
 - shap
+- gh
