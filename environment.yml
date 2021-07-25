@@ -23,13 +23,13 @@ dependencies:
 - iris
 - netcdf4
 - numpy
-- pandas<1.3 # Xarray incompatibility - https://github.com/pydata/xarray/issues/5581
+- pandas
 - pygrib
 - pyhdf
 - pytest
 - scipy
 - seaborn
-- xarray
+- xarray>=0.19
 - jupyter
 - notebook
 - nb_conda
