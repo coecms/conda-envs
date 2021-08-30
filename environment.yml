@@ -206,5 +206,4 @@ dependencies:
 - tensorflow
 - shap
 - gh
-- pyqt=5  # for Mayavia
 - mayavi
