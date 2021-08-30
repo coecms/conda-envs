@@ -206,3 +206,4 @@ dependencies:
 - tensorflow
 - shap
 - gh
+- mayavi
