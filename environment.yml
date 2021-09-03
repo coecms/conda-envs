@@ -22,7 +22,7 @@ dependencies:
 - ipython
 - iris>=3.0.4
 - netcdf4
-- numpy
+- numpy>=1.21
 - pandas
 - pygrib
 - pyhdf
