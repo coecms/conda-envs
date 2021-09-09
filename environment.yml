@@ -206,5 +206,5 @@ dependencies:
 - tensorflow
 - shap
 - gh
-- pyqt=4
+- pyqt
 - vtk
