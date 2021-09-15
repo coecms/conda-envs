@@ -209,3 +209,4 @@ dependencies:
 - pyqt
 - vtk
 - mayavi
+- gcm_filters
