@@ -208,3 +208,4 @@ dependencies:
 - gh
 - pyqt
 - vtk
+- mayavi
