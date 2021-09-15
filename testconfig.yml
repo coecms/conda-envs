@@ -28,6 +28,8 @@ skip:
 - prometheus_client.twisted # No twisted
 - pyface
 - qt
+- traits
+- traitsui
 - vtk
 
 # Preload these modules before testing to avoid weird python issues
