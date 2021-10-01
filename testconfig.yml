@@ -57,3 +57,4 @@ exception:
 - metpy.plots  # While Issue #21 unresolved
 - httpx
 - sanic
+- tensorflow.estimator
