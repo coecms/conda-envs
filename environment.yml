@@ -89,7 +89,7 @@ dependencies:
 - eofs
 - eccodes
 - python-eccodes
-- h5py
+- h5py>=3.4 # pinned for solver stability
 - line_profiler
 - bottleneck
 - jupyterlab
@@ -104,7 +104,7 @@ dependencies:
 - jupyter_contrib_nbextensions
 - intake
 - gridfill
-- xgcm
+- xgcm>0.5 # pinned for solver stability
 - xrft
 - doit
 - pylint
@@ -198,8 +198,8 @@ dependencies:
 - pymannkendall
 - param
 - noise # unlisted dependency of xarray-spatial
-- tensorflow
-- shap
+- tensorflow>=2.6 # pinned for solver stability
+- shap 
 - gh
 - pyqt
 - vtk
