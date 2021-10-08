@@ -9,7 +9,6 @@ dependencies:
 ###########
 # Resolve issues before removing these pins
 - sqlalchemy<1.4 # https://github.com/coecms/conda-envs/issues/25
-- tenacity<7 # https://github.com/coecms/conda-envs/issues/26
 ###########
 - coecms-nci
 - cdo
@@ -20,16 +19,16 @@ dependencies:
 - dask
 - distributed
 - ipython
-- iris>=3.0.4
+- iris
 - netcdf4
-- numpy>=1.21
+- numpy
 - pandas
 - pygrib
 - pyhdf
 - pytest
 - scipy
 - seaborn
-- xarray>=0.19
+- xarray
 - jupyter
 - notebook
 - nb_conda
@@ -57,8 +56,8 @@ dependencies:
 - pytables
 - nose
 - ncdu
-- cftime>1.4 # Error with year=0 dates in 1.3.0, Error with cfunits 3.3.1 in 1.5.0
-- cfunits>=3.3.3
+- cftime
+- cfunits
 - memory_profiler
 - fs
 - python-magic
@@ -104,11 +103,8 @@ dependencies:
 - h5netcdf
 - jupyter_contrib_nbextensions
 - intake
-# - pyngl # Needs recompiling with more recent gfortran?
-# - pynio # Wants HDF5 < 1.10.6
 - gridfill
-# - pyferret # Needs recompiling with more recent gfortran?
-- xgcm>=0.5
+- xgcm
 - xrft
 - doit
 - pylint
@@ -122,7 +118,7 @@ dependencies:
 - coecms-util
 - yamanifest
 - cmocean
-- payu>=1.0.20
+- payu
 - splitvar
 - marineHeatWaves
 - holoviews
@@ -134,7 +130,6 @@ dependencies:
 - mpi4py
 - palettable
 - xlrd
-  #- pybufr-ecmwf # Error compiling for python 3.7
 - nccompress
 - mdssdiff
 - mnctools
