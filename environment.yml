@@ -209,3 +209,4 @@ dependencies:
 - timezonefinder
 - lftp
 - xarraymannkendall
+- watchdog  
