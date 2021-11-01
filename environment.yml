@@ -154,7 +154,7 @@ dependencies:
 - cython
 - esmf>=8.0.1=mpi_openmpi*
 - esmpy>=8.0.1=mpi_openmpi*
-- xesmf
+- xesmf=0.6.0 # https://github.com/pangeo-data/xESMF/issues/127
 - sharppy
 - docrep
 - earthpy
