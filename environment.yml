@@ -210,3 +210,4 @@ dependencies:
 - lftp
 - xarraymannkendall
 - watchdog  
+- numpy_groupies
