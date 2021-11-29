@@ -211,3 +211,4 @@ dependencies:
 - xarraymannkendall
 - watchdog  
 - numpy_groupies
+- anytree
