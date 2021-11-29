@@ -212,3 +212,4 @@ dependencies:
 - watchdog  
 - numpy_groupies
 - anytree
+- fortran-language-server
