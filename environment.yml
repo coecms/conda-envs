@@ -216,3 +216,4 @@ dependencies:
 - hdbscan
 - jupyter-book
 - s3fs
+- iris-grib
