@@ -214,3 +214,4 @@ dependencies:
 - anytree
 - fortran-language-server
 - hdbscan
+- jupyter-book
