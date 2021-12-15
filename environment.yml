@@ -215,3 +215,4 @@ dependencies:
 - fortran-language-server
 - hdbscan
 - jupyter-book
+- s3fs
