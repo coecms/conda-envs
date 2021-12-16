@@ -218,3 +218,4 @@ dependencies:
 - s3fs
 - iris-grib
 - kerchunk
+- ujson
