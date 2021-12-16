@@ -217,3 +217,4 @@ dependencies:
 - jupyter-book
 - s3fs
 - iris-grib
+- kerchunk
