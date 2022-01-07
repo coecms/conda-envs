@@ -215,7 +215,6 @@ dependencies:
 - fortran-language-server
 - hdbscan
 - jupyter-book
-- s3fs
 - iris-grib
 - kerchunk
 - ujson
