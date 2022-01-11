@@ -220,3 +220,4 @@ dependencies:
 - kerchunk
 - ujson
 - intake-thredds
+- cafaz
