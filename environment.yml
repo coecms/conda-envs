@@ -216,8 +216,9 @@ dependencies:
 - hdbscan
 - jupyter-book
 - iris-grib
-#- s3fs
+- s3fs
 - kerchunk
 - ujson
 - intake-thredds
+- cafaz
 - cdms2
