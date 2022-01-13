@@ -32,6 +32,7 @@ skip:
 - traitsui
 - vtk
 - pyparsing
+- tensorflow_estimator
 
 # Preload these modules before testing to avoid weird python issues
 preload:
