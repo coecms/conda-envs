@@ -31,6 +31,7 @@ skip:
 - traits
 - traitsui
 - vtk
+- pyparsing
 
 # Preload these modules before testing to avoid weird python issues
 preload:
