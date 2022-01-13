@@ -70,3 +70,4 @@ exception:
 - tensorflow.compat.v2.estimator
 - tensorflow.compat.v2.compat.v1.estimator
 - tensorflow.compat.v2.compat.v2.estimator
+- pyparsing.diagrams
