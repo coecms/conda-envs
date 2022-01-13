@@ -91,7 +91,7 @@ def import_config(filename):
     """
     try:
         with open(filename, 'r') as config_file:
-            config = yaml.load(config_file)
+            config = yaml.safe_load(config_file)
     except IOError as exc:
         if exc.errno == errno.ENOENT:
             print('Warning: config file {0} not found!'
