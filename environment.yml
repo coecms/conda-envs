@@ -222,3 +222,4 @@ dependencies:
 - intake-thredds
 - cafaz
 - cdms2
+- pygam
