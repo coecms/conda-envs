@@ -74,3 +74,4 @@ exception:
 - tensorflow.compat.v2.compat.v2.estimator
 - pyparsing.diagrams
 - pysal.explore.esda
+- pysal.explore.segregation
