@@ -75,3 +75,4 @@ exception:
 - pyparsing.diagrams
 - pysal.explore.esda
 - pysal.explore.segregation
+- access.datasets
