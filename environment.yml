@@ -57,7 +57,7 @@ dependencies:
 - pytables
 - nose
 - ncdu
-- cftime
+- cftime<1.5.2
 - cfunits
 - memory_profiler
 - fs
