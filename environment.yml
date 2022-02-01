@@ -29,7 +29,7 @@ dependencies:
 - pytest
 - scipy
 - seaborn
-- xarray
+- xarray<0.21.0
 - jupyter
 - notebook
 - nb_conda
