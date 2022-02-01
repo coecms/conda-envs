@@ -18,7 +18,7 @@ dependencies:
  #x basemap-data-hires
 - cartopy>=0.19 # pinned for solver stability
 - dask
-- distributed
+- distributed<2022.01.0
 - ipython
 - iris
 - netcdf4
@@ -57,7 +57,7 @@ dependencies:
 - pytables
 - nose
 - ncdu
-- cftime<1.5.2
+- cftime
 - cfunits
 - memory_profiler
 - fs
