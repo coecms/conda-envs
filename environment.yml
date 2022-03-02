@@ -225,3 +225,4 @@ dependencies:
 - pygam
 - pysal
 - xmhw
+- argopy
