@@ -227,3 +227,4 @@ dependencies:
 - xmhw
 - argopy
 - dataclasses-json
+- ilamb
