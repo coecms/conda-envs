@@ -226,3 +226,4 @@ dependencies:
 - pysal
 - xmhw
 - argopy
+- dataclasses-json
