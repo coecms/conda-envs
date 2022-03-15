@@ -228,3 +228,4 @@ dependencies:
 - argopy
 - dataclasses-json
 - ilamb
+- posix_ipc
