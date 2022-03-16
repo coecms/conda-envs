@@ -229,3 +229,5 @@ dependencies:
 - dataclasses-json
 - ilamb
 - posix_ipc
+- spectrum
+
