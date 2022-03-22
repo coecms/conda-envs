@@ -230,4 +230,5 @@ dependencies:
 - ilamb
 - posix_ipc
 - spectrum
-
+- arch
+- pyextremes
