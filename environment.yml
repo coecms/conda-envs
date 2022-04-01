@@ -232,3 +232,4 @@ dependencies:
 - spectrum
 - arch-py
 - pyextremes
+- ipdb
