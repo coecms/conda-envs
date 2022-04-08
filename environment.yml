@@ -235,3 +235,4 @@ dependencies:
 - ipdb
 - palettable
 - webcolors
+- mpl-scatter-density
