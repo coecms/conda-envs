@@ -6,6 +6,7 @@ variables:
   CARTOPY_USER_BACKGROUNDS: /g/data/hh5/public/apps/cartopy-data/backgrounds
 dependencies:
 - python>=3.9
+- pip<22.0 # error with import railroad
 ###########
 # Resolve issues before removing these pins
 - sqlalchemy<1.4 # https://github.com/coecms/conda-envs/issues/25
