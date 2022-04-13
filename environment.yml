@@ -237,3 +237,4 @@ dependencies:
 - palettable
 - webcolors
 - mpl-scatter-density
+- benchcab
