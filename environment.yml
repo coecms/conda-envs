@@ -238,3 +238,4 @@ dependencies:
 - webcolors
 - mpl-scatter-density
 - benchcab
+- lmfit
