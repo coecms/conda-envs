@@ -239,3 +239,4 @@ dependencies:
 - mpl-scatter-density
 - benchcab
 - lmfit
+- xclim
