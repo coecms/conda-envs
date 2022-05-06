@@ -66,7 +66,7 @@ dependencies:
 - click_default_group
 - regionmask
 - libgdal>=3.2 # pinned for solver stability
-- matplotlib<=3.4.3,>=3.5.2  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
+- matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
 - dreqpy
 - pint
 - pycodestyle
