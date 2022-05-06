@@ -1,8 +1,21 @@
-# Adding packages
-
+# Adding and updating packages
+  
 New conda packages are added to `environment.yml`
 
-Sometimes it is necessary to pin a package to a specific version to avoid conflicts and errors. If the package is only being added to environment.yml to pin it's version, please add it after the comment to that effect, so it can be removed when pinning is no longer required.
+Sometimes it is necessary to pin a package to a specific version to avoid conflicts and errors. If the package is only being added to environment.yml to pin its version, please add it after the comment to that effect, so it can be removed when pinning is no longer required.
+
+Conda will look for updates for all packages that are not pinned to a specific version, every time a new commit is pushed.
+
+If you want to explicitly update a package you need to push a change to trigger the updates.
+
+A potential way to ensure this without pinning the package to a specific version is to pin it to
+
+  package >= x.x
+
+where x.x is the version you want.
+
+Changes to other files in the repository, as this README file, will also trigger an update.
+Updating a package in the CMS conda channel will also trigger an update automatically.
 
 # Resolving errors
 
