@@ -176,7 +176,7 @@ dependencies:
 - nctoolkit
 - geoplot
 - dask-ml
-- mamba
+- mamba<=0.23.0  # pin to solve error with missing libmamba library
 - intake-esm
 - pykrige
 - nci_intake_catalogue
