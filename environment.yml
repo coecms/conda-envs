@@ -78,7 +78,7 @@ dependencies:
 - pvlib-python
 - parcels
 - siphon
-- scikit-learn
+- scikit-learn<1.1.1       # Known incompatibility with dask-ml for v1.1.1 https://github.com/dask/dask-ml/issues/908
 - filelock
 - gsw
 - nb_conda_kernels
