@@ -67,8 +67,8 @@ dependencies:
 - regionmask
 - rasterio>=1.2.10           # pinned to solve #37
 - gxx_linux-64               # add missing dependency for #37
-- gdal==3.4.2                # pinned for solver stability and rasterio incompatibility #37
-- libgdal==3.4.2             # pinned for solver stability and rasterio incompatibility #37
+- gdal<3.4.2                # pinned for solver stability and rasterio incompatibility #37
+- libgdal<3.4.2             # pinned for solver stability and rasterio incompatibility #37
 - matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
 - dreqpy
 - pint
