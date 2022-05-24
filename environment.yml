@@ -244,3 +244,4 @@ dependencies:
 - lmfit
 - xclim
 - jupyter-resource-usage
+- pytorch
