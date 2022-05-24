@@ -28,7 +28,7 @@ dependencies:
 - pygrib
 - pyhdf
 - pytest
-- scipy
+- scipy<=1.8.0
 - seaborn
 - xarray
 - jupyter
