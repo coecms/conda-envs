@@ -78,7 +78,7 @@ dependencies:
 - pvlib-python
 - parcels>=2.3.0            # Pin to force update
 - siphon
-- scikit-learn<1.0          # Known incompatibility with dask-ml for >1.0 https://github.com/dask/dask-ml/issues/908
+- scikit-learn
 - filelock
 - gsw
 - nb_conda_kernels
@@ -178,7 +178,7 @@ dependencies:
 - xarray-spatial
 - nctoolkit
 - geoplot
-- dask-ml
+- dask-ml>=2022.5.27
 - mamba<=0.23.0  # pin to solve error with missing libmamba library
 - intake-esm
 - pykrige
