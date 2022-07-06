@@ -33,6 +33,7 @@ skip:
 - vtk
 - pyparsing
 - tensorflow_estimator
+- acs_replica_intake  # can't load catalogue file
 
 # Preload these modules before testing to avoid weird python issues
 preload:
