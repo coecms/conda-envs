@@ -23,14 +23,18 @@ source version
 
 FULLENV="${ENVIRONMENT}-${VERSION}"
 
-source /g/data3/hh5/public/apps/miniconda3/etc/profile.d/conda.sh
+ROOT_DIR=/g/data/hh5/public
 
-# Mark this version stable
-sed -e "s/${ENVIRONMENT}-\S\+ \<\(${ENVIRONMENT}\>\)/${FULLENV} \1/" \
-    -i /g/data3/hh5/public/modules/conda/.modulerc
+CONDA_DIR=${ROOT_DIR}/apps/miniconda3
 
-# Next version - add 1 to the year if we're currently in the last quarter
-NEXT=$(date +"%y %m" | awk '{printf("%02d%02d", $1+int($2/10), (int(($2-1)/3+1)%4*3+1))}')
+MOD_DIR=${ROOT_DIR}/modules/conda
+
+source ${CONDA_DIR}/etc/profile.d/conda.sh
+
+MAMBA=${CONDA_DIR}/envs/analysis3/bin/mamba
+
+# Next version should be the year and the current month (1, 4, 7 or 10)
+NEXT=$(date +"%y %m" | awk '{printf("%02d.%02d", $1, $2)}')
 
 if [ "${VERSION}" = "${NEXT}" ]; then
     echo "ERROR: New version ${NEXT} is the same value as the last one" 2>&1
@@ -38,10 +42,22 @@ if [ "${VERSION}" = "${NEXT}" ]; then
     exit 1
 fi
 
-echo "Next unstable version will be ${ENVIRONMENT}-${NEXT}"
+UNSTABLE="${ENVIRONMENT}-${NEXT}"
+echo "Next unstable version will be ${UNSTABLE}"
 
 # Update 'version' with the new value
-sed -e "s/\(VERSION=\).*/\1${NEXT}/" version
+sed -e "s/\(VERSION=\).*/\1${NEXT}/" -i version
+
+# Create new unstable environment
+${MAMBA} env create -p "${CONDA_DIR}/envs/${UNSTABLE}" -f environment.yml
+ln -s ${MOD_DIR}/{.common.v2,"${UNSTABLE}"}
+
+# Make new unstable environment
+sed -E -e "s#${VERSION}#${NEXT}#" -i ${MOD_DIR}/.modulerc
+
+# Make current version default
+sed -E -e "s#conda/${ENVIRONMENT}-\S+ (.*) default#conda/${ENVIRONMENT}-${VERSION} \1 default#" \
+    -i ${MOD_DIR}/.modulerc
 
 conda env export -n "${FULLENV}" > deployed.yml
 
