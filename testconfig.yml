@@ -34,6 +34,7 @@ skip:
 - pyparsing
 - tensorflow_estimator
 - acs_replica_intake  # can't load catalogue file
+- pip._vendor.chardet # encounters a null byte, doesn't seem to be an error
 
 # Preload these modules before testing to avoid weird python issues
 preload:
@@ -77,4 +78,3 @@ exception:
 - pysal.explore.esda
 - pysal.explore.segregation
 - pysal.model.access
-- pip._vendor.chardet
