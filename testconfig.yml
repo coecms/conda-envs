@@ -77,3 +77,4 @@ exception:
 - pysal.explore.esda
 - pysal.explore.segregation
 - pysal.model.access
+- pip._vendor.chardet
