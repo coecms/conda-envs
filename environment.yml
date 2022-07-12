@@ -122,7 +122,8 @@ dependencies:
 - payu
 - splitvar
 - marineHeatWaves
-- holoviews<1.14.8
+- holoviews
+- geoviews
 - pytest-cov
 - panel
 - xrft
