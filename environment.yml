@@ -7,10 +7,7 @@ variables:
 dependencies:
 - python>=3.9
 - pip<22.0 # error with import railroad
-###########
-# Resolve issues before removing these pins
-- sqlalchemy<1.4 # https://github.com/coecms/conda-envs/issues/25
-###########
+- sqlalchemy
 - libnetcdf>=4.7.4=mpi_openmpi* # pinned for solver stability
 - coecms-nci
 - cdo>=1.9.5 # pinned for solver stability
