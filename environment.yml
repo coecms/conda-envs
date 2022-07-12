@@ -21,7 +21,7 @@ dependencies:
 - iris
 - netcdf4
 - numpy>=1.21 # Mule dependency
-- pandas<1.4.0
+- pandas
 - pygrib
 - pyhdf
 - pytest
