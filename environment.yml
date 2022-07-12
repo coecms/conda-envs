@@ -128,7 +128,7 @@ dependencies:
 - panel
 - xrft
 - git
-- openmpi<=4.1.2
+- openmpi
 - mpi4py
 - palettable
 - xlrd
