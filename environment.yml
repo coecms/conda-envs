@@ -173,6 +173,7 @@ dependencies:
 - celluloid
 - jags
 - xarray-spatial
+- noise # unlisted dependency of xarray-spatial
 - nctoolkit
 - geoplot
 - dask-ml>=2022.5.27
@@ -199,7 +200,6 @@ dependencies:
 - xmovie
 - pymannkendall
 - param
-- noise # unlisted dependency of xarray-spatial
 - tensorflow>=2.6 # pinned for solver stability
 - shap 
 - gh
