@@ -24,9 +24,6 @@ pipeline {
             mail to: 'hxw599', subject: "${env.ENV_NAME} update failed", body: """
 Full results at ${env.BUILD_URL}
 """
-            mail to: 'aph502', subject: "${env.ENV_NAME} update failed", body: """
-Full results at ${env.BUILD_URL}
-"""
         }
     }
 }
