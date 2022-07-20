@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "aph502.gadi"}
+    agent {label "hxw599.gadi"}
 
     environment {
         ENV_NAME = "${env.JOB_BASE_NAME}"
