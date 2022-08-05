@@ -243,3 +243,4 @@ dependencies:
 - jupyter-resource-usage
 - acs_replica_intake
 - matchpy
+- pytmatrix  
