@@ -35,6 +35,7 @@ skip:
 - tensorflow_estimator
 - acs_replica_intake  # can't load catalogue file
 - pip._vendor.chardet # encounters a null byte, doesn't seem to be an error
+- pykrige # AttributeError: module 'scipy.linalg' has no attribute 'pinv2' -- rk4417
 
 # Preload these modules before testing to avoid weird python issues
 preload:
