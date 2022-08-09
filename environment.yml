@@ -244,3 +244,4 @@ dependencies:
 - acs_replica_intake
 - matchpy
 - pytmatrix  
+- mscorefonts
