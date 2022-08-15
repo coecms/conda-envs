@@ -7,7 +7,7 @@ variables:
 dependencies:
 - python>=3.9
 - pip<22.0 # error with import railroad
-- sqlalchemy
+- sqlalchemy<=1.4 # pinned to solve cosima-cookbook, clef downgrades
 - libnetcdf>=4.7.4=mpi_openmpi* # pinned for solver stability
 - coecms-nci
 - cdo>=1.9.5 # pinned for solver stability
