@@ -114,7 +114,7 @@ dependencies:
 - nchash
 - umtools
 - cosima-cookbook
-- clef>=1.4.1 # pinned to force update
+- clef
 - nccmp
 - coecms-util
 - yamanifest
@@ -144,7 +144,7 @@ dependencies:
 - sphinx
 - doc8
 - pymunge
-- climtas
+- climtas>=0.3.3 # pin to force update
 - asyncssh
 - ants
 - xhistogram
