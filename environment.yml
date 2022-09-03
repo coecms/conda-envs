@@ -247,3 +247,4 @@ dependencies:
 - mscorefonts
 - opencv  
 - conda-build
+- conda-verify
