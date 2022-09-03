@@ -180,7 +180,7 @@ dependencies:
 - mamba
 - intake-esm
 - pykrige
-- nci_intake_catalogue
+- nci_intake_catalogue>=1.2 # pinned to trigger update
 - cmdline_provenance
 - mplleaflet
 - branca
