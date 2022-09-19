@@ -65,7 +65,8 @@ dependencies:
 - rasterio
 - gdal
 - libgdal
-- matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
+# pinning matplotlib to 3.5.3 temporarily until plotnine issue is fixed https://github.com/has2k1/plotnine/issues/620
+- matplotlib<=3.5.3|>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
 - dreqpy
 - pint
 - pycodestyle
