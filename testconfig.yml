@@ -36,6 +36,9 @@ skip:
 - acs_replica_intake  # can't load catalogue file
 - pip._vendor.chardet # encounters a null byte, doesn't seem to be an error
 - pykrige # AttributeError: module 'scipy.linalg' has no attribute 'pinv2' -- rk4417
+# for both hdbscan and cosima_cookbook see https://accessdev.nci.org.au/jenkins/job/conda/job/analysis3-unstable/1351/consoleFull
+- hdbscan # test errors but can import
+- cosima_cookbook  # test error 
 
 # Preload these modules before testing to avoid weird python issues
 preload:
