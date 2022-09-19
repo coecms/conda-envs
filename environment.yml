@@ -178,7 +178,7 @@ dependencies:
 - geoplot
 - dask-ml>=2022.5.27
 - mamba
-- intake-esm
+- intake-esm>=2022.9.18  # pinned to trigger update
 - pykrige
 - nci_intake_catalogue>=1.2 # pinned to trigger update
 - cmdline_provenance
