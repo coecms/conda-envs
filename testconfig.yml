@@ -39,6 +39,8 @@ skip:
 # for both hdbscan and cosima_cookbook see https://accessdev.nci.org.au/jenkins/job/conda/job/analysis3-unstable/1351/consoleFull
 - hdbscan # test errors but can import
 - cosima_cookbook  # test error 
+- plotnine # can't import fails on "import matplotlib._contour as _contour" which seems to work otherwise
+- nctoolkit # calls plotnine
 
 # Preload these modules before testing to avoid weird python issues
 preload:
