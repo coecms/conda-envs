@@ -116,7 +116,7 @@ dependencies:
 - nchash
 - umtools
 - cosima-cookbook
-- clef
+- clef>=1.4.3 # temporary pi to trigger update
 - nccmp
 - coecms-util
 - yamanifest
@@ -182,7 +182,7 @@ dependencies:
 - mamba
 - intake-esm<2022.9.18  # downgrading until intake 0.6.6 issue solved
 - pykrige
-- nci_intake_catalogue>=1.2 # temporary pinned to trigger update 
+- nci_intake_catalogue>=1.2 # temporary pin to trigger update 
 - cmdline_provenance
 - mplleaflet
 - branca
