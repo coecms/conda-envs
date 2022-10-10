@@ -246,3 +246,4 @@ dependencies:
 - pytmatrix  
 - mscorefonts
 - opencv  
+- pygmt
