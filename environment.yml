@@ -65,7 +65,9 @@ dependencies:
 - rasterio
 - gdal
 - libgdal
-- matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
+# pinning matplotlib to 3.5.3 temporarily until plotnine issue is fixed https://github.com/has2k1/plotnine/issues/620
+- matplotlib==3.5.3  # 
+#- matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
 - dreqpy
 - pint
 - pycodestyle
@@ -103,7 +105,7 @@ dependencies:
 - cfgrib
 - h5netcdf
 - jupyter_contrib_nbextensions
-- intake
+- intake ==0.6.5 # pinned to downgrade until intake 0.6.6 issue is solved
 - gridfill
 - xgcm>0.5 # pinned for solver stability
 - xrft
@@ -114,7 +116,7 @@ dependencies:
 - nchash
 - umtools
 - cosima-cookbook
-- clef
+- clef>=1.4.3 # temporary pi to trigger update
 - nccmp
 - coecms-util
 - yamanifest
@@ -144,7 +146,7 @@ dependencies:
 - sphinx
 - doc8
 - pymunge
-- climtas
+- climtas>=0.3.3 # pin to force update
 - asyncssh
 - ants
 - xhistogram
@@ -160,7 +162,7 @@ dependencies:
 - docrep
 - earthpy
 - descartes
-- era5grib
+- era5grib>=0.3.7 # pinned to force update
 - conda-tree
 - xmitgcm
 - cupy
@@ -178,9 +180,9 @@ dependencies:
 - geoplot
 - dask-ml>=2022.5.27
 - mamba
-- intake-esm
+- intake-esm<2022.9.18  # downgrading until intake 0.6.6 issue solved
 - pykrige
-- nci_intake_catalogue
+- nci_intake_catalogue>=1.2 # temporary pin to trigger update 
 - cmdline_provenance
 - mplleaflet
 - branca
@@ -246,4 +248,6 @@ dependencies:
 - pytmatrix  
 - mscorefonts
 - opencv  
+- conda-build
+- conda-verify
 - pygmt
