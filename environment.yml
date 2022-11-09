@@ -35,7 +35,7 @@ dependencies:
 - windspharm
 - python-cdo
 - arm_pyart
-- bokeh
+- bokeh<3.0.0 ### Bokeh 3 breaks geoviews
 - datashader
 - f90nml
 - wrf-python
