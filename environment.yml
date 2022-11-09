@@ -6,7 +6,7 @@ variables:
   CARTOPY_USER_BACKGROUNDS: /g/data/hh5/public/apps/cartopy-data/backgrounds
 dependencies:
 - python>=3.9
-- pip<22.0 # error with import railroad
+- pip
 - sqlalchemy
 - libnetcdf>=4.7.4=mpi_openmpi* # pinned for solver stability
 - coecms-nci
@@ -69,8 +69,8 @@ dependencies:
 - matplotlib==3.5.3  # 
 #- matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
 - dreqpy
-- pint
-- pycodestyle
+- pint<=0.19.2 ### pinned to fix https://github.com/Ouranosinc/xclim/issues/1216
+- pycodestyle 
 - nc-time-axis
 - jq
 - pvlib-python
@@ -251,3 +251,7 @@ dependencies:
 - conda-build
 - conda-verify
 - pygmt
+- greenlet ### Dependency of... something?
+- objgraph ### Unlisted dependency of greenlet
+- pip:
+  - railroad-diagrams ### Unlisted dependency of pip and pyparsing
