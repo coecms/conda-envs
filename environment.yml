@@ -253,5 +253,6 @@ dependencies:
 - pygmt
 - greenlet ### Dependency of... something?
 - objgraph ### Unlisted dependency of greenlet
+- xarrayutils
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
