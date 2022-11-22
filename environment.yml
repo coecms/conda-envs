@@ -254,5 +254,6 @@ dependencies:
 - greenlet ### Dependency of... something?
 - objgraph ### Unlisted dependency of greenlet
 - xarrayutils
+- wradlib
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
