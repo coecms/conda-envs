@@ -255,5 +255,8 @@ dependencies:
 - objgraph ### Unlisted dependency of greenlet
 - xarrayutils
 - wradlib
+- pyinterp
+- wavespectra
+- xmip
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
