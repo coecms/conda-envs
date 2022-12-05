@@ -251,6 +251,7 @@ dependencies:
 - conda-build
 - conda-verify
 - pygmt
+- gmt=6.4.0=h78e8b95_2 ### pinned to fix https://github.com/GenericMappingTools/pygmt/issues/2215
 - greenlet ### Dependency of... something?
 - objgraph ### Unlisted dependency of greenlet
 - xarrayutils
@@ -258,5 +259,6 @@ dependencies:
 - pyinterp
 - wavespectra
 - xmip
+- xcdat
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
