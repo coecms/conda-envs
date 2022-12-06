@@ -45,8 +45,9 @@ fi
 function env_install {
     ${MAMBA} env create -p "${CONDA_INSTALLATION_PATH}/envs/${FULLENV}" -f environment.yml
     ln -s "${CONDA_MODULE_PATH}"/conda/{.common.v2,"${FULLENV}"}
-    
+    set +u
     conda activate "${CONDA_INSTALLATION_PATH}/envs/${FULLENV}"
+    set -u
     py.test -s
 }
 
