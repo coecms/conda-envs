@@ -260,5 +260,6 @@ dependencies:
 - wavespectra
 - xmip
 - xcdat
+- neutralocean
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
