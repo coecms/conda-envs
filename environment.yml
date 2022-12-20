@@ -261,5 +261,6 @@ dependencies:
 - xmip
 - xcdat
 - neutralocean
+- ipympl
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
