@@ -263,5 +263,7 @@ dependencies:
 - neutralocean
 - ipympl
 - libtiff<4.5.0 ### 4.4.0 -> 4.5.0 ABI change breaks gdal
+- xskillscore
+- geocat-comp
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
