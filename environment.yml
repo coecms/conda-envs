@@ -265,5 +265,6 @@ dependencies:
 - libtiff<4.5.0 ### 4.4.0 -> 4.5.0 ABI change breaks gdal
 - xskillscore
 - geocat-comp
+- ecgtools
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
