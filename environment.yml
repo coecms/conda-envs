@@ -7,7 +7,7 @@ variables:
 dependencies:
 - python>=3.9
 - pip
-- sqlalchemy
+- sqlalchemy==1.4.46 ### cosima cookbook does not import with sqlalchemy 2
 - libnetcdf>=4.7.4=mpi_openmpi* # pinned for solver stability
 - coecms-nci
 - cdo>=1.9.5 # pinned for solver stability
@@ -27,7 +27,7 @@ dependencies:
 - pytest
 - scipy
 - seaborn
-- xarray
+- xarray==2022.12.0 ### Temporary fix for netcdf issues (https://forum.access-hive.org.au/t/netcdf-not-a-valid-id-errors/389/13)
 - jupyter
 - notebook
 - nb_conda
