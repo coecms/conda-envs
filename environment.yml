@@ -19,7 +19,7 @@ dependencies:
 - distributed
 - ipython
 - iris
-- netcdf4
+- netcdf4<=1.6.0 ### Workaround for https://github.com/pydata/xarray/issues/7079
 - numpy>=1.21 # Mule dependency
 - pandas
 - pygrib
@@ -27,7 +27,7 @@ dependencies:
 - pytest
 - scipy
 - seaborn
-- xarray==2022.12.0 ### Temporary fix for netcdf issues (https://forum.access-hive.org.au/t/netcdf-not-a-valid-id-errors/389/13)
+- xarray
 - jupyter
 - notebook
 - nb_conda
