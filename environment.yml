@@ -74,7 +74,7 @@ dependencies:
 - nc-time-axis
 - jq
 - pvlib-python
-- parcels>=2.3.0            # Pin to force update
+- parcels
 - siphon
 - scikit-learn
 - filelock
@@ -266,5 +266,6 @@ dependencies:
 - xskillscore
 - geocat-comp
 - ecgtools
+- gcc_linux-64>=12.2.0 ### Pin otherwise parcels brings in a very old version that breaks the module file
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
