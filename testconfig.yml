@@ -23,7 +23,7 @@ skip:
  # - cupy # Disable when testing locally
  # - cupyx # ditto
  # - nci_intake_catalogue # ditto
-- wrf # Prints garbage at v1.3.2.5
+ # - wrf # Prints garbage at v1.3.2.5
 - matplotlib.tests # No test data
 - prometheus_client.twisted # No twisted
 - pyface
