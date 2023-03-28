@@ -2,6 +2,7 @@ name: analysis3
 channels:
 - coecms
 - conda-forge
+- accessnri
 variables:
   CARTOPY_USER_BACKGROUNDS: /g/data/hh5/public/apps/cartopy-data/backgrounds
 dependencies:
@@ -239,7 +240,7 @@ dependencies:
 - palettable
 - webcolors
 - mpl-scatter-density
-- benchcab
+- benchcab>=1.0
 - lmfit
 - xclim
 - jupyter-resource-usage
