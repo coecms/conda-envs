@@ -163,7 +163,7 @@ dependencies:
 - docrep
 - earthpy
 - descartes
-- era5grib>=0.3.7 # pinned to force update
+- era5grib>=0.3.9 # pinned to force update
 - conda-tree
 - xmitgcm
 - cupy
