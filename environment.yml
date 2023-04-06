@@ -269,5 +269,6 @@ dependencies:
 - ecgtools
 - gcc_linux-64>=12.2.0 ### Pin otherwise parcels brings in a very old version that breaks the module file
 - ipywidgets>=8
+- flox
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
