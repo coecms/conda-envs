@@ -66,8 +66,7 @@ dependencies:
 - rasterio
 - gdal
 - libgdal
-# pinning matplotlib to 3.5.3 temporarily until plotnine issue is fixed https://github.com/has2k1/plotnine/issues/620
-- matplotlib==3.5.3  # 
+- matplotlib
 #- matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
 - dreqpy
 - pint<=0.19.2 ### pinned to fix https://github.com/Ouranosinc/xclim/issues/1216
@@ -252,7 +251,7 @@ dependencies:
 - conda-build
 - conda-verify
 - pygmt
-- gmt=6.4.0=h78e8b95_2 ### pinned to fix https://github.com/GenericMappingTools/pygmt/issues/2215
+- gmt
 - greenlet ### Dependency of... something?
 - objgraph ### Unlisted dependency of greenlet
 - xarrayutils
@@ -270,5 +269,6 @@ dependencies:
 - gcc_linux-64>=12.2.0 ### Pin otherwise parcels brings in a very old version that breaks the module file
 - ipywidgets>=8
 - flox
+- erddapy>2 ### Pin to fix argopy bringing in very old version of erddapy
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
