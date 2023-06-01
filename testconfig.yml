@@ -43,6 +43,7 @@ skip:
   #- nctoolkit # calls plotnine
 - xgboost.spark ### Don't think we support spark as a parallel backend
 - send2trash.mac ### Gadi is not a mac
+- send2trash.win ### Nor is it windows
 
 # Preload these modules before testing to avoid weird python issues
 preload:
