@@ -42,6 +42,7 @@ skip:
   #- plotnine # can't import fails on "import matplotlib._contour as _contour" which seems to work otherwise
   #- nctoolkit # calls plotnine
 - xgboost.spark ### Don't think we support spark as a parallel backend
+- send2trash.mac ### Gadi is not a mac
 
 # Preload these modules before testing to avoid weird python issues
 preload:
