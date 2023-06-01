@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "hxw599.gadi"}
+    agent {label "hh5_apps.gadi"}
 
     environment {
         ENV_NAME = "${env.JOB_BASE_NAME}"
@@ -21,7 +21,7 @@ pipeline {
         }
 
         failure {
-            mail to: 'hxw599', subject: "${env.ENV_NAME} update failed", body: """
+            mail to: 'dr4292', subject: "${env.ENV_NAME} update failed", body: """
 Full results at ${env.BUILD_URL}
 """
         }
