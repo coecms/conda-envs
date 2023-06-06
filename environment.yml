@@ -270,5 +270,6 @@ dependencies:
 - ipywidgets>=8
 - flox
 - erddapy>2 ### Pin to fix argopy bringing in very old version of erddapy
+- tintx
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
