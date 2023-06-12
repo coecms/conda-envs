@@ -121,7 +121,7 @@ dependencies:
 - coecms-util
 - yamanifest
 - cmocean
-- payu
+- payu>=1.0.27 ### force update
 - splitvar
 - marineHeatWaves
 - holoviews
