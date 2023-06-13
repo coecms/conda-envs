@@ -36,7 +36,7 @@ dependencies:
 - windspharm
 - python-cdo
 - arm_pyart
-- bokeh<3.0.0 ### Bokeh 3 breaks geoviews
+- bokeh!=3.0.*,>=2.4.2 ### Dask needs bokeh!=3.0.*,>=2.4.2 for the dashboard.
 - datashader
 - f90nml
 - wrf-python>=1.3.4 ### Force update
@@ -125,7 +125,7 @@ dependencies:
 - splitvar
 - marineHeatWaves
 - holoviews
-- geoviews
+- geoviews>=1.10 ### force update
 - pytest-cov
 - panel
 - xrft
