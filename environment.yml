@@ -272,5 +272,6 @@ dependencies:
 - erddapy>2 ### Pin to fix argopy bringing in very old version of erddapy
 - tintx
 - climpred
+- odc-geo
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
