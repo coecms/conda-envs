@@ -23,6 +23,15 @@
 
 set -eu
 
+if [[ "${PBS_JOBFS}" ]]; then
+    cd "${PBS_O_WORKDIR}"
+    old_link_path=$( readlink ~/.conda )
+    trap "rm ~/.conda; ln -s $old_link_path ~/.conda" EXIT 
+    rm ~/.conda
+    mkdir -p "${PBS_JOBFS}"/.conda
+    ln -s "${PBS_JOBFS}"/.conda ~
+fi
+
 export CONDA_INSTALLATION_PATH=${CONDA_INSTALLATION_PATH:-/g/data/hh5/public/apps/miniconda3}
 export CONDA_MODULE_PATH=${CONDA_MODULE_PATH:-/g/data/hh5/public/modules}
 
