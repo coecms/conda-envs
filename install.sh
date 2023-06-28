@@ -26,7 +26,7 @@ set -eu
 if [[ "${PBS_JOBFS}" ]]; then
     cd "${PBS_O_WORKDIR}"
     old_link_path=$( readlink ~/.conda )
-    trap "rm ~/.conda; ln -s $old_link_path ~/.conda" EXIT 
+    trap "rm ~/.conda; ln -s $old_link_path ~/.conda" EXIT
     rm ~/.conda
     mkdir -p "${PBS_JOBFS}"/.conda
     ln -s "${PBS_JOBFS}"/.conda ~

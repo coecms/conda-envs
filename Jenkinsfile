@@ -10,11 +10,13 @@ pipeline {
             steps {
                 sh """
                    rm -f build_miniconda3.o*
-                   qsub -N build_miniconda3 -lncpus=1,mem=20GB,walltime=2:00:00,jobfs=50GB,storage=gdata/hh5+scratch/hh5 -P kr06 -q copyq -j oe -Wblock=true install.sh
-                   while ! [[ -e build_miniconda3.o* ]]; do
+                   jobid=$( qsub -N build_miniconda3 -lncpus=1,mem=20GB,walltime=2:00:00,jobfs=50GB,storage=gdata/hh5+scratch/hh5 -P kr06 -q copyq -j oe -Wblock=true install.sh )
+                   echo $jobid
+                   outfile=build_miniconda3.o"${jobid%.*}"
+                   while ! [[ -e "${outfile}" ]]; do
                        sleep 10
                     done
-                    cat build_miniconda3.o*
+                    cat "${outfile}"
                    """
             }
         }
