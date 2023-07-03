@@ -273,5 +273,6 @@ dependencies:
 - tintx
 - climpred
 - odc-geo
+- cmor
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
