@@ -274,5 +274,6 @@ dependencies:
 - climpred
 - odc-geo
 - cmor
+- bargeparse
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
