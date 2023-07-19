@@ -55,6 +55,7 @@ preload:
 - sklearn.manifold
 - stratify
 - xarray
+- setuptools.command.build_ext ### Strange issue with numba.pycc
 
 # Allow loading, but pass exceptions. When exceptions no longer triggered
 # can remove

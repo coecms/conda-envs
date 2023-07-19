@@ -128,12 +128,31 @@ function env_update {
     conda activate "${CONDA_INSTALLATION_PATH}/envs/${FULLENV}"
     set -u
 
-    if ! py.test -s; then
-        echo "${FULLENV} tests failed, rolling back update" 1>&2
+    #if ! py.test -s; then
+    #    echo "${FULLENV} tests failed, rolling back update" 1>&2
+    #    ${MAMBA} env update -f deployed.old.yml
+    #    exit -1
+    #fi
+    # Refresh jupyter plugins
+    ### Hanging py.test fix from conda_concept
+    export TEST_OUT_FILE=test_results.xml
+    rm -f "${TEST_OUT_FILE}"
+    py.test -s --junitxml "${TEST_OUT_FILE}" &
+    test_pid=$!
+
+    while ! [[ -e "${TEST_OUT_FILE}" ]]; do sleep 5; done
+
+    [[ -e /proc/"${test_pid}" ]] && kill -15 "${test_pid}"
+    wait
+
+    read errors failures < <( python3 -c 'import xml.etree.ElementTree as ET; import sys; t=ET.parse(sys.argv[1]); print(t.getroot()[0].get("errors") + " " + t.getroot()[0].get("failures"))' "${TEST_OUT_FILE}" )
+
+    if [[ "${errors}" -gt 0 ]] || [[ "${failures}" -gt 0 ]]; then
+        echo "TESTS FAILED - reverting update"
         ${MAMBA} env update -f deployed.old.yml
         exit -1
     fi
-    # Refresh jupyter plugins
+
     jupyter lab build
 }
 
