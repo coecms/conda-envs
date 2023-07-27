@@ -180,7 +180,7 @@ dependencies:
 - geoplot
 - dask-ml>=2022.5.27
 - mamba
-- intake-esm==2023.1.6  #<2022.9.18  # downgrading until intake 0.6.6 issue solved
+- intake-esm==2023.07.07 
 - pykrige
 - nci_intake_catalogue>=1.3 # triggering update 
 - cmdline_provenance
