@@ -11,13 +11,13 @@ if {[module-info mode remove]} {
 conflict conda
 
 # Conda install directory
-set condahome "/g/data3/hh5/public/apps/miniconda3"
+set condahome "/g/data/hh5/public/apps/miniconda3"
 
 # Name of this module's environment
 set condaenv [lindex [split [module-info name] {/}] 1]
 
 # Get the environment variables from 'conda activate'
-set condaenv [exec /bin/env -i /g/data3/hh5/public/modules/conda/condaenv.sh $condaenv]
+set condaenv [exec /bin/env -i /g/data/hh5/public/modules/conda/condaenv.sh $condaenv]
 
 # Convert the environment into module commands
 set lines [split $condaenv '\n']
@@ -25,32 +25,47 @@ foreach line $lines {
     regexp {^([^=]*)=(.*)} $line -> key value
 
     # Exclude $PWD and $_
-    if {[lsearch -exact {PATH PWD _} $key] == -1} {
-        if {[string match "*:" $value]} {
-            prepend-path $key [string trimright $value ":"]
-        } else {
-            setenv $key $value
-        }
+    if {[lsearch -exact {MODULEPATH PWD _} $key] >= 0} {
+        continue
     }
 
-    # Only get the first path entry (ignore /usr/bin:/bin)
-    if {[lsearch -exact {PATH} $key] == 0} {
-        prepend-path PATH [regsub {:.*} $value {}]
+    # Is this some sort of path?
+    if {[string match UDUNITS2_XML_PATH $key]} {
+        # This is actually a single path
+        setenv $key $value
+        continue
+    } elseif {[string match *?PATH $key]} {
+        # A *PATH variable to be prepended with a ':'
+        prepend-path $key $value
+        continue
+    } elseif {[lsearch {_LMFILES_ LOADEDMODULES} $key] >= 0} {
+        # Modulefile stuff that works like a path
+        prepend-path $key $value
+        continue
+    } elseif {[string match PATH $key]} {
+        # PATH itself (strip out the system paths to keep ordering correct)
+        prepend-path $key [regsub {:/usr/bin:/bin} $value {}]
+        continue
     }
+
+    # Otherwise set an environment var
+    setenv $key $value
 }
-
-# Add the base conda environment
-append-path PATH /g/data3/hh5/public/apps/miniconda3/bin
 
 # Add user environments
-if [ file isdirectory "/short" ] {
-    set userconda /short/$::env(PROJECT)/$::env(USER)/conda
-} else {
+if [ file isdirectory "/scratch" ] {
+    set userconda /scratch/$::env(PROJECT)/$::env(USER)/conda
+    setenv CONDA_ENVS_PATH $userconda/envs
+    setenv CONDA_PKGS_DIRS $userconda/pkgs
+} elseif [ file isdirectory "/local/$::env(PROJECT)" ] {
     set userconda /local/$::env(PROJECT)/$::env(USER)/conda
+    setenv CONDA_ENVS_PATH $userconda/envs
+    setenv CONDA_PKGS_DIRS $userconda/pkgs
 }
 
-setenv CONDA_ENVS_PATH $userconda/envs
-setenv CONDA_PKGS_DIRS $userconda/pkgs
+setenv LC_ALL en_AU.utf8
 
 # Disable including libraries from ~/.local
 # setenv PYTHONNOUSERSITE x
+
+# setenv CARTOPY_USER_BACKGROUNDS /g/data/hh5/public/apps/cartopy-data/backgrounds

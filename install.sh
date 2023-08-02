@@ -82,7 +82,7 @@ export PYTHONNOUSERSITE=true
 
 source "${CONDA_INSTALLATION_PATH}"/etc/profile.d/conda.sh
 
-MAMBA=/g/data3/hh5/public/apps/miniconda3/envs/analysis3/bin/mamba
+MAMBA=/g/data/hh5/public/apps/miniconda3/envs/analysis3/bin/mamba
 
 unset CONDA_ENVS_PATH
 unset CONDA_PKGS_DIRS

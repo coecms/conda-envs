@@ -4,7 +4,7 @@
 conflict conda
 
 # Conda install directory
-set condahome "/g/data3/hh5/public/apps/miniconda3"
+set condahome "/g/data/hh5/public/apps/miniconda3"
 
 # Name of this module's environment
 set condaenv [lindex [split [module-info name] {/}] 1]
