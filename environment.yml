@@ -116,7 +116,7 @@ dependencies:
 - nchash
 - umtools
 - cosima-cookbook
-- clef>=1.5.0  # pinning to make sure it updates
+- clef>=1.5.1  # pinning to make sure it updates
 - nccmp
 - coecms-util
 - yamanifest
