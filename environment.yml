@@ -121,7 +121,7 @@ dependencies:
 - coecms-util
 - yamanifest
 - cmocean
-- accessnri::payu==1.0.27
+- accessnri::payu
 - splitvar
 - marineHeatWaves
 - holoviews
