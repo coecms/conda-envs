@@ -23,6 +23,7 @@ jobs:
           key: ${{secrets.DEPLOY_KEY}}
           command_timeout: 120m
           script: |
+            cd ${{secrets.GADI_REPO_PATH}}
             ### Create named pipe
             named_pipe=$( mktemp -u )
             mkfifo $named_pipe
