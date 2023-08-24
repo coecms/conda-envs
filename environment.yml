@@ -6,7 +6,7 @@ channels:
 variables:
   CARTOPY_USER_BACKGROUNDS: /g/data/hh5/public/apps/cartopy-data/backgrounds
 dependencies:
-- python>=3.9
+- python>=3.10
 - pip
 - sqlalchemy<2.0 ### cosima cookbook does not import with sqlalchemy 2
 - libnetcdf>=4.7.4=mpi_openmpi* # pinned for solver stability
@@ -30,16 +30,15 @@ dependencies:
 - seaborn
 - xarray
 - jupyter
-- notebook<7 ### Roll-back due to some incompatible extensions
-- nb_conda
+- notebook
 - metpy
 - windspharm
 - python-cdo
 - arm_pyart
 - bokeh!=3.0.*,>=2.4.2 ### Dask needs bokeh!=3.0.*,>=2.4.2 for the dashboard.
 - datashader
-- f90nml==1.4.3
-- wrf-python>=1.3.4 ### Force update
+- f90nml
+- wrf-python
 - sympy
 - sh
 - ffmpeg
@@ -69,7 +68,7 @@ dependencies:
 - matplotlib
 #- matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
 - dreqpy
-- pint<=0.19.2 ### pinned to fix https://github.com/Ouranosinc/xclim/issues/1216
+- pint
 - pycodestyle 
 - nc-time-axis
 - jq
@@ -85,7 +84,7 @@ dependencies:
 - hupper
 - kealib
 - mo_pack
-- mule==2022.07.1
+- mule
 - cf-units
 - python-stratify
 - nbdime
@@ -100,14 +99,12 @@ dependencies:
 - jupyterlab_server
 - docrep
 - gifsicle
-- jupyter_nbextensions_configurator
 - nodejs
 - cfgrib
 - h5netcdf
-- jupyter_contrib_nbextensions
-- intake #==0.6.5 # pinned to downgrade until intake 0.6.6 issue is solved
+- intake
 - gridfill
-- xgcm>0.5 # pinned for solver stability
+- xgcm
 - xrft
 - doit
 - pylint
@@ -116,7 +113,7 @@ dependencies:
 - nchash
 - umtools
 - cosima-cookbook
-- clef>=1.5.1  # pinning to make sure it updates
+- clef
 - nccmp
 - coecms-util
 - yamanifest
@@ -125,7 +122,7 @@ dependencies:
 - splitvar
 - marineHeatWaves
 - holoviews
-- geoviews>=1.10 ### force update
+- geoviews
 - pytest-cov
 - panel
 - xrft
@@ -146,9 +143,9 @@ dependencies:
 - sphinx
 - doc8
 - pymunge
-- climtas>=0.3.3 # pin to force update
+- climtas
 - asyncssh
-- ants==0.19.0
+- ants
 - xhistogram
 - cartopy_userconfig=1.0.gadi
 - geopy
@@ -157,12 +154,12 @@ dependencies:
 - cython
 - esmf>=8.0.1=mpi_openmpi*
 - esmpy>=8.0.1=mpi_openmpi*
-- xesmf>=0.6.2 # https://github.com/pangeo-data/xESMF/issues/127
+- xesmf
 - sharppy
 - docrep
 - earthpy
 - descartes
-- era5grib>=0.3.9 # pinned to force update
+- era5grib
 - conda-tree
 - xmitgcm
 - cupy
@@ -178,11 +175,11 @@ dependencies:
 - noise # unlisted dependency of xarray-spatial
 - nctoolkit
 - geoplot
-- dask-ml>=2022.5.27
+- dask-ml
 - mamba
-- intake-esm==2023.07.07 
+- intake-esm
 - pykrige
-- nci_intake_catalogue>=1.3 # triggering update 
+- nci_intake_catalogue
 - cmdline_provenance
 - mplleaflet
 - branca
@@ -202,8 +199,8 @@ dependencies:
 - xmovie
 - pymannkendall
 - param
-- tensorflow>=2.6 # pinned for solver stability
-- shap<0.42.0 # https://github.com/shap/shap/issues/3075
+- tensorflow
+- shap
 - gh
 - pyqt
 - vtk
@@ -227,7 +224,7 @@ dependencies:
 - cdms2
 - pygam
 - pysal
-- xmhw>=0.9.3
+- xmhw
 - argopy
 - dataclasses-json
 - ilamb
@@ -239,13 +236,12 @@ dependencies:
 - palettable
 - webcolors
 - mpl-scatter-density
-- benchcab>=1.0
+- benchcab
 - lmfit
 - xclim
 - jupyter-resource-usage
 - acs_replica_intake
 - matchpy
-- pytmatrix  
 - mscorefonts
 - opencv  
 - conda-build
@@ -262,7 +258,7 @@ dependencies:
 - xcdat
 - neutralocean
 - ipympl
-- libtiff<4.5.0 ### 4.4.0 -> 4.5.0 ABI change breaks gdal
+- libtiff
 - xskillscore
 - geocat-comp
 - ecgtools
@@ -277,7 +273,7 @@ dependencies:
 - bargeparse
 - accessnri::amami
 - accessnri::access-nri-intake
-- ipynbname>2023.1.0.0
+- ipynbname
 - shellcheck
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing

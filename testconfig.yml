@@ -45,6 +45,8 @@ skip:
 - xgboost.spark ### Don't think we support spark as a parallel backend
 - send2trash.mac ### Gadi is not a mac
 - send2trash.win ### Nor is it windows
+- attrdict ### Deprecated but still erroneously bought in by wavespectra - not used by anything else
+- skimage.future.graph ### Thanks for raising a module error to tell me that you've moved this
 
 # Preload these modules before testing to avoid weird python issues
 preload:

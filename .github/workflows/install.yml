@@ -1,0 +1,39 @@
+name: Install
+on:
+  push:
+    branches: analysis3
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.3.0
+      - name: Sync repoisitory to Gadi
+        uses: up9cloud/action-rsync@v1.3
+        env:
+          HOST: gadi.nci.org.au
+          TARGET: ${{secrets.GADI_REPO_PATH}}
+          KEY: ${{secrets.DEPLOY_KEY}}
+          USER: ${{secrets.GADI_USER}}
+      - name: Install
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: gadi.nci.org.au
+          username: ${{secrets.GADI_USER}}
+          key: ${{secrets.DEPLOY_KEY}}
+          command_timeout: 120m
+          script: |
+            ### Create named pipe
+            named_pipe=$( mktemp -u )
+            mkfifo $named_pipe
+            exec 10<>$named_pipe
+            ### Submit job
+            qsub -N build_miniconda3 -lncpus=1,mem=20GB,walltime=2:00:00,jobfs=50GB,storage=gdata/hh5+scratch/hh5 -P kr06 -q copyq -j oe -Wblock=true install.sh >&10 &
+            pid=$!
+            ### Get jobid
+            read -u 10 jobid
+            echo $jobid
+            ### Create a trap that cats job output file on exit
+            outfile=build_miniconda3.o"${jobid%.*}"
+            trap "while ! [[ -e ${outfile} ]]; do sleep 1; done; cat ${outfile}; exec 10>&-; rm -f $named_pipe;" EXIT
+            wait $pid

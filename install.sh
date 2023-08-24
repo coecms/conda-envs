@@ -95,6 +95,28 @@ if [[ $( get_aliased_module conda/analysis ) == "conda/${FULLENV}" ]]; then
     exit 1
 fi
 
+function test_env {
+
+    export TEST_OUT_FILE=test_results.xml
+    rm -f "${TEST_OUT_FILE}"
+    py.test -s --junitxml "${TEST_OUT_FILE}" &
+    test_pid=$!
+
+    while ! [[ -e "${TEST_OUT_FILE}" ]]; do sleep 5; done
+
+    [[ -e /proc/"${test_pid}" ]] && kill -15 "${test_pid}"
+    wait
+
+    read errors failures < <( python3 -c 'import xml.etree.ElementTree as ET; import sys; t=ET.parse(sys.argv[1]); print(t.getroot()[0].get("errors") + " " + t.getroot()[0].get("failures"))' "${TEST_OUT_FILE}" )
+
+    if [[ "${errors}" -gt 0 ]] || [[ "${failures}" -gt 0 ]]; then
+        return 1
+    else
+        return 0
+    fi
+
+}
+
 function env_install {
     ${MAMBA} env create -p "${CONDA_INSTALLATION_PATH}/envs/${FULLENV}" -f environment.yml
     ln -s "${CONDA_MODULE_PATH}"/conda/{.common.v2,"${FULLENV}"}
@@ -104,7 +126,9 @@ function env_install {
 
     conda env export > deployed.yml
 
-    py.test -s
+    if ! test_env; then
+        echo "TESTS FAILED - pushing on"
+    fi
     # Refresh jupyter plugins
     jupyter lab build
 }
@@ -135,19 +159,7 @@ function env_update {
     #fi
     # Refresh jupyter plugins
     ### Hanging py.test fix from conda_concept
-    export TEST_OUT_FILE=test_results.xml
-    rm -f "${TEST_OUT_FILE}"
-    py.test -s --junitxml "${TEST_OUT_FILE}" &
-    test_pid=$!
-
-    while ! [[ -e "${TEST_OUT_FILE}" ]]; do sleep 5; done
-
-    [[ -e /proc/"${test_pid}" ]] && kill -15 "${test_pid}"
-    wait
-
-    read errors failures < <( python3 -c 'import xml.etree.ElementTree as ET; import sys; t=ET.parse(sys.argv[1]); print(t.getroot()[0].get("errors") + " " + t.getroot()[0].get("failures"))' "${TEST_OUT_FILE}" )
-
-    if [[ "${errors}" -gt 0 ]] || [[ "${failures}" -gt 0 ]]; then
+    if ! test_env; then
         echo "TESTS FAILED - reverting update"
         ${MAMBA} env update -f deployed.old.yml
         exit -1
