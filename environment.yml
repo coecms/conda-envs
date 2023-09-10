@@ -275,5 +275,6 @@ dependencies:
 - accessnri::access-nri-intake
 - ipynbname
 - shellcheck
+- pysteps
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
