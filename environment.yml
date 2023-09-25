@@ -276,5 +276,6 @@ dependencies:
 - ipynbname
 - shellcheck
 - pysteps
+- geocat-viz
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
