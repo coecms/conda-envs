@@ -73,7 +73,7 @@ dependencies:
 - nc-time-axis
 - jq
 - pvlib-python
-- parcels
+- parcels>=2.4 ### Required for cosima recipes
 - siphon
 - scikit-learn
 - filelock
@@ -277,6 +277,6 @@ dependencies:
 - shellcheck
 - pysteps
 - geocat-viz
-- icclim
+- icclim>=6.4.0 ### Prevent downgrade
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
