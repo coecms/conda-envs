@@ -128,7 +128,7 @@ dependencies:
 - xrft
 - git
 - openmpi
-- mpi4py
+- mpi4py==3.1.4 ### Prevent installation of Intel MPI
 - palettable
 - xlrd
 - nccompress
