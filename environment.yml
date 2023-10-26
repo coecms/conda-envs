@@ -68,7 +68,7 @@ dependencies:
 - matplotlib
 #- matplotlib>=3.5.2|<=3.4.3  # pinned to solve  https://github.com/matplotlib/matplotlib/issues/21917
 - dreqpy
-- pint
+- pint<0.20 ### Breaks older geocat
 - pycodestyle 
 - nc-time-axis
 - jq
@@ -279,5 +279,6 @@ dependencies:
 - geocat-viz
 - icclim>=6.4.0 ### Prevent downgrade
 - py-cordex
+- pdbufr
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
