@@ -89,6 +89,15 @@ unset CONDA_PKGS_DIRS
 
 conda info
 
+### Before we start - make sure we're not going to write into the pkgs directory in the analysis3 env
+read a b c pkg_cache < <( $MAMBA info | grep 'package cache' )
+if [[ "${pkg_cache}" =~ $( realpath ${MAMBA//bin\/mamba} ) ]]; then
+    mkdir -p "${pkg_cache}" || true
+    if [[ $( stat -c%u "${pkg_cache}" ) == "${EUID}" ]]; then
+        chmod -w "${pkg_cache}"
+    fi
+fi
+
 # Check this is not a 'stable' enviornment
 if [[ $( get_aliased_module conda/analysis ) == "conda/${FULLENV}" ]]; then
     echo "${FULLENV} is a 'stable' environment, aborting" 1>&2
