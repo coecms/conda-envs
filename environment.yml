@@ -35,7 +35,7 @@ dependencies:
 - windspharm
 - python-cdo
 - arm_pyart
-- bokeh<3.3.0 ### Dask needs bokeh!=3.0.*,>=2.4.2 for the dashboard.
+- bokeh
 - datashader
 - f90nml
 - wrf-python
