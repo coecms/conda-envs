@@ -282,5 +282,6 @@ dependencies:
 - pdbufr
 - matplotlib-scalebar
 - python-kaleido
+- numba<0.59 ### pysal -> giddy -> quantecon is broken with numba 0.59
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
