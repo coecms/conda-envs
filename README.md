@@ -15,7 +15,8 @@ A potential way to ensure this without pinning the package to a specific version
 where x.x is the version you want.
 
 Changes to other files in the repository, as this README file, will also trigger an update.
-Updating a package in the CMS conda channel will also trigger an update automatically.
+
+Check the progress of an update [here](https://github.com/coecms/conda-envs/actions)
 
 # Resolving errors
 
@@ -40,9 +41,5 @@ When updating to a new unstable release environment use the following protocol
 
 1. Remove all version pins unless pinned due to an [unresolved issue](https://github.com/coecms/conda-envs/labels/update) 
 2. Delete all packages below the comment line `Can be removed when pinning no longer required`
-3. Check [build is successful](https://accessdev.nci.org.au/jenkins/blue/organizations/jenkins/conda%2Fanalysis3-unstable/activity/)
+3. Check [build is successful](https://github.com/coecms/conda-envs/actions)
 4. Add back version pins where required. Pin to latest available version as unstable aims to be an updated environment. Packages dependencies which are added simply to pin their version should be added below the comment to that effect.
-
-# Update environment
-
-If you need to rerun the unstable environment but don't need to commit anything (e.g update the version of one of the installed package), login to Jenkins and use the "Build Now" option for the analysis3-unstable job.
