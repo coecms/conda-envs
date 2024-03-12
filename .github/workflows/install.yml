@@ -2,12 +2,13 @@ name: Install
 on:
   push:
     branches: analysis3
+  workflow_dispatch:
 jobs:
   install:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4
       - name: Sync repoisitory to Gadi
         uses: up9cloud/action-rsync@v1.3
         env:
