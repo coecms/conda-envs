@@ -236,7 +236,7 @@ dependencies:
 - palettable
 - webcolors
 - mpl-scatter-density
-- accessnri::benchcab>=4.0.0
+- accessnri::benchcab>=4.0.2
 - lmfit
 - xclim
 - jupyter-resource-usage
