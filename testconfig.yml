@@ -48,6 +48,7 @@ skip:
 - attrdict ### Deprecated but still erroneously bought in by wavespectra - not used by anything else
 - skimage.future.graph ### Thanks for raising a module error to tell me that you've moved this
 - numba.core.rvsdg_frontend ### Not supported in Python3.10
+- scipy._lib.array_api_compat.torch ### Don't support pytorch
 
 # Preload these modules before testing to avoid weird python issues
 preload:
