@@ -283,7 +283,8 @@ dependencies:
 - matplotlib-scalebar
 - python-kaleido
 - numba<0.59 ### pysal -> giddy -> quantecon is broken with numba 0.59
+- accessnri::access-med-tools
 - crick ### Unlisted dependency for dask-expr
+- regional-mom6
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
-- accessnri::access-med-tools
