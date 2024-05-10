@@ -49,6 +49,7 @@ skip:
 - skimage.future.graph ### Thanks for raising a module error to tell me that you've moved this
 - numba.core.rvsdg_frontend ### Not supported in Python3.10
 - scipy._lib.array_api_compat.torch ### Don't support pytorch
+- urllib3.contrib.emscripten ### Used for web browser integration and also experimental: https://urllib3.readthedocs.io/en/latest/reference/contrib/emscripten.html
 
 # Preload these modules before testing to avoid weird python issues
 preload:
