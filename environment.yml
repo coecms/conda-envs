@@ -94,12 +94,12 @@ dependencies:
 - h5py
 - line_profiler
 - bottleneck
-- jupyterlab
+- jupyterlab<4.2.0a0
 - dask-jobqueue
 - jupyterlab_server
 - docrep
 - gifsicle
-- nodejs>=20
+- nodejs
 - cfgrib
 - h5netcdf
 - intake
