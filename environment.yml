@@ -99,7 +99,7 @@ dependencies:
 - jupyterlab_server
 - docrep
 - gifsicle
-- nodejs
+- nodejs>=20
 - cfgrib
 - h5netcdf
 - intake
