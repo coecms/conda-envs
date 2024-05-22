@@ -50,6 +50,13 @@ skip:
 - numba.core.rvsdg_frontend ### Not supported in Python3.10
 - scipy._lib.array_api_compat.torch ### Don't support pytorch
 - urllib3.contrib.emscripten ### Used for web browser integration and also experimental: https://urllib3.readthedocs.io/en/latest/reference/contrib/emscripten.html
+- fugue_duckdb ### Optional backend not used by any package in analysis3
+- fugue_ibis ### Optional backend not used by any package in analysis3
+- fugue_polars ### Optional backend not used by any package in analysis3
+- fugue_ray ### Optional backend not used by any package in analysis3
+- fugue_spark ### Optional backend not used by any package in analysis3
+- torch.onnx ### Prevent testing of _internal APIs
+- torch.testing ### Prevent testing of _internal APIs
 
 # Preload these modules before testing to avoid weird python issues
 preload:

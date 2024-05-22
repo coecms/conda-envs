@@ -113,7 +113,23 @@ function test_env {
 
     while ! [[ -e "${TEST_OUT_FILE}" ]]; do sleep 5; done
 
-    [[ -e /proc/"${test_pid}" ]] && kill -15 "${test_pid}"
+    if [[ -e /proc/"${test_pid}" ]]; then
+        kill -15 "${test_pid}"
+    fi
+    ### Hard kill in 10 seconds because the SIGTERM doesn't work sometimes
+    sleep_counter=10
+    while [[ ${sleep_counter} -gt 0 ]]; do
+        if [[ -e /proc/"${test_pid}" ]]; then
+            sleep 1
+            sleep_counter=$(( ${sleep_counter} - 1 ))
+            if [[ ${sleep_counter} -eq 0 ]]; then
+                kill -9 "${test_pid}"
+            fi
+        else
+            sleep_counter=0
+        fi
+    done
+
     wait
 
     read errors failures < <( python3 -c 'import xml.etree.ElementTree as ET; import sys; t=ET.parse(sys.argv[1]); print(t.getroot()[0].get("errors") + " " + t.getroot()[0].get("failures"))' "${TEST_OUT_FILE}" )

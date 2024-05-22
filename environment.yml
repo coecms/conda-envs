@@ -26,7 +26,7 @@ dependencies:
 - pygrib
 - pyhdf
 - pytest
-- scipy<1.13.0 ### Very recently updated and breaks some packages that have a slower update cycle. Should be able to unpin soon.
+- scipy
 - seaborn
 - xarray>2023.9 ### py-cordex fixes xarray at != 2023.9.0 - set this to prevent downgrade
 - jupyter
@@ -286,5 +286,6 @@ dependencies:
 - accessnri::access-med-tools
 - crick ### Unlisted dependency for dask-expr
 - regional-mom6
+- u8darts-all
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
