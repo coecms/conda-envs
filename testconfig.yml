@@ -57,6 +57,7 @@ skip:
 - fugue_spark ### Optional backend not used by any package in analysis3
 - torch.onnx ### Prevent testing of _internal APIs
 - torch.testing ### Prevent testing of _internal APIs
+- torch.utils.benchmark ### Uses non-existent part of deprecated pkg_resources
 
 # Preload these modules before testing to avoid weird python issues
 preload:
