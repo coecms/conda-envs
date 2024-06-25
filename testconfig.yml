@@ -58,6 +58,7 @@ skip:
 - torch.onnx ### Prevent testing of _internal APIs
 - torch.testing ### Prevent testing of _internal APIs
 - torch.utils.benchmark ### Uses non-existent part of deprecated pkg_resources
+- keras.src.backend ### Don't test Keras backends
 
 # Preload these modules before testing to avoid weird python issues
 preload:

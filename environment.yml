@@ -288,5 +288,6 @@ dependencies:
 - regional-mom6
 - u8darts-all
 - xwrf
+- ecmwf-api-client
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
