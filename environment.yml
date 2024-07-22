@@ -289,5 +289,6 @@ dependencies:
 - u8darts-all
 - xwrf
 - ecmwf-api-client
+- pygamma_n
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
