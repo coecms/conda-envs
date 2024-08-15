@@ -283,7 +283,6 @@ dependencies:
 - matplotlib-scalebar
 - python-kaleido
 - numba
-- accessnri::access-med-tools
 - crick ### Unlisted dependency for dask-expr
 - regional-mom6
 - u8darts-all
