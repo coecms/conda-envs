@@ -73,7 +73,7 @@ dependencies:
 - nc-time-axis
 - jq
 - pvlib-python
-- parcels ##>=2.4 ### Required for cosima recipes - leaving unpinned brings in ancient py310_0 version
+- parcels>=3
 - siphon
 - scikit-learn
 - filelock
