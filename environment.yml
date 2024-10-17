@@ -289,7 +289,7 @@ dependencies:
 - xwrf
 - ecmwf-api-client
 - pygamma_n
-- mopper
+- mopper>=1.1.0  # pin to update
 - scores
 - pip:
   - railroad-diagrams ### Unlisted dependency of pip and pyparsing
