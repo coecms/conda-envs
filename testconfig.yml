@@ -7,6 +7,7 @@ skip:
 - pbr.tests
 - plotly.plotly
 - bokeh.server.django
+- boke.sampledata  # no bokeh_sampledata
 # Too many, or not necessary
 - iris.tests
 - cartopy.tests
