@@ -62,6 +62,8 @@ skip:
 - torch._inductor
 - keras.src.backend ### Don't test Keras backends
 - functorch ### This file has moved to under torch/_functorch. It is not public API.
+- shiboken2 ### using deprecated functions form various packages
+- cupy ### ImportError (libnccl.so.2: cannot open shared object file
 
 # Preload these modules before testing to avoid weird python issues
 preload:
