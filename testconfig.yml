@@ -11,6 +11,7 @@ skip:
 - datatree # error importing datatree 
 - pyart # error importing pyart
 - pyqt # import shiboken2 using deprecated functions form various packages
+- wradlib # same as above
 # Too many, or not necessary
 - iris.tests
 - cartopy.tests
