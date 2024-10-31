@@ -8,7 +8,7 @@ skip:
 - plotly.plotly
 - bokeh.server.django
 - bokeh.sampledata  # no bokeh_sampledata
-- shiboken2 ### using deprecated functions form various packages
+- datatree # import shiboken2 using deprecated functions form various packages
 # Too many, or not necessary
 - iris.tests
 - cartopy.tests
