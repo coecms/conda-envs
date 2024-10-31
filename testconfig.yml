@@ -8,10 +8,11 @@ skip:
 - plotly.plotly
 - bokeh.server.django
 - bokeh.sampledata  # no bokeh_sampledata
-- datatree # error importing datatree 
-- pyart # error importing pyart
-- pyqt # import shiboken2 using deprecated functions form various packages
-- wradlib # same as above
+- datatree # see issue #52 
+- pyart # see issue #52
+- pyqt # see issue #52
+- wradlib # see issue #52
+- xradar # see issue #52 
 # Too many, or not necessary
 - iris.tests
 - cartopy.tests
